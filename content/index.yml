@@ -1,0 +1,22 @@
+title: bp
+description: bp is an oil & gas phenomenon.
+navigation: true
+hero:
+  title: Innovation for the energy of today and tomorrow
+  description: bp’s engineers are at the heart of some of the world’s most complex projects in the harshest conditions.
+  orientation: horizontal
+features:
+  title: Sustainability
+  items:
+    - title: bp
+      description: Powered by bp for optimal SEO.
+      to: 
+    - title: Markdown
+      description: Write your pages with new MDC.
+      to: 
+    - title: bpChevron
+      description: Full set of custom components.
+      to: 
+    - title: Chevs
+      description: Lorem ipsum crashum smashum.
+      to: 
