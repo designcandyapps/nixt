@@ -10,7 +10,7 @@ const {header}=useAppConfig()
       <template v-if="header?.logo?.dark||header?.logo?.light">
         <UColorModeImage v-bind="{ class:'h-6 w-auto',...header?.logo }" />
       </template>
-      <template v-else>bp <img src="https://pinfluents.com/_BCK/4/im/bp.png" />
+      <template v-else><img src="https://pinfluents.com/_BCK/4/im/bp.png" />
       </template>
     </template>
 
