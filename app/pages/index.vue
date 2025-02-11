@@ -17,7 +17,7 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){setTimeout(()=>{this.snd()},1400)},
+  mounted(){setTimeout(()=>{this.snd()},1600)},
   methods:{
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
