@@ -18,22 +18,23 @@ export default{
   //data(){return{q:"",response:null}},
   mounted(){this.loadColor()},
   methods:{
-  async itB(ii){
-    var ca=document.getElementById("ca");
-    ca.width=ii.width; ca.height=ii.height;
-    var cx=ca.getContext("2d");
-    cx.drawImage(ii,0,0);
-    //return ca.toDataURL();
-    const dataURL=ca.toDataURL();
-    alert(dataURL);
-  },
   async loadColor(){
     var f=document.getElementById("ii");
     const r=new FileReader();
     r.onload=function(e){
       const im=new Image();
-      const img=document.getElementById("ii");
-      const bs=itB(img); im.src=bs;
+      const ii=document.getElementById("ii");
+
+
+      var ca=document.getElementById("ca");
+      ca.width=im.width; ca.height=im.height;
+      var cx=ca.getContext("2d");
+      cx.drawImage(im,0,0);
+      const dataURL=ca.toDataURL();
+      alert(dataURL);
+
+  
+      im.src=ca.toDataURL();
       alert("IMSRC2: "+im.src);
 
       im.onload=()=>{
