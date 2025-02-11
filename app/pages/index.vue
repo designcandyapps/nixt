@@ -20,7 +20,7 @@ export default{
   mounted(){setTimeout(()=>{this.snd()},1400)},
   methods:{
     async snd(){
-      const v=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},b:JSON.stringify({m:document.querySelector('#q').value})});
+      const v=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},b:JSON.stringify({ms:document.querySelector('#q').value})});
       const d=await v.json(); this.v=d.re;
       //alert("R1: "+this.v);
       document.querySelector('#t').innerText=this.v;
