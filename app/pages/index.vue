@@ -20,7 +20,7 @@ function imageToBase64(ii){
   const cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
   return ca.toDataURL();
 }
-var f=document.querySelector("#ii");
+const f=document.querySelector("#ii");
 const r=new FileReader();
 r.onload=function(e){
   const im=new Image();
