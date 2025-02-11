@@ -20,8 +20,8 @@ export default{
   mounted(){setTimeout(()=>{this.snd()},1400)},
   methods:{
     async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},b:JSON.stringify({ms:document.querySelector('#q').value})});
-      const d=await response.json(); this.response=d.re;
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
+      const data=await response.json(); this.response=data.reply;
       //alert("R1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
