@@ -19,9 +19,9 @@ export default{
   mounted(){this.loadColor()},
   methods:{
   async itB(ii){
-    const ca=document.getElementById("ca");
+    var ca=document.getElementById("ca");
     ca.width=ii.width; ca.height=ii.height;
-    const cx=ca.getContext("2d");
+    var cx=ca.getContext("2d");
     cx.drawImage(ii,0,0);
     alert("CA: "+ca);
 
@@ -29,7 +29,7 @@ export default{
     alert("Test");
   },
   async loadColor(){
-    const f=document.getElementById("ii");
+    var f=document.getElementById("ii");
     const r=new FileReader();
     r.onload=function(e){
       const im=new Image();
@@ -42,7 +42,7 @@ export default{
 
       }
     }
-    const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
+    var j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
   }
   }
 }
