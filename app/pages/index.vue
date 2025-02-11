@@ -13,9 +13,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-import ig from '~/components/ig.vue';
+import gen from '~/components/gen.vue';
 export default{
-  components:{ig},
+  components:{gen},
   data(){return{q:"",v:null}},
   mounted(){setTimeout(()=>{this.snd()},1400)},
   methods:{
