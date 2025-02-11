@@ -14,5 +14,19 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-
+import ImageGenerator from '~/components/ImageGenerator.vue';
+export default{
+  components:{ImageGenerator},
+  data(){return{prompt:"",response:null}},
+  mounted(){setTimeout(()=>{this.sendMessage()},1400)},
+  methods:{
+    async sendMessage(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
+      const data=await response.json(); this.response=data.reply;
+      //alert("RES1: "+this.response);
+      document.querySelector('#t').innerText=this.response;
+      //alert("T: "+document.querySelector('#t').innerText);
+    },
+  },
+}
 </script>
