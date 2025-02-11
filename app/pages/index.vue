@@ -23,10 +23,9 @@ export default{
     ca.width=ii.width; ca.height=ii.height;
     var cx=ca.getContext("2d");
     cx.drawImage(ii,0,0);
-    alert("CA: "+ca);
-
-    return ca.toDataURL();
-    alert("Test");
+    //return ca.toDataURL();
+    const dataURL=ca.toDataURL();
+    alert(dataURL);
   },
   async loadColor(){
     var f=document.getElementById("ii");
