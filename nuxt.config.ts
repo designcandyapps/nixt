@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     {src:'https://pinfluents.com/inc/jq.js'},
     {src:'https://pinfluents.com/_BCK/4/jqF.js'}
   ]}},
-  colorMode: {preference:'light'},
+  colorMode: {preference:'dark'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
   routeRules: {'/api/search.json':{prerender:true}},
   devtools: {enabled:true},
