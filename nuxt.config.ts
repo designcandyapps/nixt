@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
-  build: {buildDir:'dist'},
+  //build: {buildDir:'dist'},
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
