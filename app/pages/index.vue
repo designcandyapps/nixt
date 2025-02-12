@@ -6,42 +6,26 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/lo.png" crossOrigin="anonymous"><canvas id="ca" style="border:1px solid red;"></canvas>
+      <canvas id="ca" style="border:1px solid pink;"></canvas>
+      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
 </template>
 
 <script lang="ts">
+import gen from '~/components/gen.vue';
 export default{
-  mounted(){this.loadColor()},
+  components:{gen},
+  data(){return{q:"",response:null}},
+  mounted(){setTimeout(()=>{this.snd()},1600)},
   methods:{
-    async loadColor(){
-      const f=document.getElementById("ii");
-      const r=await fetch(f);
-      const b=await r.blob();
-      const im=new Image();
-      im.crossOrigin="anonymous";
-
-      //document.getElementById("f").onload=function(){
-        const im=document.getElementById("ii");
-        const ca=document.getElementById("ca");
-        ca.width=im.width; ca.height=im.height;
-        const cx=ca.getContext("2d"); cx.drawImage(im,0,0);
-        im.src=ca.toDataURL(b); alert("IM: "+im.src);
-
-        const o=cx.getImageData(0,0,ca.width,ca.height);
-        const d=o.data; const cc={}; let mc=0; let dc="";
-        for(let i=0;i<o.data.length;i+=4){
-          const r=d[i]; const g=d[i+1]; const b=d[i+2];
-          const rgb=`${r},${g},${b}`;
-          if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
-          if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
-        }
-        document.body.style.backgroundColor=`rgb(${dc})`;
-        cx.putImageData(o,0,0);
-      //}
-    }
-  }
+    async snd(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
+      const data=await response.json(); this.response=data.reply;
+      //alert("R1: "+this.response);
+      document.querySelector('#t').innerText=this.response;
+    },
+  },
 }
 </script>
