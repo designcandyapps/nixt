@@ -15,9 +15,6 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <script lang="ts">
 export default{
   mounted(){this.loadColor()},
-  //setup(){
-    //const imageElement = document.getElementById("ii");
-  //},
   methods:{
     async loadColor(){
       const imageElement = document.getElementById("ii");
@@ -27,16 +24,6 @@ export default{
       image.crossOrigin = "anonymous";
       image.src = URL.createObjectURL(blob);
       alert("IM: "+image.src);
-
-/*
-      await new Promise((resolve) => {
-        image.onload = resolve;
-      });
-      const yy=image;
-
-      //image.onload=()=>{
-      //}
-*/
 
       const canvas = document.getElementById("ca");
       canvas.width = image.width; canvas.height = image.height;
