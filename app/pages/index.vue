@@ -40,6 +40,7 @@ export default{
         alert("IM1: "+im.src);
 
         im.onload=function(){
+          alert("IM2: "+im.src);
 
           ca=document.getElementById("ca");
           ca.width=im.width; ca.height=im.height;
