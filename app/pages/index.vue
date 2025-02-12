@@ -14,15 +14,21 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){
+  mounted(){this.conVert();this.loadColor()},
+  setup(){
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
     const context = canvas.getContext("2d");
-    
-    this.loadColor()},
+
+    const conVert=async()=>{
+
+
+
+
+    }
+    return{q,im,gen};
+  },
   methods:{
-
-
     async function loadImage(url){
       const response = await fetch(url); // Fetch the image via the network
       const blob = await response.blob(); // Convert it to a blob
