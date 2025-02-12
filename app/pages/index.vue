@@ -23,30 +23,24 @@ export default{
       const im=new Image();
       im.crossOrigin="anonymous";
 
-document.getElementById("f").onload=function(){
-  const ca=document.getElementById("ca");
-  const cx=ca.getContext("2d");
-  const im=document.getElementById("ii");
+      document.getElementById("f").onload=function(){
+        const im=document.getElementById("ii");
+        const ca=document.getElementById("ca");
+        ca.width=im.width; ca.height=im.height;
+        const cx=ca.getContext("2d"); cx.drawImage(im,0,0);
+        im.src=ca.toDataURL(b); alert("IM: "+im.src);
 
-  im.src=ca.toDataURL(b);
-  alert("IM: "+im.src);
-
-  ca.width=im.width; ca.height=im.height;
-  cx.drawImage(im,0,0);
-  
-  const o=cx.getImageData(0,0,ca.width,ca.height);
-  const d=o.data; const cc={}; let mc=0; let dc="";
-  for(let i=0;i<o.data.length;i+=4){
-            const r=d[i]; const g=d[i+1]; const b=d[i+2];
-            const rgb=`${r},${g},${b}`;
-            if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
-            if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
-  }
-  document.body.style.backgroundColor=`rgb(${dc})`;
-  cx.putImageData(o,0,0);
-}
-
-
+        const o=cx.getImageData(0,0,ca.width,ca.height);
+        const d=o.data; const cc={}; let mc=0; let dc="";
+        for(let i=0;i<o.data.length;i+=4){
+          const r=d[i]; const g=d[i+1]; const b=d[i+2];
+          const rgb=`${r},${g},${b}`;
+          if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
+          if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
+        }
+        document.body.style.backgroundColor=`rgb(${dc})`;
+        cx.putImageData(o,0,0);
+      }
     }
   }
 }
