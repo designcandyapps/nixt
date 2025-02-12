@@ -37,6 +37,9 @@ export default{
           cx.drawImage(im,0,0);
           const dataURL=ca.toDataURL();
           alert(dataURL);
+
+
+    
         }
       }
       var j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
