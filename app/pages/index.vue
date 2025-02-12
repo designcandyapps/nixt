@@ -18,13 +18,6 @@ export default{
     this.loadColor();
   },
   methods:{
-    async function imageToBase64(ii){
-      var ca=document.createElement("canvas");
-      ca.width=ii.width; ca.height=ii.height;
-      var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
-      alert("Test2");
-      return ca.toDataURL();
-    },
     async loadColor(){
       var f=document.getElementById("ii");
       var r=new FileReader();
@@ -37,13 +30,13 @@ export default{
         im.onload=()=>{
           alert("IM2: "+im.src);
 
-          var ca=document.getElementById("ca");
-          ca.width=im.width; ca.height=im.height;
-          var cx=ca.getContext("2d");
-          cx.drawImage(im,0,0);
-
-          const dataURL=ca.toDataURL();  alert("D: "+dataURL);
-          im.src=ca.toDataURL(); alert("IMS: "+im.src);
+          var ca=document.createElement("canvas");
+          ca.width=document.getElementById("ii").width; ca.height=document.getElementById("ii").height;
+          var cx=ca.getContext("2d"); cx.drawImage(document.getElementById("ii"),0,0);
+          const dataURL=ca.toDataURL();
+          alert("D: "+dataURL);
+  
+          im.src=dataURL(); alert("IMS: "+im.src);
 
 
           const o=cx.getImageData(0,0,ca.width,ca.height);
