@@ -22,13 +22,16 @@ export default{
       const blob = await response.blob();
       const image = new Image();
       image.crossOrigin = "anonymous";
-      image.src = URL.createObjectURL(blob);
-      alert("IM: "+image.src);
+
 
       const canvas = document.getElementById("ca");
       canvas.width = image.width; canvas.height = image.height;
-      const context = canvas.getContext("2d");
-      context.drawImage(image, 0, 0);
+      const context = canvas.getContext("2d"); context.drawImage(image, 0, 0);
+
+      image.src = ca.toDataURL(blob);
+      alert("IM: "+image.src);
+
+
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
     }
