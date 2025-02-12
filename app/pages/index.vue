@@ -28,6 +28,7 @@ export default{
       image.src = URL.createObjectURL(blob);
       alert("IM: "+image.src);
 
+/*
       await new Promise((resolve) => {
         image.onload = resolve;
       });
@@ -35,11 +36,12 @@ export default{
 
       //image.onload=()=>{
       //}
+*/
 
       const canvas = document.getElementById("ca");
-      canvas.width = yy.width; canvas.height = yy.height;
+      canvas.width = image.width; canvas.height = image.height;
       const context = canvas.getContext("2d");
-      context.drawImage(yy, 0, 0);
+      context.drawImage(image, 0, 0);
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
     }
