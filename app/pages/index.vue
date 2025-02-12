@@ -27,14 +27,12 @@ document.getElementById("f").onload=function(){
   const ca=document.getElementById("ca");
   const cx=ca.getContext("2d");
   const im=document.getElementById("ii");
-  ca.width=im.width; ca.height=im.height;
-  cx.drawImage(im,0,0);
-
 
   im.src=ca.toDataURL(b);
   alert("IM: "+im.src);
 
-
+  ca.width=im.width; ca.height=im.height;
+  cx.drawImage(im,0,0);
   
   const o=cx.getImageData(0,0,ca.width,ca.height);
   const d=o.data; const cc={}; let mc=0; let dc="";
@@ -44,18 +42,6 @@ document.getElementById("f").onload=function(){
   document.body.style.backgroundColor=`rgb(${dc})`;
   cx.putImageData(o,0,0);
 }
-
-
-
-
-
-
-
-
-
-
-
-      
 
 
     }
