@@ -19,7 +19,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    this.loadColor()
+    //this.loadColor()
     setTimeout(()=>{this.snd()},1600)
   },
   methods:{
