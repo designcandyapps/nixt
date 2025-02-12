@@ -17,6 +17,15 @@ export default{
   mounted(){this.loadColor()},
   methods:{
     async loadColor(){
+
+
+    function imageToBase64(ii){
+      var ca=document.createElement("canvas");
+      ca.width=ii.width; ca.height=ii.height;
+      var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      return ca.toDataURL();
+    }
+  
       var f=document.getElementById("ii");
       var r=new FileReader();
 
