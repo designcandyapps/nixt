@@ -36,7 +36,17 @@ export default{
 
         im.onload=()=>{
           alert("IM2: "+im.src);
-    
+
+
+    const o=cx.getImageData(0,0,ca.width,ca.height);
+    const d=o.data; const cc={}; let mc=0; let dc="";
+    for(let i=0;i<d.length;i+=4){
+      const r=d[i]; const g=d[i+1]; const b=d[i+2];
+      const rgb=`${r},${g},${b}`;
+      if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
+      if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
+    }
+    document.body.style.backgroundColor=`rgb(${dc})`;
         }
       }
       var j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
