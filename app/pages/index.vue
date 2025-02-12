@@ -31,11 +31,14 @@ export default{
       var r=new FileReader();
       r.onload=function(e){
         f=document.getElementById("ii");
-        var im=new Image(); im.src=f.src; //alert(im.src);
+        var im=new Image(); im.src=f.src; //alert("IM: "+im.src);
         im.onload=function(){
+          
+          alert("IM2: "+im.src);
+
           const ca=document.createElement("canvas");
-          ca.width=im.width; ca.height=im.height;
-          var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
+          ca.width=f.width; ca.height=f.height;
+          var cx=ca.getContext("2d"); cx.drawImage(f,0,0);
           var o=cx.getImageData(0,0,ca.width,ca.height);
           var d=o.data; var cc={}; let mc=0; let dc="";
           for(i=0;i<d.length;i+=4){
