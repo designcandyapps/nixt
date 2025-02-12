@@ -23,14 +23,7 @@ export default{
   methods:{
     async loadColor(){
       alert("Test1");
-      /*const img = new Image();
-      img.crossOrigin = "anonymous"; // Enable CORS
-      img.src = "https://example.com/image.jpg";
-      img.onload = () => {
-
-      }*/
-
-      const response = await fetch(document.getElementById("ii").src);
+      const response = await fetch("https://pinfluents.com/_BCK/4/im/lo.png");
       const blob = await response.blob();
       const image = new Image();
       image.crossOrigin = "anonymous";
@@ -39,7 +32,10 @@ export default{
         image.onload = resolve;
       });
       const yy=image;
-      
+
+      //image.onload=()=>{
+      //}
+
       canvas.width = yy.width;
       canvas.height = yy.height;
       context.drawImage(yy, 0, 0);
