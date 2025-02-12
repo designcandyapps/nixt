@@ -22,7 +22,13 @@ export default{
       var f=document.getElementById("ii");
       alert("F: "+f);
 
-
+      var r=new FileReader();
+      r.onload=function(e){
+        var im=new Image();
+        var img=document.getElementById("ii");
+        var bs=imageToBase64(img); im.src=bs;
+        alert("IM: "+im.src);
+      }
     }
   }
 }
