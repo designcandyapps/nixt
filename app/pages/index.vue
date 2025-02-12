@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="cav"></canvas>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="ca" ref="ca"></canvas>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -19,7 +19,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    //const ca=ref(null)
+    const ca=ref(null)
     this.loadColor()
     setTimeout(()=>{this.snd()},1600)
   },
@@ -46,7 +46,7 @@ export default{
 
           var o=cx.getImageData(0,0,ca.width,ca.height);
           var d=o.data; var cc={}; let mc=0; let dc="";
-          for(i=0;i<d.length;i+=4){
+          for(let i=0;i<d.length;i+=4){
             var r=d[i]; var g=d[i+1]; var b=d[i+2];
             var rgb=`${r},${g},${b}`;
             if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
