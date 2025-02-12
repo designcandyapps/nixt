@@ -14,7 +14,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){this.conVert();this.loadColor()},
+  mounted(){this.loadColor()},
   setup(){
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
