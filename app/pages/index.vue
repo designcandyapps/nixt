@@ -21,7 +21,7 @@ export default{
     const context = canvas.getContext("2d");
   },
   methods:{
-    async function loadColor(){
+    async loadColor(){
       alert("Test1");
       /*const img = new Image();
       img.crossOrigin = "anonymous"; // Enable CORS
@@ -45,8 +45,7 @@ export default{
       context.drawImage(yy, 0, 0);
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
-    };
-    loadColor();
+    }
   }
 }
 </script>
