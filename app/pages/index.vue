@@ -14,36 +14,35 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){this.loadImage();this.loadColor()},
+  mounted(){this.loadColor()},
   setup(){
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
     const context = canvas.getContext("2d");
-    const loadImage()=async()=>{
-      alert("Test2");
-      const response = await fetch(document.getElementById("ii").src); // Fetch the image via the network
-      const blob = await response.blob(); // Convert it to a blob
-      const image = new Image();
-      image.crossOrigin = "anonymous"; // Request CORS permissions
-      image.src = URL.createObjectURL(blob); // Load the image from the blob
-      await new Promise((resolve) => {
-        image.onload = resolve; // Wait for image to load
-      });
-      return image;
-    },
   },
   methods:{
     async function loadColor(){
       alert("Test1");
-      const img = new Image();
-img.crossOrigin = "anonymous"; // Enable CORS
-img.src = "https://example.com/image.jpg";
-img.onload = () => {
-    // do something with the image
-}
-      canvas.width = image.width;
-      canvas.height = image.height;
-      context.drawImage(image, 0, 0);
+      /*const img = new Image();
+      img.crossOrigin = "anonymous"; // Enable CORS
+      img.src = "https://example.com/image.jpg";
+      img.onload = () => {
+
+      }*/
+
+      const response = await fetch(document.getElementById("ii").src);
+      const blob = await response.blob();
+      const image = new Image();
+      image.crossOrigin = "anonymous";
+      image.src = URL.createObjectURL(blob);
+      await new Promise((resolve) => {
+        image.onload = resolve;
+      });
+      const yy=image;
+      
+      canvas.width = yy.width;
+      canvas.height = yy.height;
+      context.drawImage(yy, 0, 0);
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
     };
