@@ -27,18 +27,16 @@ export default{
       var f=document.getElementById("ii");
       var r=new FileReader();
       r.onload=function(e){
-        f=document.getElementById("ii");
-        var im=new Image();
+        var f=document.getElementById("ii");
+        var im=document.createElement("img");
+        //var im=new Image();
         im.src=f.src;
 
         var ca=document.getElementById("ca");
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
-        im.src=ca.toDataURL();
-        im.src=im.src.toBlob((b)=>{
-          const du=URL.createObjectURL(b); alert(du);
-        },"image/png");
+        //im.src=ca.toDataURL();
         alert("IM1: "+im.src);
 
         im.onload=function(){
