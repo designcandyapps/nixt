@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="ca" ref="ca"></canvas>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="ca"></canvas>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -19,7 +19,6 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const ca=ref(null)
     this.loadColor()
     setTimeout(()=>{this.snd()},1600)
   },
@@ -36,8 +35,8 @@ export default{
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
-        //im.src=ca.toDataURL();
-        im.src=ca.toBlob((b)=>{
+        im.src=ca.toDataURL();
+        im.src=im.src.toBlob((b)=>{
           const du=URL.createObjectURL(b); alert(du);
         },"image/png");
         alert("IM1: "+im.src);
@@ -45,9 +44,9 @@ export default{
         im.onload=function(){
           alert("IM2: "+im.src);
 
-          //ca=document.getElementById("ca");
-          ////ca.width=im.width; ca.height=im.height;
-          ////var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
+          ca=document.getElementById("ca");
+          ca.width=im.width; ca.height=im.height;
+          var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
         }
       }
