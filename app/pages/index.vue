@@ -14,11 +14,14 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){this.loadColor()},
-  methods:{
+  mounted(){
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
     const context = canvas.getContext("2d");
+    
+    this.loadColor()},
+  methods:{
+
 
     async function loadImage(url){
       const response = await fetch(url); // Fetch the image via the network
