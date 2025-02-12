@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="display:none;">
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="-display:none;">
       <canvas id="ca" ref="ca" style="border:1px solid red;"></canvas>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -34,8 +34,8 @@ export default{
           
           alert("IM2: "+im.src);
 
-          //const ca=document.getElementById("ca");
-          const ca=ref(null);
+          const ca=document.getElementById("ca");
+          //const ca=ref(null);
           ca.width=f.width; ca.height=f.height;
           var cx=ca.getContext("2d"); cx.drawImage(f,0,0);
           var o=cx.getImageData(0,0,ca.width,ca.height);
