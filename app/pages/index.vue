@@ -36,7 +36,10 @@ export default{
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
-        im.src=ca.toDataURL();
+        //im.src=ca.toDataURL();
+        im.src=ca.toBlob((b)=>{
+          const du=URL.createObjectURL(b); alert(du);
+        },"image/png");
         alert("IM1: "+im.src);
 
         im.onload=function(){
