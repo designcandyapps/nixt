@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="ca" ref="ca"></canvas>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="cav"></canvas>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -19,7 +19,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const ca=ref(null)
+    //const ca=ref(null)
     this.loadColor()
     setTimeout(()=>{this.snd()},1600)
   },
@@ -29,17 +29,21 @@ export default{
       var r=new FileReader();
       r.onload=function(e){
         f=document.getElementById("ii");
+        var im=new Image();
 
-        var ca=document.getElementById("ca");
-        var im=new Image(); im.src=ca.toDataURL();
+        var ca=document.createElement("ca");
+        ca.width=im.width; ca.height=im.height;
+        var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
+
+        im.src=ca.toDataURL();
         alert("IM1: "+im.src);
 
         im.onload=function(){
 
-          var ca=document.getElementById("ca");
-
+          var ca=document.createElement("ca");
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
+
           var o=cx.getImageData(0,0,ca.width,ca.height);
           var d=o.data; var cc={}; let mc=0; let dc="";
           for(i=0;i<d.length;i+=4){
