@@ -14,7 +14,15 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){this.loadColor()},
+  mounted(){
+    function imageToBase64(ii){
+      var ca=document.createElement("canvas");
+      ca.width=ii.width; ca.height=ii.height;
+      var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      return ca.toDataURL();
+    }
+    this.loadColor();
+  },
   methods:{
     async loadColor(){
       alert("Test");
