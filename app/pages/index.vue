@@ -32,7 +32,7 @@ export default{
         var im=new Image();
         im.src=f.src;
 
-        ca=document.createElement("ca");
+        ca=document.createElement("canvas");
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
@@ -42,7 +42,7 @@ export default{
         im.onload=function(){
           alert("IM2: "+im.src);
 
-          ca=document.createElement("ca");
+          ca=document.createElement("canvas");
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
