@@ -19,17 +19,14 @@ export default{
       var ca=document.createElement("canvas");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      alert("Test2");
       return ca.toDataURL();
     }
     this.loadColor();
   },
   methods:{
     async loadColor(){
-      alert("Test");
-
       var f=document.getElementById("ii");
-      alert("F: "+f);
-
       var r=new FileReader();
       r.onload=function(e){
         var im=new Image();
