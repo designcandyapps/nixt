@@ -26,7 +26,7 @@ export default{
         var img=document.getElementById("ii");
         //var bs=imageToBase64(img); im.src=bs;
 
-          var ca=document.createElement("canvas");
+          var ca=document.getElementById("ca");
           ca.width=document.getElementById("ii").width; ca.height=document.getElementById("ii").height;
           var cx=ca.getContext("2d"); cx.drawImage(document.getElementById("ii"),0,0);
           const dataURL=ca.toDataURL();
