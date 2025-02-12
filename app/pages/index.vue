@@ -30,6 +30,7 @@ export default{
       r.onload=function(e){
         f=document.getElementById("ii");
         var im=new Image();
+        im.src=f.src;
 
         var ca=document.getElementById("ca");
         ca.width=im.width; ca.height=im.height;
