@@ -31,7 +31,7 @@ export default{
         f=document.getElementById("ii");
         var im=new Image();
 
-        var ca=document.createElement("ca");
+        var ca=document.getElementById("ca");
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
@@ -40,7 +40,7 @@ export default{
 
         im.onload=function(){
 
-          var ca=document.createElement("ca");
+          var ca=document.getElementById("ca");
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
