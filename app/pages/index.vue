@@ -16,26 +16,27 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   mounted(){this.loadColor()},
   methods:{
+  
     async loadColor(){
       var f=document.getElementById("ii");
       var r=new FileReader();
+
       r.onload=function(e){
         var im=new Image();
-        var ii=document.getElementById("ii");
+        var img=document.getElementById("ii");
 
-
+        im.onload=()=>{
+  
         var ca=document.getElementById("ca");
         ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d");
         cx.drawImage(im,0,0);
+
         const dataURL=ca.toDataURL();
         alert(dataURL);
 
         im.src=ca.toDataURL();
         alert("IMS: "+im.src);
-
-        im.onload=()=>{
-          alert("IM2: "+im.src);
 
 
           const o=cx.getImageData(0,0,ca.width,ca.height);
