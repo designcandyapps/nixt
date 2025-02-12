@@ -23,7 +23,7 @@ export default{
       const im=new Image();
       im.crossOrigin="anonymous";
 
-      document.getElementById("f").onload=function(){
+      //document.getElementById("f").onload=function(){
         const im=document.getElementById("ii");
         const ca=document.getElementById("ca");
         ca.width=im.width; ca.height=im.height;
@@ -40,7 +40,7 @@ export default{
         }
         document.body.style.backgroundColor=`rgb(${dc})`;
         cx.putImageData(o,0,0);
-      }
+      //}
     }
   }
 }
