@@ -6,8 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="-display:none;">
-      <canvas id="ca" ref="ca" style="border:1px solid red;"></canvas>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><canvas id="ca" ref="ca"></canvas>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -31,15 +30,13 @@ export default{
       r.onload=function(e){
         f=document.getElementById("ii");
 
-        const ca=document.getElementById("ca");
+        var ca=document.getElementById("ca");
         var im=new Image(); im.src=ca.toDataURL();
         alert("IM1: "+im.src);
 
         im.onload=function(){
 
-          const ca=document.getElementById("ca");
-          //im.src=ca.toDataURL();
-          alert("zIM2: "+im.src);
+          var ca=document.getElementById("ca");
 
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
