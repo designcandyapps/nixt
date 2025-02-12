@@ -40,7 +40,7 @@ export default{
 
         im.onload=function(){
 
-          var ca=document.getElementById("ca");
+          ca=document.getElementById("ca");
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
