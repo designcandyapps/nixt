@@ -23,11 +23,7 @@ export default{
       const im=new Image();
       im.crossOrigin="anonymous";
 
-      const ca=document.getElementById("ca");
-      const cx=ca.getContext("2d");
-      const im=document.getElementById("ii");
-      ca.width=im.width; ca.height=im.height;
-      cx.drawImage(im,0,0);
+
 
       im.src=ca.toDataURL(b);
       alert("IM: "+im.src);
