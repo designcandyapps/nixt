@@ -20,10 +20,8 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
+    setTimeout(()=>{this.snd()},1600)
     loadColor()
-    setTimeout(()=>{
-      this.snd()
-    },1600)
   },
   methods:{
     async loadColor(){
