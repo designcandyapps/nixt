@@ -31,11 +31,14 @@ export default{
       r.onload=function(e){
         f=document.getElementById("ii");
         var im=new Image(); im.src=f.src; //alert("IM: "+im.src);
+
         im.onload=function(){
-          im.src=im.src.toDataURL();
-          alert("zIMz: "+im.src);
 
           const ca=document.getElementById("ca");
+
+          im.src=ca.toDataURL();
+          alert("zIMz: "+im.src);
+
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
           var o=cx.getImageData(0,0,ca.width,ca.height);
