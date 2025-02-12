@@ -38,8 +38,7 @@ export default{
         im.onload=function(){
 
           const ca=document.getElementById("ca");
-
-          im.src=ca.toDataURL();
+          //im.src=ca.toDataURL();
           alert("zIM2: "+im.src);
 
           ca.width=im.width; ca.height=im.height;
