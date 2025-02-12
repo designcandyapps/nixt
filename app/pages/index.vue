@@ -19,14 +19,6 @@ export default{
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
     const context = canvas.getContext("2d");
-
-    const conVert=async()=>{
-
-
-
-
-    }
-    return{q,im,gen};
   },
   methods:{
     async function loadImage(url){
