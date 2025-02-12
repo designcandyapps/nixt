@@ -17,22 +17,22 @@ export default{
   mounted(){this.loadColor()},
   methods:{
     async loadColor(){
-      const imageElement = document.getElementById("ii");
-      const response = await fetch(imageElement);
-      const blob = await response.blob();
-      const image = new Image();
-      image.crossOrigin = "anonymous";
+      const f=document.getElementById("ii");
+      const r=await fetch(f);
+      const b=await r.blob();
+      const im=new Image();
+      im.crossOrigin="anonymous";
 
 
-      const canvas = document.getElementById("ca");
-      canvas.width = image.width; canvas.height = image.height;
-      const context = canvas.getContext("2d"); context.drawImage(image, 0, 0);
+      const ca=document.getElementById("ca");
+      ca.width=im.width; ca.height=im.height;
+      const cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
-      image.src = ca.toDataURL(blob);
-      alert("IM: "+image.src);
+      im.src=ca.toDataURL(blob);
+      alert("IM: "+im.src);
 
 
-      const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
+      const o=cx.getImageData(0,0,ca.width,ca.height).data;
 
     }
   }
