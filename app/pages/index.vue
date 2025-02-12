@@ -28,23 +28,22 @@ export default{
   
       var f=document.getElementById("ii");
       var r=new FileReader();
-
       r.onload=function(e){
         var im=new Image();
         var img=document.getElementById("ii");
+        var bs=imageToBase64(img); im.src=bs;
+        alert("IM: "+im.src);
 
         im.onload=()=>{
+          alert("IM2: "+im.src);
+
           var ca=document.getElementById("ca");
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d");
           cx.drawImage(im,0,0);
 
-          const dataURL=ca.toDataURL();
-          alert("D: "+dataURL);
-
-          im.src=ca.toDataURL();
-          alert("IMS: "+im.src);
-
+          const dataURL=ca.toDataURL();  alert("D: "+dataURL);
+          im.src=ca.toDataURL(); alert("IMS: "+im.src);
 
           const o=cx.getImageData(0,0,ca.width,ca.height);
           const d=o.data; const cc={}; let mc=0; let dc="";
