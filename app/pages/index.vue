@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/im/lo.png"><canvas id="ca" style="border:1px solid red;"></canvas>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/lo.png"><canvas id="ca" style="border:1px solid red;"></canvas>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -25,9 +25,9 @@ export default{
 
 
         var ca=document.getElementById("ca");
-        ca.width=ii.width; ca.height=ii.height;
+        ca.width=im.width; ca.height=im.height;
         var cx=ca.getContext("2d");
-        cx.drawImage(ii,0,0);
+        cx.drawImage(im,0,0);
         const dataURL=ca.toDataURL();
         alert(dataURL);
 
