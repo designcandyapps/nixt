@@ -15,16 +15,16 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <script lang="ts">
 export default{
   mounted(){
-    function imageToBase64(ii){
+    this.loadColor();
+  },
+  methods:{
+    async function imageToBase64(ii){
       var ca=document.createElement("canvas");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
       alert("Test2");
       return ca.toDataURL();
-    }
-    this.loadColor();
-  },
-  methods:{
+    },
     async loadColor(){
       var f=document.getElementById("ii");
       var r=new FileReader();
