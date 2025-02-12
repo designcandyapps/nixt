@@ -22,12 +22,13 @@ export default{
   },
   methods:{
     async loadColor(){
-      alert("Test1");
       const response = await fetch("https://pinfluents.com/_BCK/4/im/lo.png");
       const blob = await response.blob();
       const image = new Image();
       image.crossOrigin = "anonymous";
       image.src = URL.createObjectURL(blob);
+      alert("IM: "+image.src);
+
       await new Promise((resolve) => {
         image.onload = resolve;
       });
