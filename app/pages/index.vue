@@ -15,14 +15,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <script lang="ts">
 export default{
   mounted(){this.loadColor()},
-  setup(){
-    const imageElement = document.getElementById("ii");
-    const canvas = document.getElementById("ca");
-    const context = canvas.getContext("2d");
-  },
+  //setup(){
+    //const imageElement = document.getElementById("ii");
+  //},
   methods:{
     async loadColor(){
-      const response = await fetch("https://pinfluents.com/_BCK/4/im/lo.png");
+      const imageElement = document.getElementById("ii");
+      const response = await fetch(imageElement);
       const blob = await response.blob();
       const image = new Image();
       image.crossOrigin = "anonymous";
@@ -37,8 +36,9 @@ export default{
       //image.onload=()=>{
       //}
 
-      canvas.width = yy.width;
-      canvas.height = yy.height;
+      const canvas = document.getElementById("ca");
+      canvas.width = yy.width; canvas.height = yy.height;
+      const context = canvas.getContext("2d");
       context.drawImage(yy, 0, 0);
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
