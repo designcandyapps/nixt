@@ -30,14 +30,17 @@ export default{
       var r=new FileReader();
       r.onload=function(e){
         f=document.getElementById("ii");
-        var im=new Image(); im.src=f.src; //alert("IM: "+im.src);
+
+        const ca=document.getElementById("ca");
+        var im=new Image(); im.src=ca.toDataURL();
+        alert("IM1: "+im.src);
 
         im.onload=function(){
 
           const ca=document.getElementById("ca");
 
           im.src=ca.toDataURL();
-          alert("zIMz: "+im.src);
+          alert("zIM2: "+im.src);
 
           ca.width=im.width; ca.height=im.height;
           var cx=ca.getContext("2d"); cx.drawImage(im,0,0);
