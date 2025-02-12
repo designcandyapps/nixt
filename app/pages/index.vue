@@ -22,6 +22,7 @@ export default{
   },
   methods:{
     async function loadImage(url){
+      alert("Test2");
       const response = await fetch(url); // Fetch the image via the network
       const blob = await response.blob(); // Convert it to a blob
       const image = new Image();
@@ -32,7 +33,8 @@ export default{
       });
       return image;
     },
-    async function loadColor() {
+    async function loadColor(){
+      alert("Test1");
       const image = await loadImage(imageElement.src);
       canvas.width = image.width;
       canvas.height = image.height;
