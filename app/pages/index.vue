@@ -28,7 +28,7 @@ export default{
       ca.width=im.width; ca.height=im.height;
       const cx=ca.getContext("2d"); cx.drawImage(im,0,0);
 
-      im.src=ca.toDataURL(blob);
+      im.src=ca.toDataURL(b);
       alert("IM: "+im.src);
 
 
