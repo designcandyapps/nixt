@@ -14,14 +14,12 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  mounted(){this.loadColor()},
+  mounted(){this.loadImage(url);this.loadColor()},
   setup(){
     const imageElement = document.getElementById("ii");
     const canvas = document.getElementById("ca");
     const context = canvas.getContext("2d");
-  },
-  methods:{
-    async function loadImage(url){
+    const loadImage(url)=async()=>{
       alert("Test2");
       const response = await fetch(url); // Fetch the image via the network
       const blob = await response.blob(); // Convert it to a blob
@@ -33,6 +31,8 @@ export default{
       });
       return image;
     },
+  },
+  methods:{
     async function loadColor(){
       alert("Test1");
       const image = await loadImage(imageElement.src);
