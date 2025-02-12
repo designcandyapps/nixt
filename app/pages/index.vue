@@ -24,19 +24,20 @@ export default{
       r.onload=function(e){
         var im=new Image();
         var img=document.getElementById("ii");
-        var bs=imageToBase64(img); im.src=bs;
-        alert("IM: "+im.src);
-
-        im.onload=()=>{
-          alert("IM2: "+im.src);
+        //var bs=imageToBase64(img); im.src=bs;
 
           var ca=document.createElement("canvas");
           ca.width=document.getElementById("ii").width; ca.height=document.getElementById("ii").height;
           var cx=ca.getContext("2d"); cx.drawImage(document.getElementById("ii"),0,0);
           const dataURL=ca.toDataURL();
           alert("D: "+dataURL);
-  
-          im.src=dataURL(); alert("IMS: "+im.src);
+
+          im.src=dataURL;
+
+        alert("IM: "+im.src);
+
+        im.onload=()=>{
+          alert("IM2: "+im.src);
 
 
           const o=cx.getImageData(0,0,ca.width,ca.height);
