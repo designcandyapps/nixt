@@ -34,7 +34,7 @@ export default{
           
           alert("IM2: "+im.src);
 
-          const ca=document.createElement("canvas");
+          var ca=document.createElement("canvas");
           ca.width=f.width; ca.height=f.height;
           var cx=ca.getContext("2d"); cx.drawImage(f,0,0);
           var o=cx.getImageData(0,0,ca.width,ca.height);
