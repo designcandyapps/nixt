@@ -26,7 +26,7 @@ export default{
   const ctx=canvas.value.getContext('2d')
   if(!ctx) return
   const img=new Image()
-  img.onload==()=>{
+  img.onload=()=>{
     ctx.drawImage(img,0,0,200,200)
   }
   img.src='https://pinfluents.com/_BCK/4/im/dc2.png'
