@@ -20,7 +20,7 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     //this.loadColor()
-    setTimeout(()=>{this.snd()},1600)
+    //setTimeout(()=>{this.snd()},1600)
   },
   methods:{
     async loadColor(){
