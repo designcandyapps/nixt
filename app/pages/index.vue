@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+const canvas = ref<HTMLCanvasElement | null>(null)
 </script>
 
 <template>
@@ -18,9 +19,18 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
+  const canvas=ref(null),
   mounted(){
     //this.loadColor()
     //setTimeout(()=>{this.snd()},1600)
+  if(!canvas.value) return
+  const ctx=canvas.value.getContext('2d')
+  if(!ctx) return
+  const img=new Image()
+  img.onload==()=>{
+    ctx.drawImage(img,0,0,200,200)
+  }
+  img.src='https://pinfluents.com/_BCK/4/im/dc2.png'
   },
   methods:{
     async loadColor(){
