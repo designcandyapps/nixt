@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-const canvas = ref<HTMLCanvasElement | null>(null)
 </script>
 
 <template>
@@ -22,6 +21,7 @@ export default{
   mounted(){
     //this.loadColor()
     //setTimeout(()=>{this.snd()},1600)
+  const canvas = ref<HTMLCanvasElement | null>(null)
   if(!canvas.value) return
   const ctx=canvas.value.getContext('2d')
   if(!ctx) return
