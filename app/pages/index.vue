@@ -19,7 +19,6 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  const canvas=ref(null),
   mounted(){
     //this.loadColor()
     //setTimeout(()=>{this.snd()},1600)
