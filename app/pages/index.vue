@@ -19,19 +19,18 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    this.imageToBase64(document.getElementById("ii"),document.getElementById("ca"));
+    //this.imageToBase64(document.getElementById("ii"),document.getElementById("ca"));
     this.loadColor();
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
     async imageToBase64(ii,ca){
       //var ca=document.getElementById("ca");
-      alert("C: "+ca);
+      //-alert("C: "+ca);
       
       ca.width=ii.width; ca.height=ii.height;
-      
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
-      alert("S: "+document.getElementById("ca"));
+      //-alert("S: "+document.getElementById("ca"));
       
       var dd=ca.toDataURL();
       alert("DD: "+dd);
@@ -44,18 +43,13 @@ export default{
       r.onload=function(e){
         const im=new Image();
         const img=document.getElementById('ii');
-
-        const ca=document.createElement("canvas");
-        ca.id="ca";
-        alert("CA: "+document.getElementById("ca"));
-  
+        const ca=document.createElement("canvas"); ca.id="ca";
+        //-alert("CA: "+document.getElementById("ca"));
         ca.width=img.width; ca.height=img.height;
         var cx=ca.getContext("2d");
-
         cx.drawImage(img,0,0);
 
-        var du=ca.toDataURL();
-        alert("DU: "+du);
+        ///var du=ca.toDataURL(); alert("DU: "+du);
 
         var base64String=imageToBase64(img,document.getElementById("ca"));
         im.src=base64String;
@@ -79,9 +73,8 @@ export default{
           document.body.style.backgroundColor=`rgb(${dc})`;
         }
       }
-      const jsonString=JSON.stringify(f);
-      f=new Blob([jsonString],{type:"application/image"});
-      console.log(typeof f);
+      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
+      alert(typeof f);
       r.readAsDataURL(f);
     },
     async snd(){
