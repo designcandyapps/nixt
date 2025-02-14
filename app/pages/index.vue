@@ -32,7 +32,7 @@ export default{
       const base64String = imageToBase64(img);
       im.src=base64String;
 
-    },
+    }
     const jsonString = JSON.stringify(f);
     f = new Blob([jsonString], { type: "application/image" });
     console.log(typeof f);
