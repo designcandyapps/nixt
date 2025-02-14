@@ -40,7 +40,7 @@ export default{
       const r=new FileReader();
       r.onload=function(e){
         f=document.getElementById("ii");
-        alert("F: "+f);
+        //-alert("F: "+f);
         
         const im=new Image();
         const img=document.getElementById('ii');
@@ -56,15 +56,21 @@ export default{
         //+im.src=base64String;
 
         im.src=f.src;
-        alert("IM: "+im.src);
+        //-alert("IM: "+im.src);
 
         im.onload=function(){
-          alert("IM2: "+im.src);
+          //-alert("IM2: "+im.src);
     
           var ca=document.getElementById("ca");
           var cx=ca.getContext("2d");
           ca.width=im.width; ca.height=im.height;
+          
+          alert("CA1: "+ca);
+          
           cx.drawImage(im,0,0);
+          
+          alert("CA2: "+ca);
+          
           var o=cx.getImageData(0,0,ca.width,ca.height);
           var d=o.data; var cc={}; let mc=0; let dc="";
           for(let i=0;i<d.length;i+=4){
@@ -77,7 +83,7 @@ export default{
         }
       }
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      alert(typeof f);
+      alert("TYPE: "+typeof f);
       r.readAsDataURL(f);
     },
     async snd(){
