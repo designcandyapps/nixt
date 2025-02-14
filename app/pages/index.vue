@@ -21,41 +21,41 @@ export default{
   mounted(){
     //this.loadColor()
     //setTimeout(()=>{this.snd()},1600)
-  const canvas = ref<HTMLCanvasElement | null>(null)
-  if(!canvas.value) return
-  const ctx=canvas.value.getContext('2d')
-  if(!ctx) return
-  const img=new Image()
-  img.onload=()=>{
-    ctx.drawImage(img,0,0,200,200)
-  }
-  img.src='https://pinfluents.com/_BCK/4/im/dc2.png'
-  },
-  methods:{
-    async loadColor(){
-  var f=document.getElementById("ii");
-  var r=new FileReader();
-  r.onload=function(e){
-    f=document.getElementById("ii");
-    var im=new Image(); im.src=f.src; //alert(im.src);
-    im.onload=function(){//alert(im.src);
-     const ca=document.createElement("canvas");
-     ca.width=im.naturalWidth;
-     ca.height=im.naturalHeight;
-     var cx=ca.getContext("2d");cx.drawImage(im,0,0);
-     var o=cx.getImageData(0,0,ca.width,ca.height);
-     var d=o.data; var cc={}; let mc=0; let dc="";
-     for(i=0;i<d.length;i+=4){
-       var r=d[i]; var g=d[i+1]; var b=d[i+2];
-       var rgb=`${r},${g},${b}`;
-       if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
-       if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
-     }
-     document.body.style.backgroundColor=`rgb(${dc})`;
-    }
-  }
-  var j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
 
+
+  var f=document.getElementById("ii");
+  //const f=ev.target.files[0];
+
+  const r=new FileReader();
+  r.onload=function(e){
+    const im=new Image();
+    //im.src=e.target.result;
+
+    const img = document.getElementById('ii');
+    const base64String = imageToBase64(img);
+    //alert(base64String);
+    im.src=base64String;
+
+    im.onload=function(){
+      const ca=document.getElementById("ca");
+      const cx=ca.getContext("2d");
+      ca.width=im.width; ca.height=im.height;
+      cx.drawImage(im,0,0);
+      const o=cx.getImageData(0,0,ca.width,ca.height);
+      const d=o.data; const cc={}; let mc=0; let dc="";
+      for(let i=0;i<d.length;i+=4){
+        const r=d[i]; const g=d[i+1]; const b=d[i+2];
+        const rgb=`${r},${g},${b}`;
+        if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
+        if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
+      }
+      document.body.style.backgroundColor=`rgb(${dc})`;
+    }
+  } 
+  const jsonString = JSON.stringify(f);
+  f = new Blob([jsonString], { type: "application/image" });
+  console.log(typeof f);
+  r.readAsDataURL(f);
 
     },
     async snd(){
