@@ -24,11 +24,15 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    async imageToBase64(ii){
-      var ca=document.getElementById("ca");
+    async imageToBase64(ii,ca){
+      //var ca=document.getElementById("ca");
+      alert("C: "+ca);
+      
       ca.width=ii.width; ca.height=ii.height;
+      
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
       alert("S: "+document.getElementById("ca"));
+      
       var dd=ca.toDataURL();
       alert("DD: "+dd);
       
@@ -53,8 +57,8 @@ export default{
         var du=ca.toDataURL();
         alert("DU: "+du);
 
-        //var base64String=imageToBase64(img);
-        //im.src=base64String;
+        var base64String=imageToBase64(img,document.getElementById("ca"));
+        im.src=base64String;
         alert("IM: "+im.src);
 
         im.onload=function(){
