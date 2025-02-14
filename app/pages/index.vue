@@ -29,6 +29,9 @@ export default{
       var ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      var dd=ca.toDataURL();
+      alert("DD: "+dd);
+      
       return ca.toDataURL();
     },
     async loadColor(){
@@ -36,7 +39,7 @@ export default{
       const r=new FileReader();
       r.onload=function(e){
         const im=new Image();
-        const img = document.getElementById('ii');
+        const img=document.getElementById('ii');
 
         const ca=document.createElement("canvas");
         ca.id="ca";
