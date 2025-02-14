@@ -38,11 +38,11 @@ export default{
         const img = document.getElementById('ii');
 
 
-
-      var ca=document.getElementById("ca");
-      ca.width=img.width; ca.height=img.height;
-      var cx=ca.getContext("2d"); cx.drawImage(img,0,0);
-      var du=ca.toDataURL();
+        var ca=document.getElementById("ca");
+        ca.width=img.width; ca.height=img.height;
+        var cx=ca.getContext("2d"); cx.drawImage(img,0,0);
+        var du=ca.toDataURL();
+        alert("DU: "+du);
 
 
         //const base64String = imageToBase64(img);
