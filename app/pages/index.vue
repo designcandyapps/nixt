@@ -30,11 +30,8 @@ export default{
       return ca.toDataURL();
     },
     async loadColor(){
-      alert("Test");
       var f=document.getElementById("ii");
       const r=new FileReader();
-      alert("Test2");
-
       r.onload=function(e){
         const im=new Image();
         const img = document.getElementById('ii');
@@ -42,7 +39,12 @@ export default{
 
         var ca=document.getElementById("ca");
         ca.width=img.width; ca.height=img.height;
-        var cx=ca.getContext("2d"); cx.drawImage(img,0,0);
+        var cx=ca.getContext("2d");
+        
+        
+        alert("Test");
+        cx.drawImage(img,0,0);
+        alert("Test3");
         var du=ca.toDataURL();
         alert("DU: "+du);
 
