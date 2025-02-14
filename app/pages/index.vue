@@ -38,8 +38,11 @@ export default{
         const img = document.getElementById('ii');
         const base64String = imageToBase64(img);
         im.src=base64String;
+        alert("IM: "+im.src);
 
         im.onload=function(){
+          alert("IM2: "+im.src);
+    
           const ca=document.getElementById("ca");
           const cx=ca.getContext("2d");
           ca.width=im.width; ca.height=im.height;
