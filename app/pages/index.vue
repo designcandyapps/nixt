@@ -28,7 +28,7 @@ export default{
       var ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
-      alert("Test");
+      alert("S: "+document.getElementById("ca"));
       var dd=ca.toDataURL();
       alert("DD: "+dd);
       
