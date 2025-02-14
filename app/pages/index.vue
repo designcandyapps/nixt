@@ -19,7 +19,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    this.imageToBase64(document.getElementById("ii"));
+    this.imageToBase64(document.getElementById("ii"),document.getElementById("ca"));
     this.loadColor();
     //setTimeout(()=>{this.snd()},1600);
   },
