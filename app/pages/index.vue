@@ -65,14 +65,16 @@ export default{
           var cx=ca.getContext("2d");
           ca.width=im.width; ca.height=im.height;
           
-          alert("CA1: "+ca);
-          
+          //-alert("CA1: "+ca);
           cx.drawImage(im,0,0);
-          
-          alert("CA2: "+ca);
+          //-alert("CA2: "+ca);
           
           var o=cx.getImageData(0,0,ca.width,ca.height);
+          alert("O: "+o);
+          
           var d=o.data; var cc={}; let mc=0; let dc="";
+          alert("Te: "+d);
+          
           for(let i=0;i<d.length;i+=4){
             var r=d[i]; var g=d[i+1]; var b=d[i+2];
             var rgb=`${r},${g},${b}`;
@@ -83,7 +85,8 @@ export default{
         }
       }
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      alert("TYPE: "+typeof f);
+      //-alert("TYPE: "+typeof f);
+      alert("T: "+f.toDataURL());
       r.readAsDataURL(f);
     },
     async snd(){
