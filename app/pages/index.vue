@@ -18,17 +18,21 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){this.loadColor();//setTimeout(()=>{this.snd()},1600)
+  mounted(){
+    this.imageToBase64();
+    this.loadColor();
+    //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    async imageToBase64(ii){
-      var ca=document.getElementById("ca");
+    async imageToBase64(){
+      alert("Tu");
+      const ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
-      var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      const cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
       return ca.toDataURL();
     },
     async loadColor(){
-      var f=document.getElementById("ii");
+      const f=document.getElementById("ii");
       const r=new FileReader();
       r.onload=function(e){
         const im=new Image();
@@ -40,7 +44,7 @@ export default{
 
         cx.drawImage(img,0,0);
 
-        var du=ca.toDataURL();
+        const du=ca.toDataURL();
         alert("DU: "+du);
 
         //const base64String=imageToBase64(img);
