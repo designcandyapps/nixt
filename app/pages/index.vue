@@ -86,8 +86,7 @@ export default{
       }
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
       //-alert("TYPE: "+typeof f);
-      //alert("T: "+f.toDataURL());
-      r.readAsDataURL(f.toDataURL());
+      r.readAsDataURL(f);
     },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
