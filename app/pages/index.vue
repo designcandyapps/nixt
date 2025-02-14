@@ -34,13 +34,12 @@ export default{
         const im=new Image();
         const img = document.getElementById('ii');
 
-        var ca=document.getElementById("ca");
+        const ca=document.createElement("canvas");
         ca.width=img.width; ca.height=img.height;
-        var cx=ca.getContext("2d");
+        const cx=ca.getContext("2d");
 
-        alert("Test");
         cx.drawImage(img,0,0);
-        alert("Test3");
+
         var du=ca.toDataURL();
         alert("DU: "+du);
 
