@@ -18,9 +18,7 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){
-    this.loadColor()
-    //setTimeout(()=>{this.snd()},1600)
+  mounted(){this.loadColor();//setTimeout(()=>{this.snd()},1600)
   },
   methods:{
     async imageToBase64(ii){
@@ -36,20 +34,17 @@ export default{
         const im=new Image();
         const img = document.getElementById('ii');
 
-
         var ca=document.getElementById("ca");
         ca.width=img.width; ca.height=img.height;
         var cx=ca.getContext("2d");
-        
-        
+
         alert("Test");
         cx.drawImage(img,0,0);
         alert("Test3");
         var du=ca.toDataURL();
         alert("DU: "+du);
 
-
-        //const base64String = imageToBase64(img);
+        //const base64String=imageToBase64(img);
         //im.src=base64String;
         alert("IM: "+im.src);
 
@@ -71,8 +66,8 @@ export default{
           document.body.style.backgroundColor=`rgb(${dc})`;
         }
       }
-      const jsonString = JSON.stringify(f);
-      f = new Blob([jsonString], { type: "application/image" });
+      const jsonString=JSON.stringify(f);
+      f=new Blob([jsonString],{type:"application/image"});
       console.log(typeof f);
       r.readAsDataURL(f);
     },
