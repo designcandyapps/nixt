@@ -47,7 +47,7 @@ export default{
         }
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
-    }
+    },
     const jsonString = JSON.stringify(f);
     f = new Blob([jsonString], { type: "application/image" });
     console.log(typeof f);
