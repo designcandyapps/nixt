@@ -23,7 +23,7 @@ export default{
     setTimeout(()=>{this.snd()},1600)
   },
   methods:{
-    function imageToBase64(ii){
+    async function imageToBase64(ii){
       var ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
