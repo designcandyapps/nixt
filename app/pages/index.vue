@@ -19,24 +19,11 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    //this.loadColor()
-    //setTimeout(()=>{this.snd()},1600)
+    this.loadColor()
+    setTimeout(()=>{this.snd()},1600)
   },
   async loadColor(){
-    var f=document.getElementById("ii");
-    const r=new FileReader();
 
-    r.onload=function(e){
-      const im=new Image();
-      const img = document.getElementById('ii');
-      const base64String = imageToBase64(img);
-      im.src=base64String;
-
-    }
-    const jsonString = JSON.stringify(f);
-    f = new Blob([jsonString], { type: "application/image" });
-    console.log(typeof f);
-    r.readAsDataURL(f);
   },
   async snd(){
     const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
