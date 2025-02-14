@@ -26,43 +26,46 @@ export default{
   methods:{
     async imageToBase64(){
       alert("Tu");
-      const ca=document.getElementById("ca");
+      var ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
-      const cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
       return ca.toDataURL();
     },
     async loadColor(){
-      const f=document.getElementById("ii");
+      var f=document.getElementById("ii");
       const r=new FileReader();
       r.onload=function(e){
         const im=new Image();
         const img = document.getElementById('ii');
 
         const ca=document.createElement("canvas");
+        ca.id="ca";
+        alert("CA: "+document.getElementById("ca"));
+  
         ca.width=img.width; ca.height=img.height;
-        const cx=ca.getContext("2d");
+        var cx=ca.getContext("2d");
 
         cx.drawImage(img,0,0);
 
-        const du=ca.toDataURL();
+        var du=ca.toDataURL();
         alert("DU: "+du);
 
-        //const base64String=imageToBase64(img);
+        //var base64String=imageToBase64(img);
         //im.src=base64String;
         alert("IM: "+im.src);
 
         im.onload=function(){
           alert("IM2: "+im.src);
     
-          const ca=document.getElementById("ca");
-          const cx=ca.getContext("2d");
+          var ca=document.getElementById("ca");
+          var cx=ca.getContext("2d");
           ca.width=im.width; ca.height=im.height;
           cx.drawImage(im,0,0);
-          const o=cx.getImageData(0,0,ca.width,ca.height);
-          const d=o.data; const cc={}; let mc=0; let dc="";
+          var o=cx.getImageData(0,0,ca.width,ca.height);
+          var d=o.data; var cc={}; let mc=0; let dc="";
           for(let i=0;i<d.length;i+=4){
-            const r=d[i]; const g=d[i+1]; const b=d[i+2];
-            const rgb=`${r},${g},${b}`;
+            var r=d[i]; var g=d[i+1]; var b=d[i+2];
+            var rgb=`${r},${g},${b}`;
             if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
             if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
           }
