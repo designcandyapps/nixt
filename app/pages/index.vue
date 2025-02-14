@@ -32,15 +32,16 @@ export default{
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
       //-alert("S: "+document.getElementById("ca"));
       
-      var dd=ca.toDataURL();
-      alert("DD: "+dd);
-      
+      ///var dd=ca.toDataURL(); alert("DD: "+dd);
       return ca.toDataURL();
     },
     async loadColor(){
       var f=document.getElementById("ii");
       const r=new FileReader();
       r.onload=function(e){
+        f=document.getElementById("ii");
+        alert("F: "+f);
+        
         const im=new Image();
         const img=document.getElementById('ii');
         const ca=document.createElement("canvas"); ca.id="ca";
@@ -51,8 +52,10 @@ export default{
 
         ///var du=ca.toDataURL(); alert("DU: "+du);
 
-        var base64String=imageToBase64(img,document.getElementById("ca"));
-        im.src=base64String;
+        //+var base64String=imageToBase64(img,document.getElementById("ca"));
+        //+im.src=base64String;
+
+        im.src=f.src;
         alert("IM: "+im.src);
 
         im.onload=function(){
