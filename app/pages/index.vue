@@ -18,18 +18,13 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){
-    this.loadColor()
-    setTimeout(()=>{this.snd()},1600)
-  },
-  async loadColor(){
-
-  },
-  async snd(){
-    const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
-    const data=await response.json(); this.response=data.reply;
-    //alert("R1: "+this.response);
-    document.querySelector('#t').innerText=this.response;
+  mounted(){setTimeout(()=>{this.snd()},1600)},
+  methods:{
+    async snd(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
+      const data=await response.json(); this.response=data.reply;
+      //alert("R1: "+this.response);
+      document.querySelector('#t').innerText=this.response;
     },
   },
 }
