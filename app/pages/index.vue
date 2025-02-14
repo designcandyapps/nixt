@@ -20,7 +20,7 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     this.loadColor()
-    setTimeout(()=>{this.snd()},1600)
+    //setTimeout(()=>{this.snd()},1600)
   },
   methods:{
     async imageToBase64(ii){
@@ -30,8 +30,10 @@ export default{
       return ca.toDataURL();
     },
     async loadColor(){
+      alert("Test");
       var f=document.getElementById("ii");
       const r=new FileReader();
+      alert("Test2");
 
       r.onload=function(e){
         const im=new Image();
