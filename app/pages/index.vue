@@ -20,7 +20,7 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     //this.imageToBase64(document.getElementById("ii"),document.getElementById("ca"));
-    this.loadColor();
+    //this.loadColor();
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
