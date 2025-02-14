@@ -36,8 +36,17 @@ export default{
       r.onload=function(e){
         const im=new Image();
         const img = document.getElementById('ii');
-        const base64String = imageToBase64(img);
-        im.src=base64String;
+
+
+
+      var ca=document.getElementById("ca");
+      ca.width=img.width; ca.height=img.height;
+      var cx=ca.getContext("2d"); cx.drawImage(img,0,0);
+      var du=ca.toDataURL();
+
+
+        //const base64String = imageToBase64(img);
+        //im.src=base64String;
         alert("IM: "+im.src);
 
         im.onload=function(){
