@@ -19,16 +19,16 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    this.imageToBase64();
+    this.imageToBase64(document.getElementById("ii"));
     this.loadColor();
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    async imageToBase64(){
-      alert("Tu");
+    async imageToBase64(ii){
       var ca=document.getElementById("ca");
       ca.width=ii.width; ca.height=ii.height;
       var cx=ca.getContext("2d"); cx.drawImage(ii,0,0);
+      alert("Test");
       var dd=ca.toDataURL();
       alert("DD: "+dd);
       
