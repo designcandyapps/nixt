@@ -21,8 +21,8 @@ export default{
   mounted(){
     //this.loadColor()
     //setTimeout(()=>{this.snd()},1600)
-
-
+  },
+  async loadColor(){
   var f=document.getElementById("ii");
   //const f=ev.target.files[0];
 
