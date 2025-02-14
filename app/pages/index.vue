@@ -23,46 +23,41 @@ export default{
     //setTimeout(()=>{this.snd()},1600)
   },
   async loadColor(){
-  var f=document.getElementById("ii");
-  //const f=ev.target.files[0];
+    var f=document.getElementById("ii");
+    const r=new FileReader();
 
-  const r=new FileReader();
-  r.onload=function(e){
-    const im=new Image();
-    //im.src=e.target.result;
 
-    const img = document.getElementById('ii');
-    const base64String = imageToBase64(img);
-    //alert(base64String);
-    im.src=base64String;
-
-    im.onload=function(){
-      const ca=document.getElementById("ca");
-      const cx=ca.getContext("2d");
-      ca.width=im.width; ca.height=im.height;
-      cx.drawImage(im,0,0);
-      const o=cx.getImageData(0,0,ca.width,ca.height);
-      const d=o.data; const cc={}; let mc=0; let dc="";
-      for(let i=0;i<d.length;i+=4){
-        const r=d[i]; const g=d[i+1]; const b=d[i+2];
-        const rgb=`${r},${g},${b}`;
-        if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
-        if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
+    r.onload=function(e){
+      const im=new Image();
+      const img = document.getElementById('ii');
+      const base64String = imageToBase64(img);
+      im.src=base64String;
+      im.onload=function(){
+        const ca=document.getElementById("ca");
+        const cx=ca.getContext("2d");
+        ca.width=im.width; ca.height=im.height;
+        cx.drawImage(im,0,0);
+        const o=cx.getImageData(0,0,ca.width,ca.height);
+        const d=o.data; const cc={}; let mc=0; let dc="";
+        for(let i=0;i<d.length;i+=4){
+          const r=d[i]; const g=d[i+1]; const b=d[i+2];
+          const rgb=`${r},${g},${b}`;
+          if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}
+          if(cc[rgb]>mc){mc=cc[rgb]; dc=rgb}
+        }
+        document.body.style.backgroundColor=`rgb(${dc})`;
       }
-      document.body.style.backgroundColor=`rgb(${dc})`;
     }
-  } 
-  const jsonString = JSON.stringify(f);
-  f = new Blob([jsonString], { type: "application/image" });
-  console.log(typeof f);
-  r.readAsDataURL(f);
-
-    },
-    async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
-      const data=await response.json(); this.response=data.reply;
-      //alert("R1: "+this.response);
-      document.querySelector('#t').innerText=this.response;
+    const jsonString = JSON.stringify(f);
+    f = new Blob([jsonString], { type: "application/image" });
+    console.log(typeof f);
+    r.readAsDataURL(f);
+  },
+  async snd(){
+    const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
+    const data=await response.json(); this.response=data.reply;
+    //alert("R1: "+this.response);
+    document.querySelector('#t').innerText=this.response;
     },
   },
 }
