@@ -67,7 +67,7 @@ export default{
           
           //-alert("CA1: "+ca);
           cx.drawImage(im,0,0);
-          //-alert("CA2: "+ca);
+          alert("CA2: "+ca);
           
           var o=cx.getImageData(0,0,ca.width,ca.height);
           alert("O: "+o);
