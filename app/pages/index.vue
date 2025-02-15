@@ -7,6 +7,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <img id="ii" src="https://pinfluents.com/_BCK/4/im/bg.jpg"><canvas id="ca" ref="canvas" width="300" height="300"></canvas>
+      <input id="fi" type="file"><button onclick="dr()">Clk</button>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
