@@ -48,6 +48,33 @@ palettes[type]=targetHueSteps[type].map((step)=>({
   }
   return palettes;
 },
+async isColorEqual(c1,c2){
+  return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c;
+},
+
+
+async discoverPalettes(colors){
+  const palettes={};
+  for(const color of colors){
+    const targetPalettes=createScientificPalettes(color);
+    for(const paletteType of Object.keys(targetPalettes)){
+      const palette=[]; let variance=0;
+      for(const targetColor of targetPalettes[paletteType]){
+        const availableColors=colors.filter(
+         (color1)=>!palette.some((color2)=>isColorEqual(color1,color2))
+        );
+        const match=nearest(
+          availableColors,
+          differenceEuclidean("lch")
+        )(targetColor)[0];
+        variance+=differenceEuclidean("lch")(targetColor,match);
+        palette.push(match);
+      }
+      if(!palettes[paletteType]||variance<palettes[paletteType].variance){palettes[paletteType]={colors:palette,variance}}
+    }
+  }
+  return palettes;
+},
 
 
   },
