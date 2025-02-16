@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+const { $culori } = useNuxtApp();
+const color = $culori.rgb("blue");
+const hexColor = $culori.formatHex(color);
 </script>
 
 <template>
