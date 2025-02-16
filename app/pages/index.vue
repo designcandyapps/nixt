@@ -23,8 +23,8 @@ export default{
   },
   methods:{
 
-function adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360}
-function createScientificPalettes(baseColor){
+async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360}
+async createScientificPalettes(baseColor){
   const targetHueSteps={
     analogous:[0,30,60],
     triadic:[0,120,240],
@@ -43,10 +43,10 @@ function createScientificPalettes(baseColor){
   }
   return palettes;
 }
-function isColorEqual(c1,c2){
+async isColorEqual(c1,c2){
   return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c;
 }
-function discoverPalettes(colors){
+async discoverPalettes(colors){
   const palettes={};
   for(const color of colors){
     const targetPalettes=createScientificPalettes(color);
@@ -68,11 +68,11 @@ function discoverPalettes(colors){
   }
   return palettes;
 }
-async function loadImg(url){
+async loadImg(url){
   const img=document.createElement("img"); img.src=url;
   img.crossOrigin=`anonymous`; await img.decode(); return img;
 }
-async function generatePalette(){
+async generatePalette(){
   let colors=[]; let chosenImg;
   const queries=[
     "red",
