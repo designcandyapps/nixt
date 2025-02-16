@@ -19,16 +19,15 @@ const colorThief=new ColorThief(); const toLCH=converter("lch");
 export default{
   //data(){return{q:"",response:null}},
   mounted(){
-    this.generatePalette()
+    //this.generatePalette()
   },
   methods:{
 
 async adjustHue(val){
   if(val<0)val+=Math.ceil(-val/360)*360;
   return val%360
-}
+},
 
-/*
 async createScientificPalettes(baseColor){
   const targetHueSteps={
     analogous:[0,30,60],
@@ -47,7 +46,9 @@ async createScientificPalettes(baseColor){
     }));
   }
   return palettes;
-}
+},
+
+/*
 async isColorEqual(c1,c2){
   return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c;
 }
