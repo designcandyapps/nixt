@@ -14,6 +14,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
+import Image from 'next/image';
+import myImage from './public/designcandy.png';
+function MyComponent(){
+  return (
+    <Image id="iei" src={myImage} />
+  );
+}
 import gen from '~/components/gen.vue';
 export default{
   components:{gen},
