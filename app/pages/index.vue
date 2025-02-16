@@ -6,8 +6,8 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="z" style="visibility:hidden;">
-        <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.jpg"><canvas id="ca" ref="canvas" width="300" height="300"></canvas>
+      <div id="z" style="-visibility:hidden;">
+        <img id="ii" src="~/im/designcandy.png"><canvas id="ca" width="300" height="300"></canvas>
         <input id="fi" type="file"><button onclick='dr($("#ii"))'>Clk</button>
       </div>
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
