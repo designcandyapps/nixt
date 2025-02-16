@@ -23,7 +23,12 @@ export default{
   },
   methods:{
 
-async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360}
+async adjustHue(val){
+  if(val<0)val+=Math.ceil(-val/360)*360;
+  return val%360
+}
+
+/*
 async createScientificPalettes(baseColor){
   const targetHueSteps={
     analogous:[0,30,60],
@@ -137,6 +142,8 @@ async generatePalette(){
     paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
   }
   setTimeout(()=>{generatePalette()},1000);
+*/
+
 },
 
   },
