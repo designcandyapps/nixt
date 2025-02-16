@@ -12,10 +12,17 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   </div>
 </template>
 
-<script lang="ts" type="module">
+<script lang="ts">
 import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
 import ColorThief from "https://cdn.skypack.dev/colorthief";
 const colorThief=new ColorThief(); const toLCH=converter("lch");
+export default{
+  //data(){return{q:"",response:null}},
+  mounted(){
+    this.generatePalette()
+  },
+  methods:{
+
 function adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360}
 function createScientificPalettes(baseColor){
   const targetHueSteps={
@@ -130,8 +137,10 @@ async function generatePalette(){
     paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
   }
   setTimeout(()=>{generatePalette()},1000);
+},
+
+  },
 }
-generatePalette();
 </script>
 
 <style scoped>
