@@ -29,6 +29,25 @@ export default{
       if(val<0)val+=Math.ceil(-val/360)*360;
       return val%360
     },
+async createScientificPalettes(baseColor){
+  const targetHueSteps={
+    analogous:[0,30,60],
+    triadic:[0,120,240],
+    tetradic:[0,90,180,270],
+    complementary:[0,180],
+    splitComplementary:[0,150,210]
+  };
+  const palettes={};
+  for(const type of Object.keys(targetHueSteps)){
+palettes[type]=targetHueSteps[type].map((step)=>({
+      mode:"lch",
+      l:baseColor.l,
+      c:baseColor.c,
+      h:adjustHue(baseColor.h+step)
+    }));
+  }
+  return palettes;
+},
 
 
   },
