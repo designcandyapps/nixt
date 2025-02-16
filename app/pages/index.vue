@@ -18,7 +18,7 @@ import Image from 'next/image';
 import myImage from './public/designcandy.png';
 function MyComponent(){
   return (
-    <Image id="iei" src={myImage} />
+    <Image src={myImage} />
   );
 }
 import gen from '~/components/gen.vue';
