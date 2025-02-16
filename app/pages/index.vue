@@ -13,15 +13,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
+import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
+import ColorThief from "https://cdn.skypack.dev/colorthief";
+const colorThief=new ColorThief(); const toLCH=converter("lch");
 export default{
   //data(){return{q:"",response:null}},
   mounted(){this.generatePalette()},
   methods:{
-
-    import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
-    import ColorThief from "https://cdn.skypack.dev/colorthief";
-    const colorThief=new ColorThief(); const toLCH=converter("lch");
-
     async adjustHue(val){
       if(val<0)val+=Math.ceil(-val/360)*360;
       return val%360
