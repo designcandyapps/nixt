@@ -12,7 +12,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   </div>
 </template>
 
-<script type="module">
+<script lang="ts" type="module">
 import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
 import ColorThief from "https://cdn.skypack.dev/colorthief";
 const colorThief=new ColorThief(); const toLCH=converter("lch");
