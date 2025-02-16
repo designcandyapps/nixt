@@ -39,12 +39,12 @@ async createScientificPalettes(baseColor){
   };
   const palettes={};
   for(const type of Object.keys(targetHueSteps)){
-palettes[type]=targetHueSteps[type].map((step)=>({
-      mode:"lch",
-      l:baseColor.l,
-      c:baseColor.c,
-      h:adjustHue(baseColor.h+step)
-    }));
+    palettes[type]=targetHueSteps[type].map((step)=>({
+    mode:"lch",
+    l:baseColor.l,
+    c:baseColor.c,
+    h:adjustHue(baseColor.h+step)
+  }));
   }
   return palettes;
 },
@@ -74,6 +74,80 @@ async discoverPalettes(colors){
     }
   }
   return palettes;
+},
+async loadImg(url){
+  const img=document.createElement("img"); img.src=url;
+  img.crossOrigin=`anonymous`; await img.decode(); return img;
+},
+
+
+async generatePalette(){
+  let colors=[]; let chosenImg;
+  const queries=[
+    "red",
+    "green",
+    "blue",
+    "yellow",
+    "orange",
+    "magenta",
+    "pink",
+    "purple",
+    "turqoise",
+    "grey",
+    "black",
+    "white",
+    "indigo",
+    "violet",
+    "emerald",
+    "flower",
+    "vibrant",
+    "gold",
+    "silver",
+    "jewels",
+    "rainbow",
+    "forest",
+    "ocean",
+    "coral",
+    "galaxy",
+    "tree",
+    "leaf",
+    "fish",
+    "frog",
+    "animal",
+    "wildlife",
+    "color",
+    "paint",
+    "paint",
+    "abstract",
+    "colorful",
+    "nature",
+    "volcano",
+    "sun",
+    "ruby",
+    "saphire",
+    "emerald",
+    ""
+  ];
+  while(colors.length<4){
+    const url=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
+    chosenImg=await loadImg(url);
+    colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
+      r:c[0]/255,
+      g:c[1]/255,
+      b:c[2]/255,
+      mode:"rgb"
+    })
+   );
+  }
+  const palettes=discoverPalettes(colors);
+  document.body.innerHTML=`<div class="content"></div>`;
+  document.body.appendChild(chosenImg);
+  for(const type of Object.keys(palettes)){
+    const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
+document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
+paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
+  }
+  setTimeout(()=>{generatePalette()},1000);
 },
 
 
