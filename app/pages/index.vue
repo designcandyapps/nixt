@@ -68,9 +68,9 @@ export default{
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
         ////const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
         //chosenImg=await loadImg(u);
-        chosenImg=await loadIm();
+        //chosenImg=await loadIm();
 
-  /*
+  
         img=document.getElementById("ii");
         alert("1: "+img);
 
@@ -78,9 +78,8 @@ export default{
         img.src=u;
         alert("2: "+img.src);
   
-        //img=img.decode();
+        img=img.decode();
         chosenImg=img;
-  */
   
         alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
         //alert("IM: "+img); alert("IMS: "+img.src);
@@ -90,11 +89,11 @@ export default{
 
       ////document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
       //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
-      alert("Z: "+document.querySelector("#z"));
+      //alert("Z: "+document.querySelector("#z"));
       //alert("ZC: "+document.querySelector("#z").innerHTML);
       //alert("CO: "+document.querySelector(".content"));
       //alert("CH2: "+chosenImg);
-      //++document.body.appendChild(chosenImg); //img
+      document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div");
