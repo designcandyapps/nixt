@@ -66,8 +66,8 @@ export default{
         chosenImg=await img.decode(); alert("CHO: "+chosenImg);
 
 
-        //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-        colors=await colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+        colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+        //colors=await colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
       document.body.innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`;
