@@ -59,19 +59,20 @@ export default{
 
         img=img.decode(); chosenImg=img;
         //chosenImg=await img.decode();
-        
-        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img.src);
+        //alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
 
       //document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
       document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
-      //alert("Z: "+document.querySelector("#z"));
+      alert("Z: "+document.querySelector("#z"));
+      alert("ZC: "+document.querySelector("#z").innerHTML);
+
       //alert("CO: "+document.querySelector(".content"));
       //alert("CH2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
-      alert("ZC: "+document.querySelector("#z").innerHTML);
+
       for(const type of Object.keys(palettes)){
         //const paletteWrapper=document.createElement("div");
         const paletteWrapper=document.getElementById("z");
