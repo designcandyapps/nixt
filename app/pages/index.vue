@@ -55,8 +55,7 @@ export default{
     async loadImg(u){
       alert("Test1");
       //const img=document.createElement("img");
-      const img=document.getElementById("ii");
-      //alert("IM: "+img);
+      const img=document.getElementById("ii"); //alert("IM: "+img);
       img.src=u; img.crossOrigin=`anonymous`; await img.decode(); return img;
     },
     async generatePalette(){
@@ -72,7 +71,7 @@ export default{
 
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-        colors=await colorThief.getPalette(document.getElementById("ii")).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+        colors=await colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
       //document.body.innerHTML=`<div class="content"></div>`;
