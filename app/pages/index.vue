@@ -53,8 +53,8 @@ export default{
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
         //chosenImg=await loadImg(u);
-        //img=document.createElement("img");
-        img=document.getElementById("ii");
+        img=document.createElement("img");
+        //img=document.getElementById("ii");
         img.src=u; img.crossOrigin=`anonymous`; img=img.decode();
         chosenImg=img;
         alert("CHO: "+chosenImg); alert("IMS: "+chosenImg.src);
