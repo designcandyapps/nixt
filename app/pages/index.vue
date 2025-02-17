@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-//const { $culori } = useNuxtApp(); const color = $culori.rgb("blue"); const hexColor = $culori.formatHex(color);
-//import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
-//import ColorThief from "https://cdn.skypack.dev/colorthief";
-const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
@@ -17,8 +13,12 @@ const colorThief=new ColorThief(); const toLCH=converter("lch");
 </template>
 
 <script lang="ts">
+import gen from '~/components/gen.vue';
 export default{
-  mounted(){this.generatePalette()},
+  components:{gen},
+  mounted(){
+    this.generatePalette()
+  },
   methods:{
     async adjustHue(val){
       if(val<0)val+=Math.ceil(-val/360)*360;
