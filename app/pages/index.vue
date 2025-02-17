@@ -111,7 +111,7 @@ img {
   height:100vh;
   object-fit:cover;
   filter:brightness(.75);
-  border:5px solid blue;
+  -border:5px solid blue;
 }
 .content,#z {
   display:grid;
