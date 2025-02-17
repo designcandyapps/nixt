@@ -56,7 +56,7 @@ export default{
         //chosenImg=await loadImg(u);
         img=document.getElementById("ii");
         img.src=u; img.crossOrigin=`anonymous`; img=img.decode(); chosenImg=img;
-        alert("CH: "+chosenImg); alert("IM: "+chosenImg.src);
+        alert("CH: "+chosenImg); alert("IM: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
