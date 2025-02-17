@@ -43,36 +43,32 @@ export default{
       }
       return palettes;
     },
-    async loadIm(u){
-      alert("Testt");
+    async loadIm(){
+      alert("Test2");
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
-      alert("IM: "+img);
-      img.src=u;
-      alert("IM2: "+img.src);
-      //img.crossOrigin=`anonymous`; await img.decode(); return img;
+      alert("IM2: "+img);
+      img.src="https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D";
+      img.crossOrigin=`anonymous`; await img.decode();
+      alert("IMG: "+img);
     },
     async loadImg(u){
-      alert("U: "+u);
+      alert("Test1");
       //const img=document.createElement("img");
-      //img.setAttribute("id","im");
       const img=document.getElementById("ii");
-      alert("IM: "+img);
-      img.src=u;
-      alert("IM2: "+img.src);
-      img.crossOrigin=`anonymous`; await img.decode(); return img;
+      //alert("IM: "+img);
+      img.src=u; img.crossOrigin=`anonymous`; await img.decode(); return img;
     },
     async generatePalette(){
       let colors=[]; let chosenImg; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
+        //loadImg(`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`);
         //chosenImg=await loadImg(u);
-        sloadIm(`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`);
-        chosenImg=await loadImg(u);
-        //alert("Z: "+chosenImg);
-
-        const img=document.getElementById("ii");
-        img.src=u;
+        const img=document.getElementById("ii"); alert("IM: "+img);
+        img.src=u; alert("IMS: "+img.src);
+        img.crossOrigin=`anonymous`;
+        //chosenImg=await loadImg(u); //alert("Z: "+chosenImg);
 
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
