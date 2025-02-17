@@ -1,4 +1,17 @@
-<script type="module">
+<script setup>
+import { rgb, formatHex } from "culori";
+const color = rgb("red"); // Convert color to RGB
+const hexColor = formatHex(color); // Convert to hex format
+</script>
+
+<template>
+  <div>
+    <p>Generated Color: <span :style="{ color: hexColor }">{{ hexColor }}</span></p>
+  </div>
+</template>
+
+
+<!--script type="module">
 //const { $culori } = useNuxtApp(); const color = $culori.rgb("blue"); const hexColor = $culori.formatHex(color);
 import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
 import ColorThief from "https://cdn.skypack.dev/colorthief";
@@ -140,4 +153,4 @@ paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<di
     //return{colorthief};
   },
 }
-</script>
+</script-->
