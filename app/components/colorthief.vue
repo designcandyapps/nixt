@@ -1,4 +1,4 @@
-<script>
+<script type="module">
 //const { $culori } = useNuxtApp(); const color = $culori.rgb("blue"); const hexColor = $culori.formatHex(color);
 import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
 import ColorThief from "https://cdn.skypack.dev/colorthief";
