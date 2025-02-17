@@ -8,7 +8,7 @@ import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=for
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div id="z" style="position:relative; width:200px; height:50px; border:2px solid red;"></div><img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="position:relative; width:200px; height:120px; border:2px solid blue;">
-      <template><div style="position:relative; width:200px; height:50px; border:2px solid green;">Color: <span :style="{color:hexColor}">{{hexColor}}</span></div></template>
+      <!--template><div style="position:relative; width:200px; height:50px; border:2px solid green;">Color: <span :style="{color:hexColor}">{{hexColor}}</span></div></template-->
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -63,18 +63,21 @@ export default{
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
         //loadImg(`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`);
         //chosenImg=await loadImg(u);
-        img=document.getElementById("ii"); alert("IM: "+img);
-        img.src=u; alert("IMS: "+img.src);
-        img.crossOrigin=`anonymous`; img=img.decode();
-        chosenImg=img; alert("CHO: "+chosenImg);
+        img=document.getElementById("ii"); img.src=u; img.crossOrigin=`anonymous`; img=img.decode();
+        chosenImg=img;
+        alert("IMS: "+img.src); alert("CHO: "+chosenImg);
 
 
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
-      document.body.innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`;
+      document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
+      alert("CONT: "+document.getElementById("co"));
+      alert("CHO2: "+chosenImg);
       document.body.appendChild(chosenImg);
-      //document.getElementById("z").innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`; //alert("Z: "+document.getElementById("z"));
+
+      
+      //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`; //alert("Z: "+document.getElementById("z"));
       //document.body.appendChild(img); //chosenImg
 
       for(const type of Object.keys(palettes)){
@@ -82,7 +85,7 @@ export default{
         document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
       }
-      setTimeout(()=>{alert("Test"); generatePalette()},1000);
+      setTimeout(()=>{generatePalette()},1000);
     },
   },
 }
