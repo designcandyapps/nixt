@@ -43,9 +43,8 @@ export default{
       return palettes;
     },
     async loadImg(u){
-      let img;
-      //const img=document.createElement("img");
-      img=document.getElementById("ii");
+      const img=document.createElement("img");
+      //const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
       await img.decode(); return img;
     },
