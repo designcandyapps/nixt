@@ -49,8 +49,6 @@ export default{
     async isColorEqual(c1,c2){
       return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c;
     },
-
-
     async discoverPalettes(colors){
       const palettes={};
       for(const color of colors){
@@ -84,8 +82,6 @@ export default{
       await img.decode();
       return img;
     },
-
-
     async generatePalette(){
       let colors=[]; let chosenImg;
       const queries=[
@@ -163,7 +159,6 @@ export default{
       alert("Test4");
     },1000);
   },
-
 
   },
 }
