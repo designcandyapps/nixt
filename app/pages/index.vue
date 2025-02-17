@@ -41,7 +41,7 @@ export default{
       }
       return palettes;
     },
-    loadIm(u){
+    async loadIm(u){
       alert("Testt");
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
@@ -78,7 +78,7 @@ export default{
       }
       const palettes=discoverPalettes(colors);
       //document.body.innerHTML=`<div class="content"></div>`;
-      document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
+      document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid yellow;"></div>`;
       alert("DZ: "+document.getElementById("z"));
       
       //document.body.appendChild(chosenImg);
