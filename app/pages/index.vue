@@ -73,7 +73,10 @@ export default{
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
-        const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
+        //const paletteWrapper=document.createElement("div");
+        const paletteWrapper=document.getElementById("z");
+        
+        paletteWrapper.classList.add("palette-colors");
         //document.querySelector(".content").appendChild(paletteWrapper);
         document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
 
