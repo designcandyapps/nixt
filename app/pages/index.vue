@@ -83,7 +83,7 @@ export default{
       //alert("ZC: "+document.querySelector("#z").innerHTML);
       //alert("CO: "+document.querySelector(".content"));
       //alert("CH2: "+chosenImg);
-      document.body.appendChild(chosenImg); //img
+      //++document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div");
