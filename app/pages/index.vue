@@ -92,47 +92,34 @@ export default{
 
 <style scoped>
 * { margin:0; padding:0; box-sizing:border-box; }
-body {
-  display:grid;
-  min-height:100vh;
-  color:#1d1934;
-  place-items:center;
-  font-family:system-ui;
-  padding:2rem;
-}
-.palette-colors {
-  display:flex;
-  gap:.5rem;
-  align-items:center;
-}
-.palette-colors div {
-  flex:1;
-  height:3rem;
-  border-radius:.375rem;
-}
+body { display:grid; padding:2rem; min-height:100vh; font-family:system-ui; place-items:center; color:#1d1934; }
+.palette-colors { display:flex; gap:.5rem; align-items:center; }
+.palette-colors div { flex:1; height:3rem; border-radius:.375rem; }
 .palette-colors p { margin-right:1rem; text-transform:capitalize; }
 img {
   position:absolute;
+  z-index:-1;
   top:0;
   left:0;
   width:100vw;
   height:100vh;
   object-fit:cover;
-  z-index:-1;
   filter:brightness(.75);
+  border:5px solid pink;
 }
 .content {
-  width:100%;
   display:grid;
   grid-gap:1rem;
-  max-width:36rem;
   padding:2rem;
+  width:100%;
+  max-width:36rem;
   background:#fff;
   background:hsla(0,100%,100%,.75);
   -webkit-backdrop-filter:blur(16px) saturate(180%);
   backdrop-filter:blur(16px) saturate(180%);
   box-shadow:0 4px 16px 0px hsla(0,0%,0%,.125);
   border-radius:1rem;
-  border:1px solid hsla(0,0%,100%,.9);
+  -border:1px solid hsla(0,0%,100%,.9);
+  border:5px solid purple;
 }
 </style>
