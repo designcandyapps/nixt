@@ -42,10 +42,8 @@ export default{
       return palettes;
     },
     async loadImg(u){
-      //alert("Test1");
       const img=document.createElement("img");
       //const img=document.getElementById("ii");
-      alert("IM-limg: "+img);
       img.src=u; img.crossOrigin=`anonymous`; await img.decode(); return img;
     },
     async generatePalette(){
@@ -53,13 +51,10 @@ export default{
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
         //chosenImg=await loadImg(u);
-        img=document.createElement("img");
-        //img=document.getElementById("ii");
-        img.src=u; img.crossOrigin=`anonymous`; img=img.decode();
-        chosenImg=img;
-        alert("CHO: "+chosenImg); alert("IMS: "+chosenImg.src);
-
-
+        //img=document.createElement("img");
+        img=document.getElementById("ii");
+        img.src=u; img.crossOrigin=`anonymous`; img=img.decode(); chosenImg=img;
+        alert("CH: "+chosenImg); alert("IM: "+im.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
