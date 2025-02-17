@@ -26,7 +26,7 @@ export default{
     },
     async isColorEqual(c1,c2){return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c},
     async discoverPalettes(colors){
-      alert("Tist");
+      //alert("Tist");
       const palettes={};
       for(const color of colors){
         const targetPalettes=createScientificPalettes(color);
@@ -55,7 +55,7 @@ export default{
         //chosenImg=await loadImg(u);
         img=document.getElementById("ii");
         img.src=u; img.crossOrigin=`anonymous`; img=img.decode(); chosenImg=img;
-        alert("CH: "+chosenImg); alert("IM: "+im.src);
+        alert("CH: "+chosenImg); alert("IM: "+chosenImg.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
