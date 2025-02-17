@@ -3,11 +3,11 @@
 import {converter,differenceEuclidean,formatHex,nearest} from "https://cdn.skypack.dev/culori@2.0.0";
 import ColorThief from "https://cdn.skypack.dev/colorthief";
 export default{
-  mounted(){this.colorthief()},
+  mounted(){this.generatePalette()},
   setup(){
     const colorThief=new ColorThief(); const toLCH=converter("lch");
-    const colorthief=async()=>{
-/*
+    //const colorthief=async()=>{
+
     async adjustHue(val){
       if(val<0)val+=Math.ceil(-val/360)*360;
       return val%360
@@ -132,10 +132,10 @@ paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<di
   }
   setTimeout(()=>{generatePalette()},1000);
 },
-*/
+
   
-    }
-    return{colorthief};
+    //}
+    //return{colorthief};
   },
 }
 </script>
