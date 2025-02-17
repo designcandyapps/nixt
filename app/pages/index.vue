@@ -77,8 +77,15 @@ export default{
       return palettes;
     },
     async loadImg(url){
-      const img=document.createElement("img"); img.src=url;
-      img.crossOrigin=`anonymous`; await img.decode(); return img;
+      alert("U: "+url);
+      const img=document.createElement("img");
+      //const img=document.getElementById("ii");
+      alert("IM: "+img);
+      img.src=url;
+      alert("IM2: "+img.src);
+      img.crossOrigin=`anonymous`;
+      await img.decode();
+      return img;
     },
 
 
