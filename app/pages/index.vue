@@ -20,9 +20,9 @@ const hexColor = formatHex(color); // Convert to hex format
 </template>
 
 <script lang="ts">
-import colorthief from '~/components/colorthief.vue';
+//import colorthief from '~/components/colorthief.vue';
 export default{
-  components:{colorthief},
+  //components:{colorthief},
   mounted(){
     //this.generatePalette()
   },
