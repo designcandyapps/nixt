@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-import {rgb,formatHex} from "culori";
-const color=rgb("red"); const hexColor=formatHex(color);
+import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
 </script>
 
 <template>
@@ -75,7 +74,9 @@ export default{
       const palettes=discoverPalettes(colors);
       //document.body.innerHTML=`<div class="content"></div>`;
       document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
-      document.body.appendChild(chosenImg);
+      alert("DZ: "+document.getElementById("z"));
+      
+      //document.body.appendChild(chosenImg);
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
