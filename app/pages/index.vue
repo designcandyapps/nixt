@@ -64,11 +64,10 @@ export default{
       }
       const palettes=discoverPalettes(colors);
 
-      //document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
-      document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
+      document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
+      //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
       alert("Z: "+document.querySelector("#z"));
-      alert("ZC: "+document.querySelector("#z").innerHTML);
-
+      //alert("ZC: "+document.querySelector("#z").innerHTML);
       //alert("CO: "+document.querySelector(".content"));
       //alert("CH2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
