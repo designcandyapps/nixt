@@ -60,23 +60,19 @@ export default{
         alert("Z: "+chosenImg);
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"})
-      );
-    }
-    const palettes=discoverPalettes(colors);
-    //document.body.innerHTML=`<div class="content"></div>`;
-    document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
-    document.body.appendChild(chosenImg);
+        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+      }
+      const palettes=discoverPalettes(colors);
+      //document.body.innerHTML=`<div class="content"></div>`;
+      document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
+      document.body.appendChild(chosenImg);
 
-    for(const type of Object.keys(palettes)){
-      const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
-      document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
-      paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
-    }
-    setTimeout(()=>{
-      alert("Test");
-      generatePalette();
-    },1000);
+      for(const type of Object.keys(palettes)){
+        const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
+        document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
+        paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
+      }
+      setTimeout(()=>{alert("Test"); generatePalette()},1000);
     },
   },
 }
