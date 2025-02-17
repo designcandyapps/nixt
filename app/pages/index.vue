@@ -65,10 +65,10 @@ export default{
       //document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
       document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
       alert("Z: "+document.getElementById("z"));
+      alert("CO: "+document.getElementById("co"));
 
       alert("CHO2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
-      //alert("CONT: "+document.getElementById("co"));
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
