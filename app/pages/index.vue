@@ -141,7 +141,7 @@ export default{
           g:c[1]/255,
           b:c[2]/255,
           mode:"rgb"
-        })
+        });
         alert("Z");
       );
     }
