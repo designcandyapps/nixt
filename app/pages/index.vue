@@ -8,11 +8,8 @@ const color=rgb("red"); const hexColor=formatHex(color);
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <template>
-  <div>
-    <p>Generated Color: <span :style="{ color: hexColor }">{{ hexColor }}</span></p>
-  </div>
-</template>
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png">
+      <template><div><p>Generated Color: <span :style="{ color: hexColor }">{{ hexColor }}</span></p></div></template>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -78,8 +75,8 @@ export default{
     },
     async loadImg(url){
       alert("U: "+url);
-      const img=document.createElement("img");
-      //const img=document.getElementById("ii");
+      //const img=document.createElement("img");
+      const img=document.getElementById("ii");
       alert("IM: "+img);
       img.src=url;
       alert("IM2: "+img.src);
