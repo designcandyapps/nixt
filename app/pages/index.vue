@@ -44,8 +44,8 @@ export default{
       return palettes;
     },
     async loadImg(u){
-      //const img=document.createElement("img");
-      const img=document.getElementById("ii");
+      const img=document.createElement("img");
+      //const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
       await img.decode(); return img;
     },
@@ -63,7 +63,8 @@ export default{
         
         chosenImg=img;
         //chosenImg=await img.decode();
-        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img); alert("IMS: "+img.src);
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
+        alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
