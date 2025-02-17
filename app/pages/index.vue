@@ -57,7 +57,9 @@ export default{
         alert("CH: "+chosenImg); alert("IM: "+im.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
+      alert("COL: "+colors);
       const palettes=discoverPalettes(colors);
+      alert("PAL: "+palettes);
       document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
       alert("CONT: "+document.getElementById("co"));
       alert("CHO2: "+chosenImg);
