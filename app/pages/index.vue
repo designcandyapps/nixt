@@ -16,11 +16,9 @@ import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=for
 
 <script lang="ts">
 export default{
-  mounted(){
-    this.generatePalette()
-  },
+  mounted(){this.generatePalette()},
   methods:{
-    var img=document.getElementById("ii"); alert("IM: "+img); //var img=document.createElement("img");
+    //var img=document.getElementById("ii"); alert("IM: "+img); //var img=document.createElement("img");
     //img.src=u; alert("IM2: "+img.src); //img.crossOrigin=`anonymous`; await img.decode(); return img;
     async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360},
     async createScientificPalettes(baseColor){
