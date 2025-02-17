@@ -89,8 +89,8 @@ export default{
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
-        document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
-        paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
+        document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+        paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
       }
       setTimeout(()=>{alert("Test"); generatePalette()},1000);
     },
