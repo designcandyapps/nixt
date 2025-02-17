@@ -152,7 +152,7 @@ export default{
     setTimeout(()=>{
       alert("Test");
       generatePalette();
-      alert("Test3");
+      alert("Test4");
     },1000);
   },
 
