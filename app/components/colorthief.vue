@@ -8,6 +8,7 @@ export default{
     const colorThief=new ColorThief(); const toLCH=converter("lch");
     //const colorthief=async()=>{
 
+/*
     async adjustHue(val){
       if(val<0)val+=Math.ceil(-val/360)*360;
       return val%360
@@ -132,7 +133,7 @@ paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<di
   }
   setTimeout(()=>{generatePalette()},1000);
 },
-
+*/
   
     //}
     //return{colorthief};
