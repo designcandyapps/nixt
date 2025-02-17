@@ -53,14 +53,14 @@ export default{
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
-        //const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
+        ////const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
         //chosenImg=await loadImg(u);
         img=document.getElementById("ii");
         img.src=u; img.crossOrigin=`anonymous`;
 
         img=img.decode(); chosenImg=img;
         //chosenImg=await img.decode();
-        //alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img.src);
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
@@ -75,7 +75,7 @@ export default{
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div");
-        //const paletteWrapper=document.getElementById("z");
+        ////const paletteWrapper=document.getElementById("z");
         paletteWrapper.style.border="border:10px solid green";
         
         paletteWrapper.classList.add("palette-colors");
