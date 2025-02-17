@@ -54,12 +54,12 @@ export default{
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
         ////const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
-        chosenImg=await loadImg(u);
+        //chosenImg=await loadImg(u);
         
-        //img=document.getElementById("ii");
-        //img.crossOrigin=`anonymous`;
-        //img.src=u;
-        //img=img.decode();
+        img=document.getElementById("ii");
+        img.crossOrigin=`anonymous`;
+        img.src=u;
+        img=img.decode();
         
         chosenImg=img;
         //chosenImg=await img.decode();
