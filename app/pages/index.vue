@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-import { rgb, formatHex } from "culori";
-const color = rgb("red"); // Convert color to RGB
-const hexColor = formatHex(color); // Convert to hex format
+import {rgb,formatHex} from "culori";
+const color=rgb("red"); const hexColor=formatHex(color);
 </script>
 
 <template>
@@ -84,7 +83,7 @@ export default{
 
 
     async generatePalette(){
-    alert("Test");
+    alert("Test2");
       let colors=[]; let chosenImg;
       const queries=[
         "red",
