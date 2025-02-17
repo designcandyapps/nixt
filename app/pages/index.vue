@@ -8,6 +8,7 @@ import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=for
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><div id="z" style="border:2px solid red;"></div>
+      <div id="co" class="content" style="border:5px solid orange;"></div>
       <!--template><div style="position:relative; width:200px; height:50px; border:2px solid green;">Color: <span :style="{color:hexColor}">{{hexColor}}</span></div></template-->
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -64,7 +65,7 @@ export default{
       }
       const palettes=discoverPalettes(colors);
 
-      document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
+      ////document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
       //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
       alert("Z: "+document.querySelector("#z"));
       //alert("ZC: "+document.querySelector("#z").innerHTML);
@@ -73,12 +74,12 @@ export default{
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
-        //const paletteWrapper=document.createElement("div");
-        const paletteWrapper=document.getElementById("z");
+        const paletteWrapper=document.createElement("div");
+        //const paletteWrapper=document.getElementById("z");
         
         paletteWrapper.classList.add("palette-colors");
-        //document.querySelector(".content").appendChild(paletteWrapper);
-        document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+        document.querySelector(".content").appendChild(paletteWrapper);
+        //document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
 
         paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
@@ -104,7 +105,7 @@ img {
   height:100vh;
   object-fit:cover;
   filter:brightness(.75);
-  border:5px solid pink;
+  border:5px solid blue;
 }
 .content,#z {
   display:grid;
