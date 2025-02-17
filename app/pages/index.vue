@@ -41,6 +41,9 @@ export default{
       }
       return palettes;
     },
+
+
+
     async loadIm(){
       alert("Test2");
       //const img=document.createElement("img");
