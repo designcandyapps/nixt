@@ -66,8 +66,7 @@ export default{
       document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
       alert("Z: "+document.getElementById("z"));
       alert("CO: "+document.getElementById("co"));
-
-      alert("CHO2: "+chosenImg);
+      alert("CH2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
