@@ -53,6 +53,7 @@ export default{
     async loadImg(url){
       alert("U: "+url);
       //const img=document.createElement("img");
+      //img.setAttribute("id","im");
       const img=document.getElementById("ii");
       alert("IM: "+img);
       img.src=url;
