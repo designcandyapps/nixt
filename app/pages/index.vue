@@ -1,12 +1,19 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+import { rgb, formatHex } from "culori";
+const color = rgb("red"); // Convert color to RGB
+const hexColor = formatHex(color); // Convert to hex format
 </script>
 
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      
+      <template>
+  <div>
+    <p>Generated Color: <span :style="{ color: hexColor }">{{ hexColor }}</span></p>
+  </div>
+</template>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
