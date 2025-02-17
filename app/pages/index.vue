@@ -146,7 +146,7 @@ export default{
     }
     const palettes=discoverPalettes(colors);
     document.body.innerHTML=`<div class="content"></div>`;
-    document.body.appendChild(chosenImg);
+    //document.body.appendChild(chosenImg);
     for(const type of Object.keys(palettes)){
       const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
       document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
