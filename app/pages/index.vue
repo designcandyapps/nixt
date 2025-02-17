@@ -2,15 +2,6 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
-function sloadIm(u){
-  alert("Testt");
-  //const img=document.createElement("img");
-  const img=document.getElementById("ii");
-  alert("IM: "+img);
-  img.src=u;
-  alert("IM2: "+img.src);
-  //img.crossOrigin=`anonymous`; await img.decode(); return img;
-}
 </script>
 
 <template>
@@ -25,8 +16,12 @@ function sloadIm(u){
 
 <script lang="ts">
 export default{
-  mounted(){this.generatePalette()},
+  mounted(){
+    this.generatePalette()
+  },
   methods:{
+    const img=document.getElementById("ii"); alert("IM: "+img); //const img=document.createElement("img");
+    //img.src=u; alert("IM2: "+img.src); //img.crossOrigin=`anonymous`; await img.decode(); return img;
     async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360},
     async createScientificPalettes(baseColor){
       const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]};
@@ -83,11 +78,11 @@ export default{
 
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+        colors=await colorThief.getPalette(document.getElementById("ii")).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
       //document.body.innerHTML=`<div class="content"></div>`;
-      document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid yellow;"></div>`;
+      document.getElementById("z").innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`;
       alert("DZ: "+document.getElementById("z"));
       
       //document.body.appendChild(chosenImg);
