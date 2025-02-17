@@ -117,7 +117,7 @@ img {
   background:hsla(0,100%,100%,.75);
   -webkit-backdrop-filter:blur(16px) saturate(180%);
   backdrop-filter:blur(16px) saturate(180%);
-  box-shadow:0 4px 16px 0px hsla(0,0%,0%,.125);
+  box-shadow:0 4px 16px 0 hsla(0,0%,0%,.125);
   border-radius:1rem;
   -border:1px solid hsla(0,0%,100%,.9);
   border:5px solid purple;
