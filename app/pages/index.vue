@@ -24,7 +24,7 @@ const hexColor = formatHex(color); // Convert to hex format
 export default{
   //components:{colorthief},
   mounted(){
-    //this.generatePalette()
+    this.generatePalette()
   },
   methods:{
     async adjustHue(val){
