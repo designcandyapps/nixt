@@ -21,22 +21,8 @@ export default{
   methods:{
     async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360},
     async createScientificPalettes(baseColor){
-      const targetHueSteps={
-        analogous:[0,30,60],
-        triadic:[0,120,240],
-        tetradic:[0,90,180,270],
-        complementary:[0,180],
-        splitComplementary:[0,150,210]
-      };
-      const palettes={};
-      for(const type of Object.keys(targetHueSteps)){
-        palettes[type]=targetHueSteps[type].map((step)=>({
-          mode:"lch",
-          l:baseColor.l,
-          c:baseColor.c,
-          h:adjustHue(baseColor.h+step)
-        }));
-      }
+      const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]};
+      const palettes={}; for(const type of Object.keys(targetHueSteps)){palettes[type]=targetHueSteps[type].map((step)=>({mode:"lch",l:baseColor.l,c:baseColor.c,h:adjustHue(baseColor.h+step)}))}
       return palettes;
     },
     async isColorEqual(c1,c2){return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c},
@@ -63,45 +49,10 @@ export default{
       alert("IM: "+img);
       img.src=url;
       alert("IM2: "+img.src);
-      img.crossOrigin=`anonymous`;
-      await img.decode();
-      return img;
+      img.crossOrigin=`anonymous`; await img.decode(); return img;
     },
     async generatePalette(){
-      let colors=[]; let chosenImg;
-      const queries=[
-        "red","green","blue","yellow",
-        "orange","magenta","pink","purple",
-        "turqoise","grey",
-        "black","white","indigo",
-        "violet","emerald","flower",
-        "vibrant","gold",
-        "silver",
-        "jewels",
-        "rainbow",
-        "forest",
-        "ocean",
-        "coral",
-        "galaxy",
-        "tree",
-        "leaf",
-        "fish",
-        "frog",
-        "animal",
-        "wildlife",
-        "color",
-        "paint",
-        "paint",
-        "abstract",
-        "colorful",
-        "nature",
-        "volcano",
-        "sun",
-        "ruby",
-        "saphire",
-        "emerald",
-        ""
-      ];
+      let colors=[]; let chosenImg; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const url=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
         //chosenImg=await loadImg(url);
@@ -109,20 +60,13 @@ export default{
         alert("Z: "+chosenImg);
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({
-          r:c[0]/255,
-          g:c[1]/255,
-          b:c[2]/255,
-          mode:"rgb"
-        })
+        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"})
       );
     }
     const palettes=discoverPalettes(colors);
     //document.body.innerHTML=`<div class="content"></div>`;
     document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
     document.body.appendChild(chosenImg);
-
-
 
     for(const type of Object.keys(palettes)){
       const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
@@ -132,10 +76,8 @@ export default{
     setTimeout(()=>{
       alert("Test");
       generatePalette();
-      alert("Test4");
     },1000);
-  },
-
+    },
   },
 }
 </script>
