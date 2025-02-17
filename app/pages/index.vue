@@ -2,6 +2,15 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
+function sloadIm(u){
+  alert("Testt");
+  //const img=document.createElement("img");
+  const img=document.getElementById("ii");
+  alert("IM: "+img);
+  img.src=u;
+  alert("IM2: "+img.src);
+  //img.crossOrigin=`anonymous`; await img.decode(); return img;
+}
 </script>
 
 <template>
@@ -65,7 +74,7 @@ export default{
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
         //chosenImg=await loadImg(u);
-        loadIm(`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`);
+        sloadIm(`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`);
         chosenImg=await loadImg(u);
         //alert("Z: "+chosenImg);
 
