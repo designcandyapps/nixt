@@ -60,7 +60,7 @@ export default{
         img=img.decode(); chosenImg=img;
         //chosenImg=await img.decode();
         
-        alert("CH: "+chosenImg); alert("IM: "+img.src);
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); alert("IM: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
