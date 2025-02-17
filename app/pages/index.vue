@@ -27,6 +27,7 @@ export default{
     },
     async isColorEqual(c1,c2){return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c},
     async discoverPalettes(colors){
+      alert("Tist"););
       const palettes={};
       for(const color of colors){
         const targetPalettes=createScientificPalettes(color);
