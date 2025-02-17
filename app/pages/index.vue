@@ -17,7 +17,7 @@ import colorthief from '~/components/colorthief.vue';
 export default{
   components:{colorthief},
   mounted(){
-    this.generatePalette()
+    //this.generatePalette()
   },
   methods:{
     async adjustHue(val){
