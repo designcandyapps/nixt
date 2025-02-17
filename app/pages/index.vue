@@ -76,10 +76,8 @@ export default{
         img.src=u;
         alert("2: "+img.src);
   
-        img=img.decode();
-        
-        //chosenImg=img;
-        //chosenImg=await img.decode();
+        //img=img.decode();
+        chosenImg=img;
   
         alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
         alert("IM: "+img); alert("IMS: "+img.src);
