@@ -77,6 +77,7 @@ export default{
 
 
     async generatePalette(){
+    alert("Test");
       let colors=[]; let chosenImg;
       const queries=[
         "red",
@@ -142,7 +143,10 @@ export default{
 document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
 paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
   }
-  setTimeout(()=>{generatePalette()},1000);
+  setTimeout(()=>{
+    alert("Test");
+    generatePalette()
+  },1000);
 },
 
 
