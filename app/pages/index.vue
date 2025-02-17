@@ -44,8 +44,9 @@ export default{
       return palettes;
     },
     async loadIm(){
+      let img;
       //const img=document.createElement("img");
-      const img=document.getElementById("ii");
+      img=document.getElementById("ii");
       
       img.src=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
       alert("I4: "+img.src);
