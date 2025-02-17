@@ -133,7 +133,7 @@ paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<di
 },
 
   
-    }
+    //}
     return{colorthief};
   },
 }
