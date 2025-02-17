@@ -71,7 +71,7 @@ export default{
       //alert("CO: "+document.querySelector(".content"));
       //alert("CH2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
-
+      alert("ZC: "+document.querySelector("#z").innerHTML);
       for(const type of Object.keys(palettes)){
         //const paletteWrapper=document.createElement("div");
         const paletteWrapper=document.getElementById("z");
