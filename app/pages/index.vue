@@ -16,17 +16,10 @@ const color=rgb("red"); const hexColor=formatHex(color);
 </template>
 
 <script lang="ts">
-//import colorthief from '~/components/colorthief.vue';
 export default{
-  //components:{colorthief},
-  mounted(){
-    this.generatePalette()
-  },
+  mounted(){this.generatePalette()},
   methods:{
-    async adjustHue(val){
-      if(val<0)val+=Math.ceil(-val/360)*360;
-      return val%360
-    },
+    async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360},
     async createScientificPalettes(baseColor){
       const targetHueSteps={
         analogous:[0,30,60],
@@ -38,17 +31,15 @@ export default{
       const palettes={};
       for(const type of Object.keys(targetHueSteps)){
         palettes[type]=targetHueSteps[type].map((step)=>({
-        mode:"lch",
-        l:baseColor.l,
-        c:baseColor.c,
-        h:adjustHue(baseColor.h+step)
-      }));
+          mode:"lch",
+          l:baseColor.l,
+          c:baseColor.c,
+          h:adjustHue(baseColor.h+step)
+        }));
       }
       return palettes;
     },
-    async isColorEqual(c1,c2){
-      return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c;
-    },
+    async isColorEqual(c1,c2){return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c},
     async discoverPalettes(colors){
       const palettes={};
       for(const color of colors){
@@ -56,15 +47,9 @@ export default{
         for(const paletteType of Object.keys(targetPalettes)){
           const palette=[]; let variance=0;
           for(const targetColor of targetPalettes[paletteType]){
-            const availableColors=colors.filter(
-              (color1)=>!palette.some((color2)=>isColorEqual(color1,color2))
-            );
-            const match=nearest(
-              availableColors,
-              differenceEuclidean("lch")
-            )(targetColor)[0];
-            variance+=differenceEuclidean("lch")(targetColor,match);
-            palette.push(match);
+            const availableColors=colors.filter((color1)=>!palette.some((color2)=>isColorEqual(color1,color2)));
+            const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0];
+            variance+=differenceEuclidean("lch")(targetColor,match); palette.push(match);
           }
           if(!palettes[paletteType]||variance<palettes[paletteType].variance){palettes[paletteType]={colors:palette,variance}}
         }
@@ -85,24 +70,12 @@ export default{
     async generatePalette(){
       let colors=[]; let chosenImg;
       const queries=[
-        "red",
-        "green",
-        "blue",
-        "yellow",
-        "orange",
-        "magenta",
-        "pink",
-        "purple",
-        "turqoise",
-        "grey",
-        "black",
-        "white",
-        "indigo",
-        "violet",
-        "emerald",
-        "flower",
-        "vibrant",
-        "gold",
+        "red","green","blue","yellow",
+        "orange","magenta","pink","purple",
+        "turqoise","grey",
+        "black","white","indigo",
+        "violet","emerald","flower",
+        "vibrant","gold",
         "silver",
         "jewels",
         "rainbow",
