@@ -18,8 +18,6 @@ import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=for
 export default{
   mounted(){this.generatePalette()},
   methods:{
-    //var img=document.getElementById("ii"); alert("IM: "+img); //var img=document.createElement("img");
-    //img.src=u; alert("IM2: "+img.src); //img.crossOrigin=`anonymous`; await img.decode(); return img;
     async adjustHue(val){if(val<0)val+=Math.ceil(-val/360)*360;return val%360},
     async createScientificPalettes(baseColor){
       const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]};
@@ -46,16 +44,14 @@ export default{
     async loadIm(){
       alert("Test2");
       //const img=document.createElement("img");
-      const img=document.getElementById("ii");
-      alert("IM2: "+img);
+      const img=document.getElementById("ii"); alert("IM-lim: "+img);
       img.src="https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D";
-      img.crossOrigin=`anonymous`; await img.decode();
-      alert("IMG: "+img);
+      img.crossOrigin=`anonymous`; await img.decode(); alert("IMG: "+img);
     },
     async loadImg(u){
       alert("Test1");
       //const img=document.createElement("img");
-      const img=document.getElementById("ii"); //alert("IM: "+img);
+      const img=document.getElementById("ii"); alert("IM-limg: "+img);
       img.src=u; img.crossOrigin=`anonymous`; await img.decode(); return img;
     },
     async generatePalette(){
@@ -67,18 +63,17 @@ export default{
         const img=document.getElementById("ii"); alert("IM: "+img);
         img.src=u; alert("IMS: "+img.src);
         img.crossOrigin=`anonymous`;
-        //chosenImg=await loadImg(u); //alert("Z: "+chosenImg);
+        chosenImg=await img.decode(); alert("CHO: "+chosenImg);
 
 
         //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
         colors=await colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
-      //document.body.innerHTML=`<div class="content"></div>`;
-      document.getElementById("z").innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`;
-      alert("DZ: "+document.getElementById("z"));
-      
-      //document.body.appendChild(chosenImg);
+      document.body.innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`;
+      document.body.appendChild(chosenImg);
+      //document.getElementById("z").innerHTML=`<div class="content" style="border:2px solid yellow;"></div>`; //alert("Z: "+document.getElementById("z"));
+      //document.body.appendChild(img); //chosenImg
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
