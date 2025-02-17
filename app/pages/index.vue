@@ -7,7 +7,8 @@ import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=for
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="z" style="position:relative; width:200px; height:50px; border:2px solid red;"></div><img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="position:relative; width:200px; height:120px; border:2px solid blue;">
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png" style="position:relative; width:200px; height:120px; border:2px solid blue;">
+      <div id="z" style="position:relative; width:200px; height:50px; border:2px solid red;"></div>
       <!--template><div style="position:relative; width:200px; height:50px; border:2px solid green;">Color: <span :style="{color:hexColor}">{{hexColor}}</span></div></template-->
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -59,15 +60,15 @@ export default{
       }
       alert("COL");
       const palettes=discoverPalettes(colors);
-      alert("PAL: "+palettes);
-      document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
-      alert("CONT: "+document.getElementById("co"));
-      alert("CHO2: "+chosenImg);
-      document.body.appendChild(chosenImg);
+      //alert("PAL: "+palettes);
 
-      
-      //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`; //alert("Z: "+document.getElementById("z"));
-      //document.body.appendChild(img); //chosenImg
+      //document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
+      document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
+      alert("Z: "+document.getElementById("z"));
+
+      alert("CHO2: "+chosenImg);
+      document.body.appendChild(chosenImg); //img
+      //alert("CONT: "+document.getElementById("co"));
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
