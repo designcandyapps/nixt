@@ -8,7 +8,7 @@ const color=rgb("red"); const hexColor=formatHex(color);
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png">
+      <div id="z"></div><img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png">
       <template><div><p>Generated Color: <span :style="{ color: hexColor }">{{ hexColor }}</span></p></div></template>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -145,8 +145,12 @@ export default{
       );
     }
     const palettes=discoverPalettes(colors);
-    document.body.innerHTML=`<div class="content"></div>`;
-    //document.body.appendChild(chosenImg);
+    //document.body.innerHTML=`<div class="content"></div>`;
+    document.getElementById("z").innerHTML=`<div class="content" style="position:relative; width:200px; height:100px; border:2px solid red;"></div>`;
+    document.body.appendChild(chosenImg);
+
+
+
     for(const type of Object.keys(palettes)){
       const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
       document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
