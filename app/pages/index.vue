@@ -151,7 +151,8 @@ paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<di
   }
   setTimeout(()=>{
     alert("Test");
-    generatePalette()
+    generatePalette();
+    alert("Test3");
   },1000);
 },
 
