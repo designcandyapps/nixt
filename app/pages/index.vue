@@ -1,9 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-
-import {defineAsyncComponent} from 'vue';
-defineAsyncComponent(()=>import('@nuxthq/ui/components/colorthief'));
 </script>
 
 <template>
