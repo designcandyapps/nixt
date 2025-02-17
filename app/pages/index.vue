@@ -69,7 +69,10 @@ export default{
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
-        document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+        //document.querySelector(".content").appendChild(paletteWrapper);
+        document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+
+        paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
       }
       setTimeout(()=>{generatePalette()},1000);
@@ -95,7 +98,7 @@ img {
   filter:brightness(.75);
   border:5px solid pink;
 }
-.content {
+.content,#z {
   display:grid;
   grid-gap:1rem;
   padding:2rem;
