@@ -70,7 +70,6 @@ export default{
         //chosenImg=await loadImg(u);
         //chosenImg=await loadIm();
 
-  
         img=document.getElementById("ii");
         alert("1: "+img);
 
