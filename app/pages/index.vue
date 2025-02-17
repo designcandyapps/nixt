@@ -58,9 +58,8 @@ export default{
         //chosenImg=await loadImg(u);
         img=document.getElementById("ii");
 
-        //img.crossOrigin=`anonymous`;
+        img.crossOrigin=`anonymous`;
         img.src=u;
-
         img=img.decode();
         
         chosenImg=img;
