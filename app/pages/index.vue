@@ -61,7 +61,7 @@ export default{
         img.crossOrigin=`anonymous`;
         img.src=u;
 
-        img=img.decode();
+        //img=img.decode();
         
         chosenImg=img;
         //chosenImg=await img.decode();
