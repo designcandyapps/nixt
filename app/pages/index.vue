@@ -138,13 +138,15 @@ export default{
         //chosenImg=await loadImg(url);
         chosenImg=loadImg(url);
         alert("Z: "+chosenImg);
-  
-        colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
+
+        //colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
+        colors=await colorThief.getPalette('document.getElementById("ii")').map((c)=>toLCH({
           r:c[0]/255,
           g:c[1]/255,
           b:c[2]/255,
           mode:"rgb"
         })
+        alert("Z");
       );
     }
     const palettes=discoverPalettes(colors);
