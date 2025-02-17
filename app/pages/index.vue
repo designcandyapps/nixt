@@ -121,4 +121,5 @@ img {
   -border:1px solid hsla(0,0%,100%,.9);
   border:5px solid purple;
 }
+#z { border:5px solid green; }
 </style>
