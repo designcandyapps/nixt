@@ -76,6 +76,7 @@ export default{
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div");
         //const paletteWrapper=document.getElementById("z");
+        paletteWrapper.style.border="border:10px solid green";
         
         paletteWrapper.classList.add("palette-colors");
         document.querySelector(".content").appendChild(paletteWrapper);
