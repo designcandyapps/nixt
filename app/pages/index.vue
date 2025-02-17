@@ -83,7 +83,6 @@ export default{
 
 
     async generatePalette(){
-    alert("Test2");
       let colors=[]; let chosenImg;
       const queries=[
         "red",
@@ -132,29 +131,30 @@ export default{
       ];
       while(colors.length<4){
         const url=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://designcandy.com/im/lo.png
-    chosenImg=await loadImg(url);
-    colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
-      r:c[0]/255,
-      g:c[1]/255,
-      b:c[2]/255,
-      mode:"rgb"
-    })
-   );
-  }
-  const palettes=discoverPalettes(colors);
-  document.body.innerHTML=`<div class="content"></div>`;
-  document.body.appendChild(chosenImg);
-  for(const type of Object.keys(palettes)){
-    const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
-document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
-paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
-  }
-  setTimeout(()=>{
-    alert("Test");
-    generatePalette();
-    alert("Test3");
-  },1000);
-},
+        alert("URL: "+url);
+        chosenImg=await loadImg(url);
+        colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({
+          r:c[0]/255,
+          g:c[1]/255,
+          b:c[2]/255,
+          mode:"rgb"
+        })
+      );
+    }
+    const palettes=discoverPalettes(colors);
+    document.body.innerHTML=`<div class="content"></div>`;
+    document.body.appendChild(chosenImg);
+    for(const type of Object.keys(palettes)){
+      const paletteWrapper=document.createElement("div"); paletteWrapper.classList.add("palette-colors");
+      document.querySelector(".content").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p>${type}</p>`;
+      paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="background:${formatHex(color)};"></div>`;return html},"");
+    }
+    setTimeout(()=>{
+      alert("Test");
+      generatePalette();
+      alert("Test3");
+    },1000);
+  },
 
 
   },
