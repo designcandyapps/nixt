@@ -13,9 +13,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-import gen from '~/components/gen.vue';
+import gen from '~/components/colorthief.vue';
 export default{
-  components:{gen},
+  components:{colorthief},
   mounted(){
     this.generatePalette()
   },
