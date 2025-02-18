@@ -2,7 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
-const colorThief=new ColorThief(); const toLCH=converter("lch");
+//const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
@@ -26,7 +26,6 @@ export default{
     },
     async isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c},
     async discoverPalettes(colors){
-      //alert("Tist");
       const palettes={};
       for(const color of colors){
         const targetPalettes=createScientificPalettes(color);
@@ -52,18 +51,15 @@ export default{
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
-        ////const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
         //chosenImg=await loadImg(u);
-        
+
         img=document.getElementById("ii");
-        img.crossOrigin=`anonymous`;
         img.src=u;
+        img.crossOrigin=`anonymous`;
         img=img.decode();
-        
+
         chosenImg=img;
-        //chosenImg=await img.decode();
         alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
-        alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
