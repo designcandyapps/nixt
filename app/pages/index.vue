@@ -42,16 +42,6 @@ export default{
       }
       return palettes;
     },
-    async bs64(im){ //++++++++++++1b
-      var ca=document.getElementById("ca"); var cx=ca.getContext("2d");
-      cx.fillStyle="red"; cx.fillRect(10,10,100,100);
-      return ca.toDataURL();
-    },
-    async bb64(f,callback){ //++++++++++++1c
-      const r=new FileReader(); r.readAsDataURL(f);
-      r.onload=()=>callback(r.result);
-      r.onerror=(error)=>alert("Err: ",error);
-    },
     async loadIm(){ //++++++++++++3b
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
@@ -104,10 +94,12 @@ export default{
         //const paletteWrapper=document.getElementById("z"); //++++++++++++5
         paletteWrapper.style.border="border:10px solid green";
         alert(paletteWrapper.style.border);
+
         
         paletteWrapper.classList.add("palette-colors");
         document.querySelector(".content").appendChild(paletteWrapper); //++++++++++++6
         //document.querySelector("#z").appendChild(paletteWrapper);
+
 
         paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
