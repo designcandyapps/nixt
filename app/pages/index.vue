@@ -65,8 +65,8 @@ export default{
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://pinfluents.com/_BCK/4/im/bp.png`;
         //chosenImg=await loadImg(u); //++++++++++++2
-        chosenImg=await loadIm(); //++++++++++++3
-/*
+        //chosenImg=await loadIm(); //++++++++++++3
+
         img=document.getElementById("ii"); //++++++++++++1
         alert("1: "+img);
 
@@ -77,7 +77,7 @@ export default{
         //--chosenImg=img.decode();
         //--chosenImg.src=bs64(bs);
         alert("3: "+chosenImg.src);
-*/
+
 
         alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
