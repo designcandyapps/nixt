@@ -55,8 +55,8 @@ export default{
       alert("J3: "+img); alert("J4: "+img.src);
     },
     async loadImg(u){  //++++++++++++2b
-      //const img=document.createElement("img");
-      const img=document.getElementById("ii");
+      const img=document.createElement("img");
+      //const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
       await img.decode(); return img;
     },
@@ -64,9 +64,9 @@ export default{
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://pinfluents.com/_BCK/4/im/bp.png`;
-        //chosenImg=await loadImg(u); //++++++++++++2
+        chosenImg=await loadImg(u); //++++++++++++2
         //chosenImg=await loadIm(); //++++++++++++3
-
+/*
         img=document.getElementById("ii"); //++++++++++++1
         alert("1: "+img);
 
@@ -74,13 +74,12 @@ export default{
         img.crossOrigin=`anonymous`;
         alert("2: "+img.src);
   
-        chosenImg=img.decode();
-        //chosenImg.src=bs64(bs);
+        //--chosenImg=img.decode();
+        //--chosenImg.src=bs64(bs);
         alert("3: "+chosenImg.src);
-  
-        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
+*/
 
-  
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
@@ -90,11 +89,8 @@ export default{
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
-        const paletteWrapper=document.createElement("div");
+        const paletteWrapper=document.createElement("div"); paletteWrapper.id="pa";
         //const paletteWrapper=document.getElementById("z"); //++++++++++++5
-        paletteWrapper.style.border="border:10px solid green";
-        alert(paletteWrapper.style.border);
-
         
         paletteWrapper.classList.add("palette-colors");
         document.querySelector(".content").appendChild(paletteWrapper); //++++++++++++6
