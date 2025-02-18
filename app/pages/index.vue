@@ -42,7 +42,18 @@ export default{
       }
       return palettes;
     },
+    async loadIm(){ //++++++++++++3b
+      //const img=document.createElement("img");
+      const img=document.getElementById("ii");
 
+      img.src=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
+      alert("J1: "+img); alert("J2: "+img.src);
+
+      img.crossOrigin=`anonymous`;
+      await img.decode();
+
+      alert("J3: "+img); alert("J4: "+img.src);
+    },
     async loadImg(u){  //++++++++++++2b
       const img=document.createElement("img");
       //const img=document.getElementById("ii");
@@ -53,8 +64,8 @@ export default{
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://pinfluents.com/_BCK/4/im/bp.png`;
-        chosenImg=await loadImg(u); //++++++++++++2
-        //chosenImg=await loadIm(); //++++++++++++3
+        //chosenImg=await loadImg(u); //++++++++++++2
+        chosenImg=await loadIm(); //++++++++++++3
 /*
         img=document.getElementById("ii"); //++++++++++++1
         alert("1: "+img);
