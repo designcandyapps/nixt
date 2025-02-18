@@ -74,7 +74,7 @@ export default{
         img.crossOrigin=`anonymous`;
         alert("2: "+img.src);
   
-        //--chosenImg=img.decode();
+        chosenImg=img.decode();
         //--chosenImg.src=bs64(bs);
         //alert("3: "+chosenImg.src);
         chosenImg=img;
