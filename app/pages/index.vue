@@ -2,7 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
-const colorThief=new ColorThief(); const toLCH=converter("lch");
+//const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
@@ -42,18 +42,7 @@ export default{
       }
       return palettes;
     },
-    async loadIm(){ //++++++++++++3b
-      //const img=document.createElement("img");
-      const img=document.getElementById("ii");
-      
-      img.src=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
-      alert("J1: "+img); alert("J2: "+img.src);
 
-      img.crossOrigin=`anonymous`;
-      await img.decode();
-
-      alert("J3: "+img); alert("J4: "+img.src);
-    },
     async loadImg(u){  //++++++++++++2b
       const img=document.createElement("img");
       //const img=document.getElementById("ii");
