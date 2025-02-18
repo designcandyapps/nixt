@@ -54,7 +54,7 @@ export default{
 
       alert("J3: "+img); alert("J4: "+img.src);
     },
-    async loadImg(u){  //++++++++++++2b
+    async function loadImg(u){  //++++++++++++2b
       const img=document.createElement("img");
       //const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
