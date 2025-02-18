@@ -46,7 +46,7 @@ export default{
       var ca=document.getElementById("ca"); var cx=ca.getContext("2d");
       cx.fillStyle="red"; cx.fillRect(10,10,100,100);
       return ca.toDataURL();
-    }
+    },
     async bb64(f,callback){ //++++++++++++1c
       const r=new FileReader(); r.readAsDataURL(f);
       r.onload=()=>callback(r.result);
