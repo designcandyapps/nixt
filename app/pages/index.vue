@@ -2,7 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
-const colorThief=new ColorThief(); const toLCH=converter("lch");
+//const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
@@ -41,6 +41,18 @@ export default{
       }
       return palettes;
     },
+    async loadIm(){ //++++++++++++3b
+      //const img=document.createElement("img");
+      const img=document.getElementById("ii");
+
+      img.src=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
+      alert("J1: "+img); alert("J2: "+img.src);
+
+      img.crossOrigin=`anonymous`;
+      await img.decode();
+
+      alert("J3: "+img); alert("J4: "+img.src);
+    },
     async loadImg(u){
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
@@ -51,6 +63,24 @@ export default{
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
         const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
+        //chosenImg=await loadImg(u); //++++++++++++2
+        //chosenImg=await loadIm(); //++++++++++++3
+
+        img=document.getElementById("ii"); //++++++++++++1
+        alert("1: "+img);
+
+        img.src=u;
+        img.crossOrigin=`anonymous`;
+        alert("2: "+img.src);
+  
+        chosenImg=img.decode();
+        //--chosenImg.src=bs64(bs);
+        //alert("3: "+chosenImg.src);
+        chosenImg=img;
+
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
+
+/*
         //chosenImg=await loadImg(u);
 
         img=document.getElementById("ii");
@@ -60,19 +90,20 @@ export default{
 
         chosenImg=img;
         alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
+*/
+
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
-        const paletteWrapper=document.createElement("div");
-        ////const paletteWrapper=document.getElementById("z");
-        paletteWrapper.style.border="border:10px solid green";
+        const paletteWrapper=document.createElement("div"); paletteWrapper.id="pa";
+        //const paletteWrapper=document.getElementById("z"); //++++++++++++5
         
         paletteWrapper.classList.add("palette-colors");
-        document.querySelector(".content").appendChild(paletteWrapper);
-        //document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+        document.querySelector(".content").appendChild(paletteWrapper); //++++++++++++6
+        //document.querySelector("#z").appendChild(paletteWrapper);
 
         paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
