@@ -2,14 +2,13 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
+const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><div id="z" style="border:2px solid red;"></div>
-      <div id="co" class="content" style="border:5px solid orange;"></div>
-      <!--template><div style="position:relative; width:200px; height:50px; border:2px solid green;">Color: <span :style="{color:hexColor}">{{hexColor}}</span></div></template-->
+      <img id="ii" src="https://pinfluents.com/_BCK/4/im/dc2.png"><div id="z" style="border:2px solid red;"></div><div id="co" class="content" style="border:2px solid orange;"></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -25,9 +24,9 @@ export default{
       const palettes={}; for(const type of Object.keys(targetHueSteps)){palettes[type]=targetHueSteps[type].map((step)=>({mode:"lch",l:baseColor.l,c:baseColor.c,h:adjustHue(baseColor.h+step)}))}
       return palettes;
     },
-    async isColorEqual(c1,c2){return c1.h===c2.h && c1.l===c2.l && c1.c===c2.c},
+    async isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c},
     async discoverPalettes(colors){
-      //alert("Tist");
+      alert("Tist");
       const palettes={};
       for(const color of colors){
         const targetPalettes=createScientificPalettes(color);
@@ -43,20 +42,29 @@ export default{
       }
       return palettes;
     },
-    async loadIm(){
-      //let img;
+    async bs64(im){ //++++++++++++1b
+      var ca=document.getElementById("ca"); var cx=ca.getContext("2d");
+      cx.fillStyle="red"; cx.fillRect(10,10,100,100);
+      return ca.toDataURL();
+    }
+    async bb64(f,callback){ //++++++++++++1c
+      const r=new FileReader(); r.readAsDataURL(f);
+      r.onload=()=>callback(r.result);
+      r.onerror=(error)=>alert("Err: ",error);
+    },
+    async loadIm(){ //++++++++++++3b
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
       
       img.src=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
-      alert("I4: "+img.src);
-      
+      alert("J1: "+img); alert("J2: "+img.src);
+
       img.crossOrigin=`anonymous`;
       await img.decode();
-      alert("I5: "+img);
-      alert("I6: "+img.src);
+
+      alert("J3: "+img); alert("J4: "+img.src);
     },
-    async loadImg(u){
+    async loadImg(u){  //++++++++++++2b
       //const img=document.createElement("img");
       const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
@@ -65,43 +73,41 @@ export default{
     async generatePalette(){
       let colors=[]; let chosenImg; let img; const queries=["red","green","blue","yellow","orange","magenta","pink","purple","turqoise","grey","black","white","indigo","violet","emerald","flower","vibrant","gold","silver","jewels","rainbow","forest","ocean","coral","galaxy","tree","leaf","fish","frog","animal","wildlife","color","paint","paint","abstract","colorful","nature","volcano","sun","ruby","saphire","emerald",""];
       while(colors.length<4){
-        const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;
-        ////const u=`https://pinfluents.com/_BCK/4/im/bp.png`;
-        //chosenImg=await loadImg(u);
-        //chosenImg=await loadIm();
+        const u=`https://images.unsplash.com/photo-1732279446743-324499ebbeba?w=800&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D`;//https://pinfluents.com/_BCK/4/im/bp.png`;
+        //chosenImg=await loadImg(u); //++++++++++++2
+        //chosenImg=await loadIm(); //++++++++++++3
 
-        img=document.getElementById("ii");
+        img=document.getElementById("ii"); //++++++++++++1
         alert("1: "+img);
 
-        img.crossOrigin=`anonymous`;
         img.src=u;
+        img.crossOrigin=`anonymous`;
         alert("2: "+img.src);
   
-        img=img.decode();
-        chosenImg=img;
+        chosenImg=img.decode();
+        //chosenImg.src=bs64(bs);
+        alert("3: "+chosenImg.src);
   
-        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src);
-        //alert("IM: "+img); alert("IMS: "+img.src);
+        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
+
+  
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
 
-      ////document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`;
+      document.body.innerHTML=`<div id="co" class="content" style="border:2px solid yellow;"></div>`; //++++++++++++4
       //document.getElementById("z").innerHTML=`<div id="co" class="content" style="border:2px solid pink;"></div>`;
-      //alert("Z: "+document.querySelector("#z"));
-      //alert("ZC: "+document.querySelector("#z").innerHTML);
-      //alert("CO: "+document.querySelector(".content"));
-      //alert("CH2: "+chosenImg);
       document.body.appendChild(chosenImg); //img
 
       for(const type of Object.keys(palettes)){
         const paletteWrapper=document.createElement("div");
-        ////const paletteWrapper=document.getElementById("z");
+        //const paletteWrapper=document.getElementById("z"); //++++++++++++5
         paletteWrapper.style.border="border:10px solid green";
+        alert(paletteWrapper.style.border);
         
         paletteWrapper.classList.add("palette-colors");
-        document.querySelector(".content").appendChild(paletteWrapper);
-        //document.querySelector("#z").appendChild(paletteWrapper); paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
+        document.querySelector(".content").appendChild(paletteWrapper); //++++++++++++6
+        //document.querySelector("#z").appendChild(paletteWrapper);
 
         paletteWrapper.innerHTML=`<p style="border:2px solid aqua;">${type}</p>`;
         paletteWrapper.innerHTML+=palettes[type].colors.reduce((html,color)=>{html+=`<div style="border:2px solid lavender; background:${formatHex(color)};"></div>`;return html},"");
@@ -127,7 +133,6 @@ img {
   height:100vh;
   object-fit:cover;
   filter:brightness(.75);
-  -border:5px solid blue;
 }
 .content,#z {
   display:grid;
@@ -144,5 +149,5 @@ img {
   -border:1px solid hsla(0,0%,100%,.9);
   border:5px solid purple;
 }
-#z { border:5px solid green; }
+#z { border:2px solid blue; }
 </style>
