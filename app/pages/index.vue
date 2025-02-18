@@ -42,7 +42,7 @@ export default{
       }
       return palettes;
     },
-    async function loadImg(u){  //++++++++++++2b
+    async loadImg(u){  //++++++++++++2b
       const img=document.createElement("img");
       //const img=document.getElementById("ii");
       img.src=u; img.crossOrigin=`anonymous`;
