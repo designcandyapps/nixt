@@ -76,10 +76,10 @@ export default{
   
         //--chosenImg=img.decode();
         //--chosenImg.src=bs64(bs);
-        alert("3: "+chosenImg.src);
+        //alert("3: "+chosenImg.src);
+        chosenImg=img;
 
-
-        alert("CH: "+chosenImg); alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
+        alert("CH: "+chosenImg); //alert("CI: "+chosenImg.src); //alert("IM: "+img); alert("IMS: "+img.src);
         colors=await colorThief.getPalette(chosenImg).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
       }
       const palettes=discoverPalettes(colors);
