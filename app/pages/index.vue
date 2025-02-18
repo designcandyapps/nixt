@@ -2,6 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 import {rgb,formatHex} from "culori"; const color=rgb("red"); const hexColor=formatHex(color);
+const colorThief=new ColorThief(); const toLCH=converter("lch");
 </script>
 
 <template>
