@@ -24,8 +24,8 @@ export default{
       const canvas=this.$refs.canvas;
       const cx=canvas.getContext("2d");
       cx.drawImage(imE,0,0,canvas.width,canvas.height);
-    },
-    setTimeout(()=>{this.snd()},1600)
+    }
+    //setTimeout(()=>{this.snd()},1600)
   },
   methods:{
     async snd(){
