@@ -32,8 +32,8 @@ export default{
   },
   methods:{
     getCP(){
-      alert("Test14z");
-      const ct=new ColorThief(); alert("CT2z: "+ct);
+      alert("Test14a");
+      const ct=new ColorThief(); alert("CTa: "+ct);
       const si=$("#iz"); const pa=ct.getPalette(si,4);
       if(!pa){return} const dc=ct.getColor(si); const cp=ct.getPalette(si);
       $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
