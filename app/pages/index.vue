@@ -7,6 +7,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <NuxtImg ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas ref="canvas" width="60" height="60"></canvas>
+
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
@@ -18,21 +19,8 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){
-    this.getCP();
-    //setTimeout(()=>{this.snd()},1600)
+  mounted(){//this.getCP();setTimeout(()=>{this.snd()},1600)
   },
-  /*setup(){
-    const getCP=async()=>{ //const getCP=function(){
-      alert("Test16b");
-      var si=$("#iz")[0]; var pa=ct.getPalette(si,4);
-      if(!pa){return} dc=ct.getColor(si); cp=ct.getPalette(si);
-      $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
-      for(i=0;i<cp.length;i++){cc.eq(i).css({background: "rgb("+cp[i]+")"})}
-    }
-    return{getCP}
-  },*/
-/*
   methods:{
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
@@ -41,6 +29,5 @@ export default{
       document.querySelector('#t').innerText=this.response;
     },
   },
-*/
 }
 </script>
