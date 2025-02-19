@@ -30,7 +30,7 @@ export default{
   },
   methods:{
     getCP(){
-      document.querySelector("#ix").setAttribute(":src",document.querySelector("#ii").src;
+      document.querySelector("#ix").setAttribute(":src",document.querySelector("#ii").src);
       const ct=new ColorThief(); alert("CTe: "+ct);
       const si=document.querySelector('#nnu'); const pa=ct.getPalette(si,4);
       alert("SI: "+si); alert("PA: "+pa);
