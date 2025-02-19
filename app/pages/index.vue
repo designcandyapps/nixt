@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <NuxtImg ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas ref="canvas" width="60" height="60"></canvas>
+      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas ref="canvas" width="60" height="60"></canvas>
 
       
 
