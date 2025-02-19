@@ -6,8 +6,8 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" />
-      <nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" />
+      <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" />
+      <nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" /-->
       <nuxt-img id="nim" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
         <img v-else src="https://pinfluents.com/_BCK/4/im/bp.png" alt="placeholder" />
@@ -26,7 +26,8 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100);
-    this.getCP();
+    alert("CA: "+ca); 
+    //this.getCP();
     setTimeout(()=>{this.snd()},1600);
   },
   methods:{
