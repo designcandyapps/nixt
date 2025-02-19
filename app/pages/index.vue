@@ -7,10 +7,12 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   <div id="ff=">
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /-->
-      <nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/1bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
+      <!--nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/1bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img id="ii" v-if="isLoaded" v-bind="imgAttrs" :src="src" />
         <img id="ix" v-else src="https://pinfluents.com/_BCK/4/im/lo.png" alt="placeholder" />
-      </nuxt-img><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
+      </nuxt-img-->
+      <img id="xx" src="https://pinfluents.com/_BCK/4/im/lo.png">
+      <canvas id="ca" ref="canvas" width="60" height="60"></canvas>
 
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
