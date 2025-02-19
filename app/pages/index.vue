@@ -8,7 +8,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" />
       <nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" /-->
-      <nuxt-img id="nim" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
+      <nuxt-img id="nuu" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
         <img v-else src="https://pinfluents.com/_BCK/4/im/bp.png" alt="placeholder" />
       </nuxt-img><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
