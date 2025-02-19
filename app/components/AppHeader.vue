@@ -9,7 +9,7 @@ const {header}=useAppConfig()
     <template #logo>
       <template v-if="header?.logo?.dark||header?.logo?.light"><UColorModeImage v-bind="{ class:'h-6 w-auto',...header?.logo }" /></template>
       <template v-else>
-        <NuxtImg id="nu" src="/public/dc2.png" width="60" height="60" format="png" @load="getCP" />
+        <!--NuxtImg id="nu" src="/public/dc2.png" width="60" height="60" format="png" @load="getCP" /-->
       </template>
     </template>
 
