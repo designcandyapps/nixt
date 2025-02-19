@@ -31,8 +31,8 @@ export default{
   },
   methods:{
     getCPz(){
-      alert("Test14b");
-      const ct=new ColorThief(); alert("CTb: "+ct);
+      alert("Test14bz");
+      const ct=new ColorThief(); alert("CTbz: "+ct);
       const si=$("#iz"); const pa=ct.getPalette(si,4);
       if(!pa){return} const dc=ct.getColor(si); const cp=ct.getPalette(si);
       $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
