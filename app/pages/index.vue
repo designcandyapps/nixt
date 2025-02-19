@@ -22,7 +22,7 @@ export default{
     this.getCP();
     //setTimeout(()=>{this.snd()},1600)
   },
-  setup(){
+  /*setup(){
     const getCP=async()=>{ //const getCP=function(){
       alert("Test16b");
       var si=$("#iz")[0]; var pa=ct.getPalette(si,4);
@@ -31,7 +31,7 @@ export default{
       for(i=0;i<cp.length;i++){cc.eq(i).css({background: "rgb("+cp[i]+")"})}
     }
     return{getCP}
-  },
+  },*/
 /*
   methods:{
     async snd(){
