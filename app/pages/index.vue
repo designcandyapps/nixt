@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCPz" />
+      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" />
       <!--nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" @load="getCP" width="60" height="60" />
       <nuxt-img id="nuu" src="/public/dc2.png" width="60" height="60" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
@@ -26,11 +26,11 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100); alert("CA: "+ca); 
-    //this.getCPz();
+    //this.getCP();
     setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    getCPz(){
+    getCP(){
       alert("Test14bz");
       const ct=new ColorThief(); alert("CTbz: "+ct);
       const si=$("#iz"); const pa=ct.getPalette(si,4);
