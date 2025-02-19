@@ -27,9 +27,18 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100);
-    //this.getCP();setTimeout(()=>{this.snd()},1600)
+    this.getCP();
+    setTimeout(()=>{this.snd()},1600);
   },
   methods:{
+    getCP(){
+      alert("Test14z");
+      const ct=new ColorThief(); alert("CT2z: "+ct);
+      const si=$("#iz"); const pa=ct.getPalette(si,4);
+      if(!pa){return} const dc=ct.getColor(si); const cp=ct.getPalette(si);
+      $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
+      for(i=0;i<cp.length;i++){cc.eq(i).css({background: "rgb("+cp[i]+")"})}
+    },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
       const data=await response.json(); this.response=data.reply;
