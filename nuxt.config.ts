@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  image: {sirv:{baseURL:"https://youralias.sirv.com"}},
+  image: {sirv:{baseURL:"https://www.designcandy.com/"}},
   app: {head:{script:[
     {src:'https://pinfluents.com/inc/jq.js'},
     {src:'https://code.jquery.com/jquery-1.12.0.min.js'},
