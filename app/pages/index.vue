@@ -31,12 +31,17 @@ export default{
   },
   methods:{
     getCP(){
-      alert("Test14bz");
-      const ct=new ColorThief(); alert("CTbz: "+ct);
-      const si=$("#iz"); const pa=ct.getPalette(si,4);
-      if(!pa){return} const dc=ct.getColor(si); const cp=ct.getPalette(si);
-      $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
-      for(i=0;i<cp.length;i++){cc.eq(i).css({background: "rgb("+cp[i]+")"})}
+      const ct=new ColorThief(); alert("CTe: "+ct);
+      const si=$("#nnu"); const pa=ct.getPalette(si,4);
+      alert("SI: "+si); alert("PA: "+pa);
+      
+      if(!pa){return}
+      
+      const dc=ct.getColor(si); const cp=ct.getPalette(si);
+      alert("DC: "+dc); alert("CP: "+cp);
+      
+      $("#nnu").parent().next("div").css({background:"rgb("+dc+")"});
+      for(i=0;i<cp.length;i++){cc.eq(i).css({background:"rgb("+cp[i]+")"})}
     },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
