@@ -6,8 +6,8 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas ref="canvas" width="60" height="60"></canvas>
-
+      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
+      <nuxt-img src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" />
       
 
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
@@ -21,7 +21,9 @@ import gen from '~/components/gen.vue';
 export default{
   components:{gen},
   data(){return{q:"",response:null}},
-  mounted(){//this.getCP();setTimeout(()=>{this.snd()},1600)
+  mounted(){
+    const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100);
+    //this.getCP();setTimeout(()=>{this.snd()},1600)
   },
   methods:{
     async snd(){
