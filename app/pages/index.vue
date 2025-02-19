@@ -24,13 +24,13 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100); alert("CA: "+ca); 
+    const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100); //alert("CA: "+ca); 
     //this.getCP();
     setTimeout(()=>{this.snd()},1600);
   },
   methods:{
     getCP(){
-      document.querySelector("#ix").setAttribute(":src",document.querySelector("#ii").src);
+      //document.querySelector("#ix").setAttribute(":src",document.querySelector("#ii").src);
       const ct=new ColorThief(); alert("CTe: "+ct);
       const si=document.querySelector('#nnu'); const pa=ct.getPalette(si,4);
       alert("SI: "+si); alert("PA: "+pa);
