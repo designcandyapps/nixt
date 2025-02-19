@@ -7,11 +7,8 @@ const {header}=useAppConfig()
 <template>
   <UHeader>
     <template #logo>
-      <template v-if="header?.logo?.dark||header?.logo?.light">
-        <UColorModeImage v-bind="{ class:'h-6 w-auto',...header?.logo }" />
-      </template>
-      <template v-else><img id="ix" src="https://pinfluents.com/_BCK/4/im/bp.png" />
-      </template>
+      <template v-if="header?.logo?.dark||header?.logo?.light"><UColorModeImage v-bind="{ class:'h-6 w-auto',...header?.logo }" /></template>
+      <template v-else><NuxtImg src="/public/dc2.png" width="60" height="60" @load="getCP" /><!--img id="ix" src="https://pinfluents.com/_BCK/4/im/bp.png" /--></template>
     </template>
 
     <template v-if="header?.search" #center>
@@ -20,13 +17,9 @@ const {header}=useAppConfig()
 
     <template #right>
       <UContentSearchButton v-if="header?.search" :label="null" class="lg:hidden" />
-      <template v-if="header?.links">
-        <UButton v-for="(link,index) of header.links" :key="index" v-bind="{ color:'gray',variant:'ghost',...link }" />
-      </template>
+      <template v-if="header?.links"><UButton v-for="(link,index) of header.links" :key="index" v-bind="{ color:'gray',variant:'ghost',...link }" /></template>
     </template>
 
-    <template #panel>
-<UNavigationTree :links="mapContentNavigation(navigation)" />
-    </template>
+    <template #panel><UNavigationTree :links="mapContentNavigation(navigation)" /></template>
   </UHeader>
 </template>
