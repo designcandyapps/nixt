@@ -6,9 +6,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
-      <nuxt-img src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" />
-      
+      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" />
+      <nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" />
+      <nuxt-img id="nim" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
+        <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
+        <img v-else src="https://pinfluents.com/_BCK/4/im/lo.png" alt="placeholder" />
+      </nuxt-img>
+      <canvas id="ca" ref="canvas" width="60" height="60"></canvas>
 
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
