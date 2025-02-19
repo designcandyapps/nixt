@@ -6,8 +6,8 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" />
-      <nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" /-->
+      <NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCPz" />
+      <!--nuxt-img id="nnn" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" /-->
       <nuxt-img id="nuu" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
         <img v-else src="https://pinfluents.com/_BCK/4/im/bp.png" alt="placeholder" />
@@ -27,13 +27,13 @@ export default{
   mounted(){
     const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100);
     alert("CA: "+ca); 
-    //this.getCP();
+    //this.getCPz();
     setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    getCP(){
-      alert("Test14a");
-      const ct=new ColorThief(); alert("CTa: "+ct);
+    getCPz(){
+      alert("Test14b");
+      const ct=new ColorThief(); alert("CTb: "+ct);
       const si=$("#iz"); const pa=ct.getPalette(si,4);
       if(!pa){return} const dc=ct.getColor(si); const cp=ct.getPalette(si);
       $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
