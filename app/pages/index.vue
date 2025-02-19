@@ -19,14 +19,20 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const imE=this.$refs.image.$el.querySelector("img");
-    imE.onload=()=>{
-      const canvas=this.$refs.canvas;
-      const cx=canvas.getContext("2d");
-      cx.drawImage(imE,0,0,canvas.width,canvas.height);
-    }
+    this.getCP();
     //setTimeout(()=>{this.snd()},1600)
   },
+  setup(){
+    const getCP=async()=>{ //const getCP=function(){
+      alert("Test16b");
+      var si=$("#iz")[0]; var pa=ct.getPalette(si,4);
+      if(!pa){return} dc=ct.getColor(si); cp=ct.getPalette(si);
+      $("#iz").parent().next("div").css({background: "rgb("+dc+")"});
+      for(i=0;i<cp.length;i++){cc.eq(i).css({background: "rgb("+cp[i]+")"})}
+    }
+    return{getCP}
+  },
+/*
   methods:{
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
@@ -35,5 +41,6 @@ export default{
       document.querySelector('#t').innerText=this.response;
     },
   },
+*/
 }
 </script>
