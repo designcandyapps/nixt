@@ -7,7 +7,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /-->
-      <nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
+      <nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/1bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img id="ii" v-if="isLoaded" v-bind="imgAttrs" :src="src" />
         <img id="ix" v-else src="https://pinfluents.com/_BCK/4/im/lo.png" alt="placeholder" />
       </nuxt-img><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
@@ -31,16 +31,22 @@ export default{
   methods:{
     getCP(){
       //document.querySelector("#ix").setAttribute(":src",document.querySelector("#ii").src);
-      const ct=new ColorThief(); alert("CTe: "+ct);
-      const si=document.querySelector('#nnu'); const pa=ct.getPalette(si,4);
-      alert("SI: "+si); alert("PA: "+pa);
+      const ct=new ColorThief(); //alert("CTe: "+ct);
+      const si=document.querySelector('#ix');
+      alert("SI: "+si);
+
+      const pa=ct.getPalette(si,4);
+      alert("PA: "+pa);
       
       if(!pa){return}
       
-      const dc=ct.getColor(si); const cp=ct.getPalette(si);
-      alert("DC: "+dc); alert("CP: "+cp);
+      const dc=ct.getColor(si);
+      alert("DC: "+dc);
 
-      document.querySelector('#nnu').parent().next("div").css({background:"rgb("+dc+")"});
+      const cp=ct.getPalette(si);
+      alert("CP: "+cp);
+
+      document.querySelector('#ee').parent().next("div").css({background:"rgb("+dc+")"});
       //for(i=0;i<cp.length;i++){cc.eq(i).css({background:"rgb("+cp[i]+")"})}
     },
     async snd(){
