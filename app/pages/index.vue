@@ -4,7 +4,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </script>
 
 <template>
-  <div id="ff=">
+  <div id="ff">
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /-->
       <!--nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/1bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
