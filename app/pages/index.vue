@@ -9,7 +9,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
       <!--NuxtImg id="nnu" ref="image" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60" @load="getCP" /-->
       <!--nuxt-img id="nnu" src="https://pinfluents.com/_BCK/4/im/1bp.png" width="60" height="60" @load="getCP" :custom="true" v-slot="{src,isLoaded,imgAttrs}">
         <img id="ii" v-if="isLoaded" v-bind="imgAttrs" :src="src" />
-        <img id="ix" v-else src="https://pinfluents.com/_BCK/4/im/lo.png" alt="placeholder" />
+        <img id="ix" v-else src="https://pinfluents.com/_BCK/4/im/lo.png" />
       </nuxt-img-->
       <img id="xx" src="https://pinfluents.com/_BCK/4/im/lo.png">
       <canvas id="ca" ref="canvas" width="60" height="60"></canvas>
