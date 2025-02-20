@@ -34,7 +34,7 @@ export default{
     getCP(){
       //document.querySelector("#xx").setAttribute(":src",document.querySelector("#ee").src);
       const ct=new ColorThief(); //alert("CTe: "+ct);
-      const si=document.querySelector('#ix');
+      const si=document.querySelector('#iz');
       alert("SI: "+si);
 
       const pa=ct.getPalette(si,4);
@@ -48,7 +48,7 @@ export default{
       const cp=ct.getPalette(si);
       alert("CP: "+cp);
 
-      document.querySelector('#ee').parent().next("div").css({background:"rgb("+dc+")"});
+      document.querySelector('#iz').parent().next("div").css({background:"rgb("+dc+")"});
       //for(i=0;i<cp.length;i++){cc.eq(i).css({background:"rgb("+cp[i]+")"})}
     },
     async snd(){
