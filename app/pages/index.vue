@@ -13,7 +13,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
   </div>
 </template>
 
-<script type"ts">
+<script lang="ts">
 import gen from '~/components/gen.vue';
 export default{
   components:{gen},
