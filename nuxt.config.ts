@@ -19,10 +19,8 @@ export default defineNuxtConfig({
   app: {head:{script:[
     {src:'https://pinfluents.com/inc/jq.js'},
     {src:'https://pinfluents.com/inc/jq-1.12.js'},
-    {src:'https://pinfluents.com/inc/ct.js'},
-    //{src:'https://code.jquery.com/jquery-1.12.0.min.js'},
-    //{src:'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js'},
-    {src:'https://pinfluents.com/_BCK/4/jqG.js'}
+    {src:'https://pinfluents.com/_BCK/4/jqG.js'},
+    {src:'https://pinfluents.com/inc/ct.js'}
   ]}},
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
