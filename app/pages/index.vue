@@ -19,19 +19,19 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const cv=document.getElementById("cv");
-    const cvx=cv.getContext("2d");
+    //const cv=document.getElementById("cv");
+    //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
 
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
-        t=this;
+        //t=this;
         //alert(this); alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
         const cv=document.getElementById("cv");
-        cv.width=t.width; cv.height=t.height;
+        cv.width=this.width; cv.height=this.height;
         alert("zCW: "+cv.width);
 
         const cvx=cv.getContext("2d"); alert("CVX: "+cvx);
