@@ -71,9 +71,9 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
-    e=document.getElementById("iz");
-    alert("E1: "+e);
-    const j=JSON.stringify(e); e=new Blob([j],{type:"application/image"}); r.readAsDataURL(e);
+    var pp=document.getElementById("iz");
+    alert("PP: "+pp);
+    const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
 
 
     //this.ell();
