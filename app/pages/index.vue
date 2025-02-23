@@ -60,7 +60,7 @@ export default{
         alert("CVX: "+cvx);
 
         //cvx.fillStyle="rgb(0,0,255)"; cvx.fillRect(0,0,this.width,this.height);
-        cvx.drawImage(this,0,0,cv.width,cv.height);
+        cvx.drawImage(this,0,0);
 
         const o=cvx.getImageData(0,0,cv.width,cv.height);
         alert("O2: "+o);
