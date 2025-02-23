@@ -36,7 +36,7 @@ export default{
     //alert("RR: "+rr);
     alert("IM: "+e.src);
 
-    const r=new FileReader(); r.onload=function(){
+    //const r=new FileReader(); r.onload=function(){
       alert("IMr: "+e.src);
 
       const im=new Image();
@@ -74,12 +74,7 @@ export default{
         //cvx.fillStyle=`rgb(${dc})`;
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
-    }
-
-
-      var pp=document.getElementById("iz");
-      //alert("PP: "+pp);
-      const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
+    //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     },1600);
 
     //this.ell();
