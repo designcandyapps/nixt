@@ -19,7 +19,12 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    //const ca=document.getElementById("ca"); const cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(10,10,100,100); //alert("CA0: "+ca); 
+    const cv=document.getElementById("cv");
+    const cvx=ca.getContext("2d");
+    cvx.fillStyle="red";
+    cvx.fillRect(10,10,100,100);
+    //alert("CA0: "+ca);
+
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
   },
