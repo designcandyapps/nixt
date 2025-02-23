@@ -29,7 +29,8 @@ export default{
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
         t=this;
-        alert(this); alert("T: "+t); alert("TW: "+t.width);
+        alert("Tes");
+        //alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
         const cv=document.querySelector("cv");
