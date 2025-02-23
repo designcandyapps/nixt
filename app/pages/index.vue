@@ -34,9 +34,10 @@ export default{
     //e=e.attr("id","rr"); const rr=document.getElementById("rr");
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     //alert("RR: "+rr);
-    //alert("IM: "+e.src);
+    alert("IM: "+e.src);
 
     const r=new FileReader(); r.onload=function(){
+      alert("IMr: "+e.src);
 
       const im=new Image();
       im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
