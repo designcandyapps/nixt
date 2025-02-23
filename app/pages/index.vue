@@ -23,15 +23,17 @@ export default{
     //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
-    var e=document.getElementById("iz");
-    alert("E1: "+e);
+    //var e=document.getElementById("iz");
+    //alert("E1: "+e);
 
     const r=new FileReader(); r.onload=function(){
     //const e=document.querySelector("#i1 img");
-    alert("E2: "+e);
+    //alert("E2: "+e);
 
     const e=new Image();
+    e.attr("id","rr");
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
+    alert("E1: "+e);
     alert("IM: "+e.src);
 
       const im=new Image();
