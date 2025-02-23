@@ -21,9 +21,9 @@ export default{
   mounted(){
     const cv=document.getElementById("cv");
     const cvx=cv.getContext("2d");
-    cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
+    //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
-    //this.ell();
+    this.ell();
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
   },
@@ -34,7 +34,7 @@ export default{
         t=this;
         //alert(this); alert("T: "+t); alert("TW: "+t.width);
 
-        //var cv=document.createElement("canvas");
+        //const cv=document.createElement("canvas");
         const cv=document.getElementById("cv");
         cv.width=t.width; cv.height=t.height;
         alert("CW: "+cv.width);
