@@ -39,13 +39,14 @@ export default{
         cv.width=this.width; cv.height=this.height;
         alert("zCW: "+cv.width);
 
-        const cvx=cv.getContext("2d"); //alert("CVX: "+cvx);
+        const cvx=cv.getContext("2d");
+        alert("CVX: "+cvx);
 
         cvx.fillStyle="rgb(0,0,255)";
-        cvx.fillRect(0,0,t.width,t.height);
-        cvx.drawImage(this,0,0,t.width,t.height);
+        cvx.fillRect(0,0,this.width,this.height);
+        cvx.drawImage(this,0,0,this.width,this.height);
 
-        const o=cvx.getImageData(0,0,t.width,t.height);
+        const o=cvx.getImageData(0,0,this.width,this.height);
         alert("O2: "+o);
 
         const d=o.data; const cc={}; let mc=0; let dc="";
