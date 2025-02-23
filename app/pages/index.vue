@@ -24,7 +24,10 @@ export default{
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
     const r=new FileReader(); r.onload=function(){
-    const e=document.querySelector("#i1 img");
+    //const e=document.querySelector("#i1 img");
+    
+    const e=new Image();
+    e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     alert("IM: "+e.src);
 
       const im=new Image();
