@@ -23,8 +23,9 @@ export default{
     //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
-    //const im=document.getElementById("iz");
-    //alert("IM: "+im);
+    const r=new FileReader(); r.onload=function(){
+    const e=document.getElementById("iz");
+    alert("IM: "+e);
 
       const im=new Image();
       im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
@@ -59,8 +60,8 @@ export default{
         //cx.fillStyle=`rgb(${dc})`;
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
-
-
+    }
+    const j=JSON.stringify(e); e=new Blob([j],{type:"application/image"}); r.readAsDataURL(e);
 
 
 
