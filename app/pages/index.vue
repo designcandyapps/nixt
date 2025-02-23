@@ -27,7 +27,7 @@ export default{
     alert("E1: "+e);
 
     const r=new FileReader(); r.onload=function(){
-    e=document.querySelector("#i1 img");
+    //const e=document.querySelector("#i1 img");
     alert("E2: "+e);
 
     const e=new Image();
