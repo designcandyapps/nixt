@@ -27,6 +27,36 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
+    async ell(){
+      const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
+      im.onload=function(){
+        t=this;
+        //alert(this); alert("T: "+t); alert("TW: "+t.width);
+
+        //var cv=document.createElement("canvas");
+        var cv=document.getElementById("cv");
+        cv.width=t.width; cv.height=t.height;
+        //alert("CW: "+cv.width);
+
+        var cx=cv.getContext("2d"); alert("CX: "+cx);
+
+        cx.fillStyle="rgb(0,255,0)";
+        cx.fillRect(0,0,t.width,t.height);
+        cx.drawImage(this,0,0,t.width,t.height);
+
+        var o=cx.getImageData(0,0,t.width,t.height);
+        alert("O2: "+o);
+
+        var d=o.data; var cc={}; let mc=0; let dc="";
+        alert("D2: "+d);
+
+        for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+
+        cx.fillStyle="rgb(0,0,255)";
+        //cx.fillStyle=`rgb(${dc})`;
+        document.body.style.backgroundColor=`rgb(${dc})`;
+      }
+    },
     getCP(){
       //document.querySelector("#xx").setAttribute(":src",document.querySelector("#ee").src);
       const ct=new ColorThief(); //alert("CTe: "+ct);
