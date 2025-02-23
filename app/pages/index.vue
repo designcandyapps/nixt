@@ -33,7 +33,7 @@ export default{
         //alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
-        const cv=document.querySelector("cv");
+        const cv=document.querySelector("#cv");
         alert("CV: "+cv);
         
         cv.width=this.width; cv.height=this.height;
