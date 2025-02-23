@@ -24,7 +24,7 @@ export default{
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
     //const im=document.getElementById("iz");
-    alert("IZ: "iz);
+    alert("IZ: "+iz);
 
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
