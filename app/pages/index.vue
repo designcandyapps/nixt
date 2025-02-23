@@ -24,7 +24,7 @@ export default{
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
     const r=new FileReader(); r.onload=function(){
-    const e=document.querySelector("#ee");
+    const e=document.querySelector("#iz");
     alert("IM: "+e.src);
 
       const im=new Image();
