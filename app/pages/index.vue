@@ -23,7 +23,7 @@ export default{
     //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
-    const e=document.querySelector("#i1 img");
+    var e=document.querySelector("#i1 img");
     alert("E1: "+e);
 
     const r=new FileReader(); r.onload=function(){
