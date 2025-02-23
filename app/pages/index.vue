@@ -29,15 +29,15 @@ export default{
     //const e=document.querySelector("#i1 img");
     //alert("E2: "+e);
 
-  setTimeout(()=>{
-    const e=new Image();
+  //setTimeout(()=>{
+    //const e=new Image();
     //e=e.attr("id","rr"); const rr=document.getElementById("rr");
-    e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
+    //e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     //alert("RR: "+rr);
-    alert("IM: "+e.src);
+    //alert("IM: "+e.src);
 
     //const r=new FileReader(); r.onload=function(){
-      alert("IMr: "+e.src);
+    //alert("IMr: "+e.src);
 
       const im=new Image();
       im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
@@ -46,7 +46,7 @@ export default{
       alert("IMs: "+im.src);
   
       im.onload=function(){
-        alert(this.src);
+        //alert(this.src);
         //alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
