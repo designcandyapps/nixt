@@ -23,7 +23,6 @@ export default{
     const cvx=ca.getContext("2d");
     cvx.fillStyle="red";
     cvx.fillRect(10,10,100,100);
-    //alert("CA0: "+ca);
 
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
