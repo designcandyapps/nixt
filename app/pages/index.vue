@@ -19,7 +19,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const cv=document.getElementById("cv");
+    const ca=document.getElementById("cv");
     const cvx=ca.getContext("2d");
     cvx.fillStyle="red";
     cvx.fillRect(10,10,100,100);
