@@ -23,9 +23,13 @@ export default{
     //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
+    const e=document.querySelector("#i1 img");
+    alert("E1: "+e);
+
     const r=new FileReader(); r.onload=function(){
-    //const e=document.querySelector("#i1 img");
-    
+    e=document.querySelector("#i1 img");
+    alert("E2: "+e);
+
     const e=new Image();
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     alert("IM: "+e.src);
