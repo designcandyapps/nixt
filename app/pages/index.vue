@@ -82,22 +82,23 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-  async bs64(t){
-  var cv=document.getElementById("cv");
-  cv.width=t.width; cv.height=t.height;
-  var cvx=cv.getContext("2d");
-  cvx.fillStyle="red";
-  cvx.fillRect(0,0,cv.width,cv.height);
-  var o=cvx.getImageData(0,0,cv.width,cv.height);
-  alert("O: "+o);
+    async bs64(t){
+      alert("Test");
+  
+      var cv=document.getElementById("cv");
+      cv.width=t.width; cv.height=t.height;
+      var cvx=cv.getContext("2d");
+      cvx.fillStyle="red"; cvx.fillRect(0,0,cv.width,cv.height);
+      var o=cvx.getImageData(0,0,cv.width,cv.height);
+      alert("O: "+o);
 
-  var d=o.data; var cc={}; let mc=0; let dc="";
-  alert("D: "+d);
+      var d=o.data; var cc={}; let mc=0; let dc="";
+      alert("D: "+d);
 
-  for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-  document.body.style.backgroundColor=`rgb(${dc})`;
-  return ca.toDataURL();
-},
+      for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+      document.body.style.backgroundColor=`rgb(${dc})`;
+      return ca.toDataURL();
+    },
     async ell(){
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
