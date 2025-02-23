@@ -23,11 +23,12 @@ export default{
     //const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
+    //const im=document.getElementById("iz");
+    alert("IZ: "iz);
 
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
-        //t=this;
-        //alert(this); alert("T: "+t); alert("TW: "+t.width);
+        //t=this; alert(this); alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
         const cv=document.getElementById("cv");
