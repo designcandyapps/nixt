@@ -71,10 +71,11 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
-    var pp=document.getElementById("iz");
-    alert("PP: "+pp);
-    const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
-
+    setTimeout(()=>{
+      var pp=document.getElementById("iz");
+      alert("PP: "+pp);
+      const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
+    },1600);
 
     //this.ell();
     //this.getCP();
