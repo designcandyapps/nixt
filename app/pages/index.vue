@@ -29,6 +29,7 @@ export default{
     //const e=document.querySelector("#i1 img");
     //alert("E2: "+e);
 
+  setTimeout(()=>{
     const e=new Image();
     //e=e.attr("id","rr"); const rr=document.getElementById("rr");
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
@@ -71,7 +72,8 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
-    setTimeout(()=>{
+
+
       var pp=document.getElementById("iz");
       //alert("PP: "+pp);
       const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
