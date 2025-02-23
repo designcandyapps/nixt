@@ -19,10 +19,9 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const ca=document.getElementById("cv");
-    const cvx=ca.getContext("2d");
-    cvx.fillStyle="red";
-    cvx.fillRect(10,10,100,100);
+    const cv=document.getElementById("cv");
+    const cvx=cv.getContext("2d");
+    cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
