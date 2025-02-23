@@ -26,7 +26,6 @@ export default{
     //var e=document.getElementById("iz");
     //alert("E1: "+e);
 
-    const r=new FileReader(); r.onload=function(){
     //const e=document.querySelector("#i1 img");
     //alert("E2: "+e);
 
@@ -35,6 +34,8 @@ export default{
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     alert("RR: "+rr);
     alert("IM: "+e.src);
+
+    const r=new FileReader(); r.onload=function(){
 
       const im=new Image();
       //im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
