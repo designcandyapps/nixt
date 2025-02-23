@@ -35,20 +35,20 @@ export default{
         //alert(this); alert("T: "+t); alert("TW: "+t.width);
 
         //var cv=document.createElement("canvas");
-        var cv=document.getElementById("cv");
+        const cv=document.getElementById("cv");
         cv.width=t.width; cv.height=t.height;
-        //alert("CW: "+cv.width);
+        alert("CW: "+cv.width);
 
-        var cx=cv.getContext("2d"); alert("CX: "+cx);
+        const cvx=cv.getContext("2d"); alert("CVX: "+cvx);
 
-        cx.fillStyle="rgb(0,255,0)";
-        cx.fillRect(0,0,t.width,t.height);
-        cx.drawImage(this,0,0,t.width,t.height);
+        cvx.fillStyle="rgb(0,0,255)";
+        cvx.fillRect(0,0,t.width,t.height);
+        cvx.drawImage(this,0,0,t.width,t.height);
 
-        var o=cx.getImageData(0,0,t.width,t.height);
+        const o=cvx.getImageData(0,0,t.width,t.height);
         alert("O2: "+o);
 
-        var d=o.data; var cc={}; let mc=0; let dc="";
+        const d=o.data; const cc={}; let mc=0; let dc="";
         alert("D2: "+d);
 
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
