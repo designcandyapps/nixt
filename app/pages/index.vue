@@ -31,11 +31,11 @@ export default{
         //t=this; alert(this); alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
-        const cv=document.getElementById("cv");
+        const cv=document.querySelector("cv");
         cv.width=this.width; cv.height=this.height;
         alert("zCW: "+cv.width);
 
-        const cvx=cv.getContext("2d"); alert("CVX: "+cvx);
+        const cvx=cv.getContext("2d"); //alert("CVX: "+cvx);
 
         cvx.fillStyle="rgb(0,0,255)";
         cvx.fillRect(0,0,t.width,t.height);
