@@ -23,6 +23,7 @@ export default{
     const cvx=cv.getContext("2d");
     cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
+    this.ell();
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
   },
