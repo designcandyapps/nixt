@@ -29,10 +29,10 @@ export default{
     //const e=document.querySelector("#i1 img");
     //alert("E2: "+e);
 
-    const e=new Image(); e=e.attr("id","rr");
-    const rr=document.getElementById("rr");
+    const e=new Image();
+    //e=e.attr("id","rr"); const rr=document.getElementById("rr");
     e.src="https://pinfluents.com/_BCK/4/im/dc2.png";
-    alert("RR: "+rr);
+    //alert("RR: "+rr);
     alert("IM: "+e.src);
 
     const r=new FileReader(); r.onload=function(){
