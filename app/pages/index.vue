@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div id="ff">
     <ULandingHero v-if="page.hero" v-bind="page.hero"><br><br><br><br><br>
-      <div class="g"><canvas id="ca" ref="canvas" width="60" height="60"></canvas>
+      <div class="g"><canvas id="ca" ref="canvas" width="60" height="60" style="border:3px solid pink;"></canvas>
       <input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
