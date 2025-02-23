@@ -28,12 +28,14 @@ export default{
 
       const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
       im.onload=function(){
-        t=this;
+        //const t=this;
         alert("Tes");
         //alert("T: "+t); alert("TW: "+t.width);
 
         //const cv=document.createElement("canvas");
         const cv=document.querySelector("cv");
+        alert("Tes");
+        
         cv.width=this.width; cv.height=this.height;
         alert("zCW: "+cv.width);
 
