@@ -23,7 +23,45 @@ export default{
     const cvx=cv.getContext("2d");
     //cvx.fillStyle="red"; cvx.fillRect(10,10,100,100);
 
-    this.ell();
+
+      const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
+      im.onload=function(){
+        t=this;
+        //alert(this); alert("T: "+t); alert("TW: "+t.width);
+
+        //const cv=document.createElement("canvas");
+        const cv=document.getElementById("cv");
+        cv.width=t.width; cv.height=t.height;
+        alert("zCW: "+cv.width);
+
+        const cvx=cv.getContext("2d"); alert("CVX: "+cvx);
+
+        cvx.fillStyle="rgb(0,0,255)";
+        cvx.fillRect(0,0,t.width,t.height);
+        cvx.drawImage(this,0,0,t.width,t.height);
+
+        const o=cvx.getImageData(0,0,t.width,t.height);
+        alert("O2: "+o);
+
+        const d=o.data; const cc={}; let mc=0; let dc="";
+        alert("D2: "+d);
+
+        for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+
+        cx.fillStyle="rgb(0,0,255)";
+        //cx.fillStyle=`rgb(${dc})`;
+        document.body.style.backgroundColor=`rgb(${dc})`;
+      }
+
+
+
+
+
+
+
+
+    
+    //this.ell();
     //this.getCP();
     //setTimeout(()=>{this.snd()},1600);
   },
