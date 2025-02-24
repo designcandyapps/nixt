@@ -35,8 +35,9 @@ export default{
           //im.src=du;
         })
 
-      //alert("A-BS: "+bs);
-      //im.src=bs; alert("A-IM: "+im.src);
+      alert("A-BS: "+bs);
+      im.src=bs;
+      alert("A-IM: "+im.src);
       im.onload=function(){//alert(this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
