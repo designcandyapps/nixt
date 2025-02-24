@@ -21,7 +21,7 @@ export default{
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
-      cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
+      cx.fillStyle=""; cx.fillRect(0,0,cv.width,cv.height);
       //cx.drawImage(t,0,0,cv.width,cv.height);
       var o=cx.getImageData(0,0,cv.width,cv.height);
       var d=o.data; var cc={}; let mc=0; let dc="";
