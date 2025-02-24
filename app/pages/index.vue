@@ -24,6 +24,7 @@ export default{
       r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
     }
+    bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
@@ -53,7 +54,6 @@ export default{
       alert("YY: "+yy);
     }
     em.onload=function(){alert("EM: "+this.src);
-      bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
       const cvB=document.querySelector("#cvB");
       cvB.width=this.width; cvB.height=this.height;
       const cvBx=cvB.getContext("2d"); cvBx.drawImage(this,0,0);
