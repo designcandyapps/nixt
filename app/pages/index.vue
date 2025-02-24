@@ -18,6 +18,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
+    this.bs64();
     //setTimeout(()=>{
       //const r=new FileReader(); r.onload=function(){alert("IMr: "+e.src);
       const em=new Image(); em.src="https://pinfluents.com/_BCK/4/im/lo.png";
@@ -49,7 +50,6 @@ export default{
       //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     //},1600);
     //setTimeout(()=>{this.snd()},1600);
-    this.bs64();
   },
   methods:{
     async bs64(t){alert("zT: "+t.src);
