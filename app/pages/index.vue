@@ -21,12 +21,13 @@ export default{
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
+      return cv.toDataURL();
       cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
       var o=cx.getImageData(0,0,cv.width,cv.height);
       var d=o.data; var cc={}; let mc=0; let dc="";
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
       //alert("-DU: "+cv.toDataURL());
-      return cv.toDataURL();
+
     }
     //const r=new FileReader(); r.onload=function(){
     const em=new Image(); em.src="https://pinfluents.com/_BCK/4/im/lo.png";
