@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /><canvas id="cv"></canvas></div>
+      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /><canvas id="cv"></canvas><canvas id="cvB"></canvas></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -44,10 +44,10 @@ export default{
       document.body.style.backgroundColor=`rgb(${dc})`;
     }
     em.onload=function(){alert("EM: "+this.src);
-      const cv=document.querySelector("#cv");
-      cv.width=this.width; cv.height=this.height;
-      const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
-      const o=cvx.getImageData(0,0,cv.width,cv.height);
+      const cvB=document.querySelector("#cvB");
+      cvB.width=this.width; cvB.height=this.height;
+      const cvBx=cvB.getContext("2d"); cvBx.drawImage(this,0,0);
+      const o=cvBx.getImageData(0,0,cvB.width,cvB.height);
       const d=o.data; const cc={}; let mc=0; let dc="";
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
       document.body.style.backgroundColor=`rgb(${dc})`;
