@@ -35,8 +35,8 @@ export default{
       //var bs=bs64(im);
       var bs=im.decode();
       alert("BS: "+bs);
-      alert("IMs: "+im.src);
       im.src=bs;
+      alert("IMs: "+im.src);
       im.onload=function(){//alert(this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
