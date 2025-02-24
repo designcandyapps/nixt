@@ -36,7 +36,7 @@ export default{
       //var bs=bs64(im);
       bs64(im).then(bs=>{bs64(im); alert("b: "+bs)})
         .catch(error=>{console.error(error)})
-        .finally(()=>{bs64(im); im.src=bs}; alert("1BS: "+bs));
+        .finally(()=>{bs64(im); im.src=bs; alert("1BS: "+bs)})
 
       //alert("BS: "+bs);
       //im.src=bs;
