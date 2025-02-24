@@ -67,6 +67,7 @@ export default{
   },
   methods:{
     async bb64(f,callback){
+      alert("Tes");
       const r=new FileReader(); r.readAsDataURL(f);
       r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
