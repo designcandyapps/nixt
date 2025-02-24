@@ -64,6 +64,13 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
+    async bp64(f){
+      const r=new FileReader();
+      r.onload=function(){
+
+      }
+      const j=JSON.stringify(f); f=new Blob([f],{type:"application/image"}); r.readAsDataURL(f);
+    },
     async bb64(f,callback){
       alert("F: "+f);
       const r=new FileReader(); r.readAsDataURL(f);
