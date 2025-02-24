@@ -41,11 +41,11 @@ export default{
         .catch(error=>{console.error("E: "+error)})
         .finally(()=>{
           bs64(im);
-          //alert("b2-DU: "+bs);
+          alert("b2-DU: "+bs);
         })
       
-      //alert("A-BS: "+bs);
-      //im.src=bs;
+      alert("A-BS: "+bs);
+      im.src=bs;
       alert("A-IM: "+im.src);
       im.onload=function(){//alert(this.src);
         const cv=document.querySelector("#cv");
