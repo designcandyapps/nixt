@@ -22,7 +22,7 @@ export default{
     //alert("F: "+f);
 
     this.bb64(f);
-    async function bs64(t){//alert("zT: "+t.src);
+    /*async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
       cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
@@ -62,7 +62,7 @@ export default{
     var pp=document.querySelector("#ee");
     const j=JSON.stringify(pp);
     pp=new Blob([j],{type:"application/image"});
-    r.readAsDataURL(pp);
+    r.readAsDataURL(pp);*/
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
