@@ -25,7 +25,7 @@ export default{
       r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
     }
-    bb64(f);
+    //bb64(f);
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
@@ -36,7 +36,7 @@ export default{
       //alert("-DU: "+cv.toDataURL());
       return cv.toDataURL();
     }
-    //const r=new FileReader(); r.onload=function(){
+    const r=new FileReader(); r.onload=function(){
     const em=new Image();
     const im=new Image(); im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
     const rr=im.src;
@@ -62,7 +62,11 @@ export default{
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
       document.body.style.backgroundColor=`rgb(${dc})`;
     }
-    //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
+    }
+    var pp=document.querySelector("#ee");
+    const j=JSON.stringify(pp);
+    pp=new Blob([j],{type:"application/image"});
+    r.readAsDataURL(pp);
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
