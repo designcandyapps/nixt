@@ -18,13 +18,14 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    const f="https://pinfluents.com/_BCK/4/im/dc2.png";
+    const f=document.querySelector("#iz");
+    alert("F: "+f);
     async function bb64(f,callback){
       const r=new FileReader(); r.readAsDataURL(f);
       r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
     }
-    bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
+    bb64(f);
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
