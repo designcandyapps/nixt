@@ -25,6 +25,7 @@ export default{
       var o=cvx.getImageData(0,0,cv.width,cv.height); //alert("O: "+o);
       var d=o.data; var cc={}; let mc=0; let dc=""; //alert("D: "+d);
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+      alert("DU: "+cv.toDataURL());
       return cv.toDataURL();
     }
     //setTimeout(()=>{
