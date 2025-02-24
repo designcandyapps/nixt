@@ -42,10 +42,8 @@ export default{
         //alert("b2-DU: "+bs);
       });
       
-      //alert("A-BS: "+bs);
-      //im.src=bs;
-      //alert("A-IM: "+im.src);
-      im.onload=function(){//alert(this.src);
+      //alert("A-BS: "+bs); im.src=bs; alert("A-IM: "+im.src);
+      im.onload=function(){alert(this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
         const cvx=cv.getContext("2d");
