@@ -18,7 +18,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    async function bs64(t){//alert("zT: "+t.src);
+    /*async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height;
       var cvx=cv.getContext("2d"); cvx.fillStyle="red"; cvx.fillRect(0,0,cv.width,cv.height);
@@ -27,7 +27,7 @@ export default{
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
       //alert("-DU: "+cv.toDataURL());
       return cv.toDataURL();
-    }
+    }*/
     //setTimeout(()=>{
       //const r=new FileReader(); r.onload=function(){alert("IMr: "+e.src);
       const em=new Image(); em.src="https://pinfluents.com/_BCK/4/im/lo.png";
