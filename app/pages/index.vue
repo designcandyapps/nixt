@@ -42,7 +42,7 @@ export default{
       const o=cvx.getImageData(0,0,cv.width,cv.height);
       const d=o.data; const cc={}; let mc=0; let dc="";
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-      //document.body.style.backgroundColor=`rgb(${dc})`;
+      document.body.style.backgroundColor=`rgb(${dc})`;
     }
     em.onload=function(){alert("EM: "+this.src);
       const cvB=document.querySelector("#cvB");
@@ -51,7 +51,7 @@ export default{
       const o=cvBx.getImageData(0,0,cvB.width,cvB.height);
       const d=o.data; const cc={}; let mc=0; let dc="";
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-      document.body.style.backgroundColor=`rgb(${dc})`;
+      //document.body.style.backgroundColor=`rgb(${dc})`;
     }
     //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     //setTimeout(()=>{this.snd()},1600);
