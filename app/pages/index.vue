@@ -51,7 +51,7 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    async bs64(t){alert("zT: "+t.src);
+    async function bs64(t){alert("zT: "+t.src);
       var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height;
       var cvx=cv.getContext("2d"); cvx.fillStyle="red"; cvx.fillRect(0,0,cv.width,cv.height);
