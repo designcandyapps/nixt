@@ -18,6 +18,12 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
+    const f="https://pinfluents.com/_BCK/4/im/dc2.png";
+    async function bb64(f,callback){
+      const r=new FileReader(); r.readAsDataURL(f);
+      r.onload=()=>callback(alert("R: "+r.result);
+      r.onerror=(error)=>console.error(error)
+    }
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
@@ -57,6 +63,7 @@ export default{
     }
     //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     //setTimeout(()=>{this.snd()},1600);
+    this.bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
   },
   methods:{
     async snd(){
