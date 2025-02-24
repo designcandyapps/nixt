@@ -21,7 +21,7 @@ export default{
     const f="https://pinfluents.com/_BCK/4/im/dc2.png";
     async function bb64(f,callback){
       const r=new FileReader(); r.readAsDataURL(f);
-      r.onload=()=>callback(alert("R: "+r.result);
+      r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
     }
     async function bs64(t){//alert("zT: "+t.src);
