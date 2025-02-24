@@ -20,8 +20,9 @@ export default{
   mounted(){
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var ca=document.createElement("canvas");
-      ca.width=t.width; ca.height=t.height;
-      var cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(0,0,ca.width,ca.height);
+      ca.width=t.width; ca.height=t.height; var cx=ca.getContext("2d");
+      cx.drawImage(t,0,0);
+      //cx.fillStyle="red"; cx.fillRect(0,0,ca.width,ca.height);
       var o=cx.getImageData(0,0,ca.width,ca.height);
       var d=o.data; var cc={}; let mc=0; let dc="";
       for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
