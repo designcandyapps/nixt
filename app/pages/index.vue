@@ -4,7 +4,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </script>
 
 <template>
-  <div id="ff">
+  <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /><canvas id="cv"></canvas></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
