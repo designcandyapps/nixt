@@ -18,7 +18,7 @@ export default{
   components:{gen},
   data(){return{q:"",response:null}},
   mounted(){
-    function bs64(t){
+    async function bs64(t){
       alert("Test");
       var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height;
