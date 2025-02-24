@@ -33,7 +33,7 @@ export default{
         cvx.drawImage(this,0,0); //cvx.fillStyle="rgb(0,0,255)"; cvx.fillRect(0,0,this.width,this.height);
         const o=cvx.getImageData(0,0,cv.width,cv.height); //alert("O2: "+o);
         const d=o.data; const cc={}; let mc=0; let dc=""; //alert("D2: "+d);
-        for(i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+        for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         //cvx.fillStyle="rgb(0,0,255)"; //cvx.fillStyle=`rgb(${dc})`;
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
@@ -50,7 +50,7 @@ export default{
       cvx.fillStyle="red"; cvx.fillRect(0,0,cv.width,cv.height);
       var o=cvx.getImageData(0,0,cv.width,cv.height); alert("O: "+o);
       var d=o.data; var cc={}; let mc=0; let dc=""; //alert("D: "+d);
-      for(i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+      for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
       return cv.toDataURL();
     },
     async snd(){
