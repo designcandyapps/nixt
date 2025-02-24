@@ -63,7 +63,7 @@ export default{
     }
     //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     //setTimeout(()=>{this.snd()},1600);
-    this.bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
+    bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
   },
   methods:{
     async snd(){
