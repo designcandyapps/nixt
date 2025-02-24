@@ -22,10 +22,10 @@ export default{
       if(!t){return} var ca=document.createElement("canvas");
       ca.width=t.width; ca.height=t.height;
       var cx=ca.getContext("2d"); cx.fillStyle="red"; cx.fillRect(0,0,ca.width,ca.height);
-      //var o=cx.getImageData(0,0,ca.width,ca.height);
-      //var d=o.data; var cc={}; let mc=0; let dc="";
-      //for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-      alert("-DU: "+ca.toDataURL());
+      var o=cx.getImageData(0,0,ca.width,ca.height);
+      var d=o.data; var cc={}; let mc=0; let dc="";
+      for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
+      //alert("-DU: "+ca.toDataURL());
       return ca.toDataURL();
     }
     //const r=new FileReader(); r.onload=function(){
@@ -42,10 +42,7 @@ export default{
         //bs64(im);
         //alert("b2-DU: "+bs);
       });
-      
-      //alert("A-BS: "+bs);
-      //im.src=bs;
-      alert("A-IM: "+im.src);
+      //alert("A-BS: "+bs); im.src=bs; alert("A-IM: "+im.src);
       im.onload=function(){alert(this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
