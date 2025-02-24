@@ -19,8 +19,6 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     const f=document.querySelector("#ee");
-    //alert("F: "+f);
-
     this.bb64(f);
     /*async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
@@ -67,7 +65,7 @@ export default{
   },
   methods:{
     async bb64(f,callback){
-      alert("Tes");
+      alert("F: "+f);
       const r=new FileReader(); r.readAsDataURL(f);
       r.onload=()=>callback(alert("R: "+r.result));
       r.onerror=(error)=>console.error(error)
