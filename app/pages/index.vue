@@ -19,7 +19,7 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
-    async function bs64(t){//alert("zT: "+t.src);
+    async function bs64(t){alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
       cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
@@ -37,7 +37,7 @@ export default{
     //const bs=bs64(img); im.src=bs;
     const bs=bs64(im).then(bs=>{im.src=bs});
     
-    im.onload=function(){//alert("IM: "+this.src);
+    im.onload=function(){alert("IM: "+this.src);
       const cv=document.querySelector("#cv");
       cv.width=this.width; cv.height=this.height;
       const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
