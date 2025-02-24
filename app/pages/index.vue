@@ -53,6 +53,7 @@ export default{
       alert("YY: "+yy);
     }
     em.onload=function(){alert("EM: "+this.src);
+      bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
       const cvB=document.querySelector("#cvB");
       cvB.width=this.width; cvB.height=this.height;
       const cvBx=cvB.getContext("2d"); cvBx.drawImage(this,0,0);
@@ -63,7 +64,6 @@ export default{
     }
     //} var pp=document.getElementById("iz"); const j=JSON.stringify(pp); pp=new Blob([j],{type:"application/image"}); r.readAsDataURL(pp);
     //setTimeout(()=>{this.snd()},1600);
-    bb64("https://pinfluents.com/_BCK/4/im/dc2.png");
   },
   methods:{
     async snd(){
