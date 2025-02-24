@@ -19,13 +19,9 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     const f=document.querySelector("#ee");
-    alert("F: "+f);
-    async function bb64(f,callback){
-      const r=new FileReader(); r.readAsDataURL(f);
-      r.onload=()=>callback(alert("R: "+r.result));
-      r.onerror=(error)=>console.error(error)
-    }
-    //bb64(f);
+    //alert("F: "+f);
+
+    this.bb64(f);
     async function bs64(t){//alert("zT: "+t.src);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
@@ -70,6 +66,11 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
+    async bb64(f,callback){
+      const r=new FileReader(); r.readAsDataURL(f);
+      r.onload=()=>callback(alert("R: "+r.result));
+      r.onerror=(error)=>console.error(error)
+    },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
       const data=await response.json(); this.response=data.reply;
