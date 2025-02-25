@@ -29,19 +29,9 @@ export default{
       //alert("DU: "+cv.toDataURL());
       return cv.toDataURL();
     }
-    async function bs64rgb(b64,callback){
-      let em=new Image(); em.crossOrigin="Anonymous"; em.src=b64;
-      em.onload=function(){
-        let cv=document.createElement("canvas");
-        let cvx=cv.getContext("2d");
-        cv.width=em.width; cv.height=em.height;
-        cvx.drawImage(em,0,0);
-        alert("Tes2");
-
-        let o=cvx.getImageData(0,0,em.width,em.height);
-        let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
-        callback(ra,em.width,em.height);
-      };
+    async function bb64rgb(b64){
+      let d=atob(b64); let o=new ImageData(new Uint8ClampedArray(d),d.length/4,4);
+      for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
     }
     const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
@@ -56,24 +46,17 @@ export default{
         const o=cvx.getImageData(0,0,cv.width,cv.height);
         const d=o.data; const cc={}; let mc=0; let dc="";
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-        //document.body.style.backgroundColor=`rgb(${dc})`;
 
         const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
-        //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
-        alert("BC: "+dc);
+        alert("BC: "+dc); //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
 
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
         //const bsImg=dr.innerHTML;
-        const bsi=bs64rgb(dr.innerHTML).then(bsi=>{
-          alert("DR2: "+dr.innerHTML);
+        //const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
+        const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
           alert("BSI: "+this);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
-        });
-        //const bsImg=bs64rgb(dr.innerHTML).then(bsImg=>{
-        let bsImg=dr.innerHTML;
-        bs64rgb(bsImg,function(ra,width,height){
-          alert("R: "+JSON.stringify(ra,null,2));
         });
         alert("BSI: "+bsi);
 
