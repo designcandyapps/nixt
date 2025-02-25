@@ -41,6 +41,7 @@ export default{
         callback(ra,em.width,em.height);
       };
     }
+    const bs=bs64(img).then(bs=>{im.src=bs});
     let bsImg="";
     bs64rgb(bsImg,function(ra,width,height){
       alert("R: "+ra); alert("W: "+width+" -- H: "+height);
