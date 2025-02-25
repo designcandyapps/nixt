@@ -71,10 +71,12 @@ export default{
           //document.body.style.backgroundColor=`rgb(${bsi})`;
         });
         //const bsImg=bs64rgb(dr.innerHTML).then(bsImg=>{
-        let bsImg=dr.innerHTML;
-        bs64rgb(bsImg,function(ra,width,height){
-          alert("R: "+JSON.stringify(ra,null,2));
-        });
+
+        //});
+        //let bsImg=dr.innerHTML;
+        //bs64rgb(bsImg,function(ra,width,height){
+          
+        //});
         alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
