@@ -52,17 +52,25 @@ export default{
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
 
         const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
-        alert("BC: "+dc); //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
-
+        //alert("BC: "+dc); //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
         //const bsImg=dr.innerHTML;
         //const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
-        const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
-          alert("BSI: "+this);
+
+
+      let d=atob(this.src); let o=new ImageData(new Uint8ClampedArray(d),d.length/4,4);
+      alert("D: "+d);
+      //alert("O: "+o);
+      //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
+
+        
+        //const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
+          //alert("BSI: "+this);
+        
           //document.body.style.backgroundColor=`rgb(${bsi})`;
-        });
-        alert("BSI: "+bsi);
+        //});
+        //alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
         //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
