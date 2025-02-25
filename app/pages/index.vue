@@ -29,14 +29,6 @@ export default{
       //alert("DU: "+cv.toDataURL());
       return cv.toDataURL();
     }
-    async function bb64rgb(b64){
-      let da=atob(b64); let oa=new ImageData(new Uint8ClampedArray(da),da.length/4,4);
-      alert("D: "+da);
-      alert("O: "+oa);
-
-
-      for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
-    }
     const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
       //im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
@@ -58,11 +50,10 @@ export default{
         //const bsImg=dr.innerHTML;
         //const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
 
-
-      let d=atob(this.src); let o=new ImageData(new Uint8ClampedArray(d),d.length/4,4);
-      alert("D: "+d);
-      //alert("O: "+o);
-      //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
+        let da=atob(this.src); let oa=new ImageData(new Uint8ClampedArray(da),da.length/4,4);
+        alert("D: "+da);
+        //alert("O: "+oa);
+        //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
 
         
         //const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
