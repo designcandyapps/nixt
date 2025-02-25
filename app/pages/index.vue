@@ -43,18 +43,15 @@ export default{
         const d=o.data; const cc={}; let mc=0; let dc="";
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
 
-        const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
+        ////const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
         //alert("BC: "+dc); //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
         //const bsImg=dr.innerHTML;
         //const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
 
-        let da=atob(this.src); let oa=new ImageData(new Uint8ClampedArray(da),da.length/4,4);
-        alert("D: "+da);
-        //alert("O: "+oa);
-        //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
-
+        let da=btoa(this.src); let oa=new ImageData(new Uint8ClampedArray(da),da.length/4,4); //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
+        alert("D: "+da); alert("O: "+oa);
         
         //const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
           //alert("BSI: "+this);
