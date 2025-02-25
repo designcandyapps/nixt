@@ -42,6 +42,7 @@ export default{
         callback(ra,em.width,em.height);
       };
     }
+    const bsImg=dr.innerHTML;
     bs64rgb(bsImg,function(ra,width,height){
       alert("R: "+ra);
     });
@@ -67,7 +68,7 @@ export default{
         alert("DR: "+dr.innerHTML); //alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
     const bsImg=dr.innerHTML;
-    const bsi=bs64rgb(bsImg).then(bsi=>{
+    const bsi=bs64rgb(this.src).then(bsi=>{
       alert("BSI: "+bsi);
       //document.body.style.backgroundColor=`rgb(${bsi})`;
     });
