@@ -29,7 +29,7 @@ export default{
       //alert("DU: "+cv.toDataURL());
       return cv.toDataURL();
     }
-    function bs64rgb(b64,callback){
+    async function bs64rgb(b64,callback){
       let em=new Image(); em.crossOrigin="Anonymous"; em.src=b64;
       em.onload=function(){
         alert("zTes");
