@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /><canvas id="cv"></canvas><canvas id="cvB"></canvas></div>
+      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator /><div id="dr"></div><canvas id="cv"></canvas><canvas id="cvB"></canvas></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
@@ -43,8 +43,12 @@ export default{
         const d=o.data; const cc={}; let mc=0; let dc="";
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         //document.body.style.backgroundColor=`rgb(${dc})`;
-        alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
-        document.body.style.background="url("+this.src+")";
+
+        const dr=document.querySelector("#dr");
+        dr.innerHTML=this.src;
+
+        alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+        document.body.style.background="url("+this.src+")"; //dr.innerHTML
         //document.body.style.background=`rgb(${dc})`;
       }
     }
