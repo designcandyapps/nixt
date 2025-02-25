@@ -32,11 +32,12 @@ export default{
     async function bs64rgb(b64,callback){
       let em=new Image(); em.crossOrigin="Anonymous"; em.src=b64;
       em.onload=function(){
-        alert("zTes");
         let cv=document.createElement("canvas");
         let cvx=cv.getContext("2d");
         cv.width=em.width; cv.height=em.height;
         cvx.drawImage(em,0,0);
+        alert("zTes");
+
         let o=cvx.getImageData(0,0,em.width,em.height);
         let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
         callback(ra,em.width,em.height);
