@@ -49,7 +49,7 @@ export default{
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
         //const bsImg=dr.innerHTML;
   
-        const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
+        const bsi=bs64rgb(dr.innerHTML).then(bsi=>{
           alert("BSI: "+this);
         
           //document.body.style.backgroundColor=`rgb(${bsi})`;
