@@ -47,8 +47,8 @@ export default{
         const dr=document.querySelector("#dr");
         dr.innerHTML=this.src;
 
-        alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
-        document.body.style.background="url("+this.src+")"; //dr.innerHTML
+        //alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+        document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
         //document.body.style.background=`rgb(${dc})`;
       }
     }
