@@ -31,6 +31,10 @@ export default{
     }
     async function bb64rgb(b64){
       let d=atob(b64); let o=new ImageData(new Uint8ClampedArray(d),d.length/4,4);
+      alert("D: "+d);
+      alert("O: "+o);
+
+
       for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
     }
     const r=new FileReader(); r.onload=function(){
