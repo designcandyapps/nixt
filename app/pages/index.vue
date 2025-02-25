@@ -48,17 +48,13 @@ export default{
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
         //const bsImg=dr.innerHTML;
-        //const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
-
-        let da=btoa(this.src); let oa=new ImageData(new Uint8ClampedArray(da),da.length/4,4); //for(let i=0;i<o.data.length;i+=4){let r=o.data[i]; let g=o.data[i+1]; let b=o.data[i+2]}
-        alert("D: "+da); alert("O: "+oa);
-        
-        //const bsi=bb64rgb(this.src.split(',')[1]).then(bsi=>{
-          //alert("BSI: "+this);
+  
+        const bsi=bb64rgb(dr.innerHTML).then(bsi=>{
+          alert("BSI: "+this);
         
           //document.body.style.backgroundColor=`rgb(${bsi})`;
-        //});
-        //alert("BSI: "+bsi);
+        });
+        alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
         //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
