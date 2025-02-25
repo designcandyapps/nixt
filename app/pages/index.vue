@@ -36,7 +36,7 @@ export default{
         let cvx=cv.getContext("2d");
         cv.width=em.width; cv.height=em.height;
         cvx.drawImage(em,0,0);
-        alert("zTes");
+        alert("Tes2");
 
         let o=cvx.getImageData(0,0,em.width,em.height);
         let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
@@ -69,7 +69,7 @@ export default{
           alert("BSI: "+this);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
         });
-        const bsImg=dr.innerHTML; bs64rgb(bsImg,function(ra,width,height){alert("R: "+ra)});
+        //bs64rgb(bsImg,function(ra,width,height){alert("R: "+ra)});
         alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
