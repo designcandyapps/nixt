@@ -45,6 +45,7 @@ export default{
         //document.body.style.backgroundColor=`rgb(${dc})`;
         alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
         document.body.style.background="url("+this.src+")";
+        //document.body.style.background=`rgb(${dc})`;
       }
     }
     const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
