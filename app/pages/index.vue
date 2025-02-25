@@ -69,6 +69,7 @@ export default{
           alert("BSI: "+this);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
         });
+        let bsImg=dr.innerHTML;
         bs64rgb(bsImg,function(ra,width,height){alert("R: "+ra)});
         alert("BSI: "+bsi);
 
