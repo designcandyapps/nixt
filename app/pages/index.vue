@@ -59,7 +59,8 @@ export default{
         //document.body.style.backgroundColor=`rgb(${dc})`;
 
         const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
-        alert("DR: "+dr.innerHTML); //alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+        //alert("DR: "+dr.innerHTML);
+        alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
@@ -74,7 +75,7 @@ export default{
         alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
-            //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
+        //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
         //document.body.style.background=`rgb(${dc})`;
       }
     }
