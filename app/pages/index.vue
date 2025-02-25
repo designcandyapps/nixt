@@ -41,10 +41,8 @@ export default{
         callback(ra,em.width,em.height);
       };
     }
-    const bs=bs64(img).then(bs=>{im.src=bs});
-    let bsImg="";
     bs64rgb(bsImg,function(ra,width,height){
-      alert("R: "+ra); alert("W: "+width+" -- H: "+height);
+      alert("R: "+ra);
     });
     const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
@@ -66,8 +64,15 @@ export default{
         dr.innerHTML=this.src;
 
         alert("DR: "+dr.innerHTML); //alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+
+    let bsImg=dr.innerHTML;
+    const bsi=bs64rgb(bsImg).then(bsi=>{
+      alert("BSI: "+bsi);
+      //document.body.style.backgroundColor=`rgb(${bsi})`;
+    });
+        
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
-        document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
+            //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
         //document.body.style.background=`rgb(${dc})`;
       }
     }
