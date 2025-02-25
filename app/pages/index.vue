@@ -65,7 +65,7 @@ export default{
 
         alert("DR: "+dr.innerHTML); //alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
-    let bsImg=dr.innerHTML;
+    const bsImg=dr.innerHTML;
     const bsi=bs64rgb(bsImg).then(bsi=>{
       alert("BSI: "+bsi);
       //document.body.style.backgroundColor=`rgb(${bsi})`;
