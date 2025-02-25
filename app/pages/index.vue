@@ -61,20 +61,19 @@ export default{
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         //document.body.style.backgroundColor=`rgb(${dc})`;
 
-        const dr=document.querySelector("#dr");
-        dr.innerHTML=this.src;
-
+        const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
         alert("DR: "+dr.innerHTML); //alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
-    //const bs=bs64(img).then(bs=>{im.src=bs});
-    //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
-    //const bsImg=dr.innerHTML;
-    const bsi=bs64rgb(dr.innerHTML).then(bsi=>{
-      alert("DR2: "+dr.innerHTML);
-      alert("BSI: "+bsi);
-      //document.body.style.backgroundColor=`rgb(${bsi})`;
-    });
-        
+        //const bs=bs64(img).then(bs=>{im.src=bs});
+        //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
+        //const bsImg=dr.innerHTML;
+        const bsi=bs64rgb(dr.innerHTML).then(bsi=>{
+          alert("DR2: "+dr.innerHTML);
+          alert("BSI: "+this);
+          //document.body.style.backgroundColor=`rgb(${bsi})`;
+        });
+        alert("BSI: "+bsi);
+
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
             //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
         //document.body.style.background=`rgb(${dc})`;
