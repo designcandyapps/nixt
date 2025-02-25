@@ -43,10 +43,6 @@ export default{
         callback(ra,em.width,em.height);
       };
     }
-    const bsImg=dr.innerHTML;
-    bs64rgb(bsImg,function(ra,width,height){
-      alert("R: "+ra);
-    });
     const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
       //im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
@@ -73,6 +69,7 @@ export default{
           alert("BSI: "+this);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
         });
+        const bsImg=dr.innerHTML; bs64rgb(bsImg,function(ra,width,height){alert("R: "+ra)});
         alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
