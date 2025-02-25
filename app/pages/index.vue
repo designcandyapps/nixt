@@ -32,6 +32,7 @@ export default{
     function bs64rgb(b64,callback){
       let em=new Image(); em.crossOrigin="Anonymous"; em.src=b64;
       em.onload=function(){
+        alert("Tes");
         let cv=document.createElement("canvas");
         let cvx=cv.getContext("2d");
         cv.width=em.width; cv.height=em.height;
