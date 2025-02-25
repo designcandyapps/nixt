@@ -51,7 +51,7 @@ export default{
       const bs=bs64(img).then(bs=>{
         //im.src=bs;
         const bsi=bs64rgb(this).then(bsi=>{
-          let em=new Image(); em.crossOrigin="Anonymous"; em.src=b64;
+          let em=new Image(); em.crossOrigin="Anonymous"; em.src=bs;
       em.onload=function(){
         let cv=document.createElement("canvas");
         let cvx=cv.getContext("2d");
