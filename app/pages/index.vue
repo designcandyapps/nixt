@@ -59,8 +59,8 @@ export default{
         //document.body.style.backgroundColor=`rgb(${dc})`;
 
         const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
-        //alert("DR: "+dr.innerHTML);
-        alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+        //alert("DR: "+dr.innerHTML); alert("BC2: "+`rgb(${dc})`);
+        alert("BC: "+dc);
 
         //const bs=bs64(img).then(bs=>{im.src=bs});
         //const bsi=bs64rgb(this.src); alert("BSI: "+bsi);
@@ -70,8 +70,11 @@ export default{
           alert("BSI: "+this);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
         });
+        //const bsImg=bs64rgb(dr.innerHTML).then(bsImg=>{
         let bsImg=dr.innerHTML;
-        bs64rgb(bsImg,function(ra,width,height){alert("R: "+ra)});
+        bs64rgb(bsImg,function(ra,width,height){
+          alert("R: "+JSON.stringify(ra,null,2));
+        });
         alert("BSI: "+bsi);
 
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
