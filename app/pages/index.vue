@@ -44,7 +44,7 @@ export default{
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         //document.body.style.backgroundColor=`rgb(${dc})`;
         alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
-        document.body.style.background=`rgb(${dc})`;
+        document.body.style.background="url("+this.src+")";
       }
     }
     const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
