@@ -61,7 +61,7 @@ export default{
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         //document.body.style.backgroundColor=`rgb(${dc})`;
 
-        var kl=bs64rgb(this.src); alert("KL: "+kl);
+        var kl=bs64rgb(this.src); alert(JSON.stringify(kl,null,2));
         const dr=document.querySelector("#dr");
         dr.innerHTML=this.src;
 
