@@ -49,9 +49,9 @@ export default{
         //alert("RA2: "+ra);
       }
     }
-    async function bi64(f){alert("Fs2: "+f);
+    async function bi64(f){alert("Fs2: "+f.src);
       const ym=new Image(); ym.src=f;
-      ym.onload=function(){alert("IM3: "+this.src);
+      ym.onload=function(){//alert("IM3: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
         const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
@@ -61,16 +61,13 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
-    async function bb64(f,callback){alert("F: "+f);
+    async function bb64(f,callback){//alert("F: "+f);
       const rr=new FileReader();
-      const j=JSON.stringify(f);
-      alert("J: "+j);
-      
-      f=new Blob([j],{type:"application/image"});
-      f=document.querySelector("#ee");
+      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
+      //f=document.querySelector("#ee");
       alert("Fs: "+f.src);
       
-      rr.readAsDataURL(f);
+      rr.readAsDataURL(ff);
       rr.onload=()=>callback(bi64(f.src)); //alert("RR: "+rr.result);
       rr.onerror=(error)=>console.error(error)
     }
@@ -110,7 +107,7 @@ export default{
         const q=document.querySelector("#q"); q.value=bs; //alert("Q: "+q.value);
         im.src=bs;
       });
-    im.src=f.src;
+    //im.src=f.src;
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
