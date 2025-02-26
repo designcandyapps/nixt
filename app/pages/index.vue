@@ -41,7 +41,7 @@ export default{
         let o=cvx.getImageData(0,0,em.width,em.height);
         let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
         callback(ra,em.width,em.height);
-      };
+      }
     }
     bs64rgb(function(ra,width,height)){
       alert("RA: "+ra);
