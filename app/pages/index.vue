@@ -37,15 +37,10 @@ export default{
         cv.width=em.width; cv.height=em.height;
         cvx.drawImage(em,0,0);
 
-        let o=cvx.getImageData(0,0,em.width,em.height);
-        //alert("O: "+o);
-        
-        let d=o.data; let ra=[];
-        //alert("D: "+d);
-        
+        let o=cvx.getImageData(0,0,em.width,em.height); //alert("O: "+o);
+        let d=o.data; let ra=[]; //alert("D: "+d);
         for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
-        callback(ra,em.width,em.height);
-        //alert("RA2: "+ra);
+        callback(ra,em.width,em.height); //alert("RA2: "+ra);
       }
     }
     async function bi64(f){alert("Fs2: "+f.src);
