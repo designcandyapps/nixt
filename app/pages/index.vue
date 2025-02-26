@@ -42,9 +42,9 @@ export default{
         let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
         callback(ra,em.width,em.height);
       };
-      bb64rgb(function(ra,width,height)){
-        alert("RA: "+ra);
-      }
+    }
+    bs64rgb(function(ra,width,height)){
+      alert("RA: "+ra);
     }
     //const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
