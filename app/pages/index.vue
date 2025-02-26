@@ -49,8 +49,8 @@ export default{
         //alert("RA2: "+ra);
       }
     }
-    async function bi64(f){
-      const ym=new Image(); ym.src=f;
+    async function bi64(f){alert("Fs: "+f.src);
+      const ym=new Image(); ym.src=f.src
       ym.onload=function(){alert("IM3: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
@@ -106,10 +106,6 @@ export default{
         const q=document.querySelector("#q"); q.value=bs; //alert("Q: "+q.value);
         im.src=bs;
       });
-      //const bsi=bs64rgb(img).then(bsi=>{
-        //im.src=bsi;
-        //alert("BSI: "+bsi);
-      //});
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
@@ -119,21 +115,17 @@ export default{
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
         document.body.style.backgroundColor=`rgb(${dc})`;
 
-        //const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
-        //alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
+        //const dr=document.querySelector("#dr"); dr.innerHTML=this.src; alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
   
         bb64(this);
+
 /*
+        const bsi=bs64rgb(img).then(bsi=>{im.src=bsi});
+
         let bsImg=this.src;
         const bsi=bs64rgb(bsImg).then(bsi=>{
-          alert("IM2: "+this.src);
-          bs64rgb(bsImg,function(ra,width,height){
-            alert("bsImg: "+bsImg);
-            //const bsi=bsImg; alert("BSI: "+bsi);
-          });
-          //document.body.style.backgroundColor=`rgb(${bsi})`;
+          bs64rgb(bsImg,function(ra,width,height){const bsi=bsImg});
         });
-        //let bsImg=dr.innerHTML; bs64rgb(bsImg,function(ra,width,height){});
 */
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
         //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
