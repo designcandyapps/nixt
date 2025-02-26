@@ -49,6 +49,16 @@ export default{
         //alert("RA2: "+ra);
       }
     }
+    async function bb64(f,callback){alert("F: "+f);
+      const rr=new FileReader();
+      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
+      rr.readAsDataURL(f);
+      rr.onload=()=>callback(
+        alert("RR: "+rr.result);
+        
+      );
+      rr.onerror=(error)=>console.error(error)
+    }
     async function bp64(f){alert("Testt");
       const rd=new FileReader();
       rd.onload=function(){alert("DU2: "+du);
@@ -101,7 +111,7 @@ export default{
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
         //alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
   
-        bp64(this);
+        bb64(this);
 /*
         let bsImg=this.src;
         const bsi=bs64rgb(bsImg).then(bsi=>{
@@ -122,12 +132,6 @@ export default{
     //setTimeout(()=>{this.snd()},1600);
   },
   methods:{
-    async bb64(f,callback){
-      alert("F: "+f);
-      const r=new FileReader(); r.readAsDataURL(f);
-      r.onload=()=>callback(alert("R: "+r.result));
-      r.onerror=(error)=>console.error(error)
-    },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
       const data=await response.json(); this.response=data.reply;
