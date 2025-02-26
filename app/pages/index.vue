@@ -107,6 +107,7 @@ export default{
         const q=document.querySelector("#q"); q.value=bs; //alert("Q: "+q.value);
         im.src=bs;
       });
+    im.src=f.src;
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
