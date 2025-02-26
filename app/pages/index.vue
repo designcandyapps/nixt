@@ -54,7 +54,7 @@ export default{
     async function bb64(ff,callback){//alert("F: "+f);
       const rr=new FileReader();
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      var ff=document.querySelector("#ee");
+      var ff=document.querySelector("#iz");
       alert("Fs: "+f.src);
       
       rr.readAsDataURL(ff);
