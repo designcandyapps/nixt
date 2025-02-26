@@ -53,10 +53,7 @@ export default{
       const rr=new FileReader();
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
       rr.readAsDataURL(f);
-      rr.onload=()=>callback(
-        alert("RR: "+rr.result);
-        
-      );
+      rr.onload=()=>callback(alert("RR: "+rr.result));
       rr.onerror=(error)=>console.error(error)
     }
     async function bp64(f){alert("Testt");
