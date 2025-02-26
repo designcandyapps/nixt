@@ -49,8 +49,8 @@ export default{
         //alert("RA2: "+ra);
       }
     }
-    async function bi64(f){alert("Fs: "+f.src);
-      const ym=new Image(); ym.src=f.src
+    async function bi64(f){alert("Fs: "+f);
+      const ym=new Image(); ym.src=f;
       ym.onload=function(){alert("IM3: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
@@ -117,7 +117,7 @@ export default{
 
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src; alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
   
-        bb64(this);
+        bb64(this.src);
 
 /*
         const bsi=bs64rgb(img).then(bsi=>{im.src=bsi});
