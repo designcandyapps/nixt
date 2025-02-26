@@ -51,7 +51,7 @@ export default{
       //const bs=bs64(img).then(bs=>{im.src=bs});
       const bsi=bs64rgb(img).then(bsi=>{
         //im.src=bsi;
-        alert("BSI: bsi");
+        alert("BSI: "+bsi);
       });
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
