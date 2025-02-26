@@ -48,7 +48,7 @@ export default{
         const o=cvx.getImageData(0,0,cv.width,cv.height);
         const d=o.data; const cc={}; let mc=0; let dc="";
         for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-        document.body.style.backgroundColor=`rgb(${dc})`;
+        //document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
     async function bb64(f,callback){//alert("F: "+f);
