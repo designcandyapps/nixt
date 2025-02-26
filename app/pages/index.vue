@@ -36,11 +36,17 @@ export default{
         let cvx=cv.getContext("2d");
         cv.width=em.width; cv.height=em.height;
         cvx.drawImage(em,0,0);
-        alert("Tes33");
+        
 
         let o=cvx.getImageData(0,0,em.width,em.height);
-        let d=o.data; let ra=[]; for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
+        alert("O: "+o);
+        
+        let d=o.data; let ra=[];
+        alert("D: "+d);
+        
+        for(let i=0;i<d.length;i+=4){let r=d[i]; let g=d[i+1]; let b=d[i+2]; ra.push({r,g,b})}
         callback(ra,em.width,em.height);
+        alert("RA2: "+ra);
       }
     }
     //const r=new FileReader(); r.onload=function(){
@@ -60,14 +66,14 @@ export default{
  
 
       const bs=bs64(img).then(bs=>{
-        const q=document.querySelector("#q"); q.value=bs; alert("Q: "+q.value);
+        const q=document.querySelector("#q"); q.value=bs; //alert("Q: "+q.value);
         im.src=bs;
       });
       //const bsi=bs64rgb(img).then(bsi=>{
         //im.src=bsi;
         //alert("BSI: "+bsi);
       //});
-      im.onload=function(){alert("IM: "+this.src);
+      im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
         const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
@@ -83,7 +89,7 @@ export default{
         const bsi=bs64rgb(bsImg).then(bsi=>{
           alert("IM2: "+this.src);
           bs64rgb(bsImg,function(ra,width,height){
-            alert("RA: "+ra);
+            //alert("RA: "+ra);
           });
           alert("BSI: "+bsi);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
