@@ -51,10 +51,10 @@ export default{
         //document.body.style.backgroundColor=`rgb(${dc})`;
       }
     }
-    async function bb64(f,callback){//alert("F: "+f);
+    async function bb64(ff,callback){//alert("F: "+f);
       const rr=new FileReader();
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      //f=document.querySelector("#ee");
+      var ff=document.querySelector("#ee");
       alert("Fs: "+f.src);
       
       rr.readAsDataURL(ff);
