@@ -61,7 +61,7 @@ export default{
 
       const bs=bs64(img).then(bs=>{
         const q=document.querySelector("#q"); q.value=bs; alert("Q: "+q.value);
-        //im.src=bs;
+        im.src=bs;
       });
       //const bsi=bs64rgb(img).then(bsi=>{
         //im.src=bsi;
@@ -79,10 +79,12 @@ export default{
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
         //alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
-        //const bsi=bs64rgb(dr.innerHTML).then(bsi=>{
-          //alert("BSI: "+this);
+        let bsImg=this.src;
+        const bsi=bs64rgb(bsImg).then(bsi=>{
+          bs64rgb(bsImg,function(ra,width,height){alert("RA: "+ra)});
+          alert("BSI: "+bsi);
           //document.body.style.backgroundColor=`rgb(${bsi})`;
-        //});
+        });
         //let bsImg=dr.innerHTML;
         //bs64rgb(bsImg,function(ra,width,height){
           
