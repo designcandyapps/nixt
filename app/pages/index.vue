@@ -97,7 +97,7 @@ export default{
         const q=document.querySelector("#q"); q.value=bs; //alert("Q: "+q.value);
         im.src=bs;
       });
-    //im.src=f.src;
+      //im.src=f.src;
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
@@ -108,17 +108,13 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
 
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src; alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
-  
         bb64(this);
 
-/*
-        const bsi=bs64rgb(img).then(bsi=>{im.src=bsi});
-
-        let bsImg=this.src;
+        /*const bsi=bs64rgb(img).then(bsi=>{im.src=bsi});*/
+        /*let bsImg=this.src;
         const bsi=bs64rgb(bsImg).then(bsi=>{
           bs64rgb(bsImg,function(ra,width,height){const bsi=bsImg});
-        });
-*/
+        });*/
         //document.body.style.background="url("+dr.innerHTML+")"; //dr.innerHTML
         //document.body.style.background=`url('+document.querySelector("#dr").innerHTML+')`;
         //document.body.style.background=`rgb(${dc})`;
