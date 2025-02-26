@@ -50,8 +50,8 @@ export default{
       }
     }
     async function bp64(f){
-      const r=new FileReader();
-      r.onload=function(){alert("DU2: "+du);
+      const rd=new FileReader();
+      rd.onload=function(){alert("DU2: "+du);
         const ym=new Image(); ym.src=du;
         im.onload=function(){alert("IM3: "+this.src);
           const cv=document.querySelector("#cv");
@@ -63,7 +63,7 @@ export default{
           document.body.style.backgroundColor=`rgb(${dc})`;
         }
       }
-      const j=JSON.stringify(f); f=new Blob([f],{type:"application/image"});
+      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
     }
     //const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
@@ -99,7 +99,7 @@ export default{
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src;
         //alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
 
-        alert("R: "+r); alert("F: "+f);
+        alert("RD: "+rd); alert("F: "+f);
         r.readAsDataURL(f);
 /*
         let bsImg=this.src;
