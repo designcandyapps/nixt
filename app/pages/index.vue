@@ -19,7 +19,7 @@ export default{
   data(){return{q:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
-    async function bs64(t){//alert("T: "+t.src);
+    async function bs64(t){alert("T: "+t);
       if(!t){return} var cv=document.getElementById("cv");
       cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
       cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
@@ -49,7 +49,7 @@ export default{
         //alert("RA2: "+ra);
       }
     }
-    async function bi64(f){alert("Fs: "+f);
+    async function bi64(f){alert("Fs2: "+f);
       const ym=new Image(); ym.src=f;
       ym.onload=function(){alert("IM3: "+this.src);
         const cv=document.querySelector("#cv");
@@ -64,7 +64,8 @@ export default{
     async function bb64(f,callback){alert("F: "+f);
       const rr=new FileReader();
       const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      alert("F2: "+f);
+      f=document.querySelector("#ee");
+      alert("Fs: "+f.src);
       
       rr.readAsDataURL(f);
       rr.onload=()=>callback(bi64(f)); //alert("RR: "+rr.result);
@@ -117,7 +118,7 @@ export default{
 
         //const dr=document.querySelector("#dr"); dr.innerHTML=this.src; alert("DR: "+dr.innerHTML); alert("BC: "+dc); alert("BC2: "+`rgb(${dc})`);
   
-        bb64(this.src);
+        bb64(this);
 
 /*
         const bsi=bs64rgb(img).then(bsi=>{im.src=bsi});
