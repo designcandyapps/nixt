@@ -43,9 +43,6 @@ export default{
         callback(ra,em.width,em.height);
       }
     }
-    bs64rgb(b64,function(ra,width,height)){
-      alert("RA: "+ra);
-    }
     //const r=new FileReader(); r.onload=function(){
       const im=new Image(); const img=document.getElementById("ee");
       //im.src="https://pinfluents.com/_BCK/4/im/dc2.png";
