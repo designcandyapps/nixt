@@ -43,7 +43,7 @@ export default{
         callback(ra,em.width,em.height);
       }
     }
-    bs64rgb(function(ra,width,height)){
+    bs64rgb(b64,function(ra,width,height)){
       alert("RA: "+ra);
     }
     //const r=new FileReader(); r.onload=function(){
