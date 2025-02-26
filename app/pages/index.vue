@@ -50,9 +50,9 @@ export default{
       //const bs=bs64(img); im.src=bs;
       const bs=bs64(img).then(bs=>{im.src=bs});
       //const bsi=bs64rgb(img).then(bsi=>{
-        im.src=bs;
+        //im.src=bsi;
         //alert("BSI: "+bsi);
-      });
+      //});
       im.onload=function(){//alert("IM: "+this.src);
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
