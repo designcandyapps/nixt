@@ -63,12 +63,15 @@ export default{
     }
     async function bb64(f,callback){alert("F: "+f);
       const rr=new FileReader();
-      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
+      const j=JSON.stringify(f);
+      alert("J: "+j);
+      
+      f=new Blob([j],{type:"application/image"});
       f=document.querySelector("#ee");
       alert("Fs: "+f.src);
       
       rr.readAsDataURL(f);
-      rr.onload=()=>callback(bi64(f)); //alert("RR: "+rr.result);
+      rr.onload=()=>callback(bi64(f.src)); //alert("RR: "+rr.result);
       rr.onerror=(error)=>console.error(error)
     }
     async function bp64(f){alert("Testt");
