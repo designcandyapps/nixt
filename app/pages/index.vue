@@ -54,8 +54,8 @@ export default{
       //im.attr("id","uu");
       im.onload=function(){//alert("IM: "+this.src);
         //bb64(this);
-        this.setAttribute("crossorigin","anonymous");
-        this.setAttribute("id","uu");
+        //this.setAttribute("crossorigin","anonymous");
+        //this.setAttribute("id","uu");
         const cv=document.querySelector("#cv");
         cv.width=this.width; cv.height=this.height;
         const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
