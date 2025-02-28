@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   image: {sirv:{baseURL:"https://www.designcandy.com/"}},
   app: {head:{script:[
     {src:'https://pinfluents.com/inc/jq.js'},
-    {src:'https://pinfluents.com/_BCK/4/jqH.js'},
+    {src:'https://pinfluents.com/_BCK/4/jqG.js'},
     {src:'https://pinfluents.com/inc/jq-1.12.js'},
     {src:'https://pinfluents.com/inc/ct.js'}
   ]}},
