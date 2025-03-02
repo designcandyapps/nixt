@@ -65,7 +65,7 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
-    setTimeout(()=>{this.snd()},1600);
+    setTimeout(()=>{this.snd()},2400);
   },
   methods:{
     async snd(){
