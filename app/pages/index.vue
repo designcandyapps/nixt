@@ -65,13 +65,13 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
-    setTimeout(()=>{this.gen();this.snd()},2400);
+    setTimeout(()=>{this.snd();this.gen()},2400);
   },
   methods:{
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
       const data=await response.json(); this.response=data.reply;
-      //alert("R1: "+this.response);
+      alert("R1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
   },
