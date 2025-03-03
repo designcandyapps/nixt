@@ -13,13 +13,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-import ImageGenerator from '~/components/ImageGenerator.vue';
+import ImageGenerator from '~/components/gen.vue';
 export default{
-  components:{ImageGenerator},
+  components:{gen},
   data(){return{prompt:"",response:null}},
-  mounted(){setTimeout(()=>{this.sendMessage()},1400)},
+  mounted(){setTimeout(()=>{this.snd()},1400)},
   methods:{
-    async sendMessage(){
+    async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply;
       //alert("RES1: "+this.response);
