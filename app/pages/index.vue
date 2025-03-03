@@ -13,9 +13,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-import ImageGenerator from '~/components/ImageGenerator.vue';
+import gen from '~/components/gen.vue';
 export default{
-  components:{ImageGenerator},
+  components:{gen},
   data(){return{prompt:"",response:null}},
   mounted(){setTimeout(()=>{this.snd()},1400)},
   methods:{
