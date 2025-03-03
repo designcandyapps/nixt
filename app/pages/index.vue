@@ -13,9 +13,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-//import gen from '~/components/gen.vue';
+import gen from '~/components/gen.vue';
 export default{
-  //components:{gen},
+  components:{gen},
   data(){return{prompt:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
