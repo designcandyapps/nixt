@@ -3,14 +3,14 @@
 <script>
 export default{
   mounted(){setTimeout(()=>{this.gen()},1600)},
-  setup(){const q=ref(''); const im=ref('');
+  setup(){const prompt=ref(''); const im=ref('');
     const gen=async()=>{im.value='';
-      const response=await fetch('https://api.openai.com/v1/images/generations',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer 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`},body:JSON.stringify({q:document.querySelector('#q').value,n:1,size:'256x256'})});
+      const response=await fetch('https://api.openai.com/v1/images/generations',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer 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`},body:JSON.stringify({prompt:document.querySelector('#prompt').value,n:1,size:'256x256'})});
       const data=await response.json();
-      alert("R2: "+JSON.stringify(data));
+      //alert("R2: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){im.value=data.data[0].url; document.querySelector('#y').firstChild.style.backgroundImage="url("+im.value+")";}
     }
-    return{q,im,gen};
+    return{prompt,im,gen};
   },
 }
 </script>
