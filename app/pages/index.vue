@@ -6,7 +6,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /-->
+      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div>
+        <sirv />
+        <ImageGenerator />
         <div id="dr"></div><canvas id="cv"></canvas><canvas id="cvB"></canvas>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -15,9 +17,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-//import gen from '~/components/gen.vue';
+import sirv from '~/components/sirv.vue';
 export default{
-  //components:{gen},
+  components:{sirv},
   data(){return{prompt:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
@@ -67,7 +69,7 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
-    //setTimeout(()=>{this.snd()},1400);
+    setTimeout(()=>{this.snd()},1400);
   },
   methods:{
     async snd(){
