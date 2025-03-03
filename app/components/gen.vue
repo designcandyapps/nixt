@@ -7,7 +7,7 @@ export default{
     const gen=async()=>{im.value='';
       const response=await fetch('https://api.openai.com/v1/images/generations',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer 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`},body:JSON.stringify({prompt:document.querySelector('#prompt').value,n:1,size:'256x256'})});
       const data=await response.json();
-      //alert("R2: "+JSON.stringify(data));
+      //alert("RES2: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){im.value=data.data[0].url; document.querySelector('#v').firstChild.style.backgroundImage="url("+im.value+")";}
     }
     return{prompt,im,gen};
