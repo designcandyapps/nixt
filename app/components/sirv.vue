@@ -8,8 +8,8 @@ export default{
       const response=await fetch('https://api.sirv.com/v2/token',{
         method:'POST',
         headers:{
-          'Content-Type':'application/json',
-          Authorization:`Bearer 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`
+          'Content-Type':'application/json'
+          //Authorization:`Bearer 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`
         },
         data:{
           "clientId":"5p8p9Su9yZ7NYidnUC3RwEE1fDw",
