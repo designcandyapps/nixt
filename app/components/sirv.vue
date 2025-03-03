@@ -12,7 +12,12 @@ export default{
           'Content-Type':'application/json',
           Authorization:`Bearer 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`
         },
-        body:JSON.stringify({prompt:document.querySelector('#prompt').value,n:1,size:'256x256'})});
+        data:{
+          "clientId":"ZcnZNfzwRhQExoHFoGpxWJ4p2R",
+          "clientSecret":"TM3d0CfXxusKMpH3x7kHJYD40qJIR3omTIGXP6wPPkXpIUKLEz/dOJ9v6LbXra3y67XsaGK7iQPmnAuD+fzj+Q=="
+        },
+        body:JSON.stringify({prompt:document.querySelector('#prompt').value,n:1,size:'256x256'})
+      });
       const data=await response.json();
       alert("RES2: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){im.value=data.data[0].url; document.querySelector('#v').firstChild.style.backgroundImage="url("+im.value+")";}
