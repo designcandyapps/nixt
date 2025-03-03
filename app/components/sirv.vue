@@ -1,5 +1,4 @@
 <template><div v-if="im"><img id="i" :src="im" /></div></template>
-
 <script>
 export default{
   mounted(){setTimeout(()=>{this.sirv()},1600)},
@@ -13,8 +12,8 @@ export default{
           Authorization:`Bearer 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`
         },
         data:{
-          "clientId":"ZcnZNfzwRhQExoHFoGpxWJ4p2R",
-          "clientSecret":"TM3d0CfXxusKMpH3x7kHJYD40qJIR3omTIGXP6wPPkXpIUKLEz/dOJ9v6LbXra3y67XsaGK7iQPmnAuD+fzj+Q=="
+          "clientId":"5p8p9Su9yZ7NYidnUC3RwEE1fDw",
+          "clientSecret":"22RXCSY+WvkmutxOjlyMdzqHSK/n+q7bHx8ay079Y9oCcwjxlq2DogBTqcEbdW2HaSC4rFNQBzKFDrWnicqXBg=="
         },
         body:JSON.stringify({prompt:document.querySelector('#prompt').value,n:1,size:'256x256'})
       });
