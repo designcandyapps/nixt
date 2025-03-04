@@ -1,5 +1,5 @@
-title: bp
-description: bp is an oil & gas phenomenon.
+title: Lorem Ipsum
+description: Lorem ipsum dolor sit amet.
 navigation: true
 hero:
   title: Innovation for the energy of today and tomorrow
@@ -8,15 +8,15 @@ hero:
 features:
   title: Sustainability
   items:
-    - title: bp
-      description: Powered by bp for optimal SEO.
+    - title: Search
+      description: Powered by Nuxt for optimal SEO.
       to: 
     - title: Markdown
       description: Write your pages with new MDC.
       to: 
-    - title: bpChevron
+    - title: Components
       description: Full set of custom components.
       to: 
-    - title: Chevs
+    - title: Modules
       description: Lorem ipsum crashum smashum.
       to: 
