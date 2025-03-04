@@ -15,9 +15,9 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </template>
 
 <script lang="ts">
-import gen from '~/components/gen.vue';
+//import gen from '~/components/gen.vue';
 export default{
-  components:{gen},
+  //components:{gen},
   data(){return{prompt:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
@@ -67,7 +67,7 @@ export default{
         document.body.style.backgroundColor=`rgb(${dc})`;
       }
     //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
-    setTimeout(()=>{this.snd()},1400);
+    //setTimeout(()=>{this.snd()},1400);
   },
   methods:{
     async snd(){
