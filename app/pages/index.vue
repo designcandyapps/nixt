@@ -56,7 +56,7 @@ export default{
       }
     //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
     */
-    setTimeout(()=>{this.snd()},2200);
+    //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
