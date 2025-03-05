@@ -4,7 +4,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 </script>
 
 <template>
-  <div>
+  <div >
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><ImageGenerator />
         <canvas id="cv"></canvas><canvas id="cvB"></canvas>
