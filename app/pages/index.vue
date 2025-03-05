@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div class="g"><input id="q" v-model="q"><div id="response" v-if="response">{{response}}</div><ImageGenerator />
+      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><ImageGenerator />
         <canvas id="cv"></canvas><canvas id="cvB"></canvas>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -16,7 +16,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  data(){return{q:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){
     var f=document.querySelector("#ee");
     async function bs64(t){//alert("T: "+t);
@@ -69,7 +69,7 @@ export default{
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#q').value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply;
       //alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
