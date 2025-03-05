@@ -1,5 +1,4 @@
 <template><div v-if="image"><img id="i" :src="image" /></div></template>
-
 <script>
 export default{
   mounted(){setTimeout(()=>{this.generateImage()},1600)},
