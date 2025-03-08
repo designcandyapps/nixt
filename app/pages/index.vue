@@ -12,8 +12,8 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
     <ULandingSection :title="page.features.title" :links="page.features.links">
       <UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid>
     </ULandingSection>
-    <ULandingSection :title="page.features2.title" :links="page.features2.links">
-      <UPageGrid><ULandingCard v-for="(item,index) of page.features2.items" :key="index" v-bind="item" /></UPageGrid>
+    <ULandingSection :title="page.features.title" :links="page.features.links">
+      <UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid>
     </ULandingSection>
   </div>
 </template>
