@@ -16,7 +16,7 @@ features:
       description: Full set of custom components.
     - title: Modules
       description: Lorem ipsum crashum smashum.
-features:
+features2:
   title: [New productivity]{.text-(--ui-primary)}
   description: Every session.
   features:
