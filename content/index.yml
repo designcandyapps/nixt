@@ -16,7 +16,7 @@ features:
       description: Full set of custom components.
     - title: Modules
       description: Lorem ipsum crashum smashum.
-features:
+sections:
   title: New Productivity
   items:
     - title: AI-Powered
