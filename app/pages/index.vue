@@ -15,7 +15,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
           description="Nuxt UI v3 integrates with latest Tailwind CSS v4 beta, bringing significant improvements."
           icon="i-simple-icons-tailwindcss"
           orientation="horizontal"
-        ><img src="/tailwindcss-v4.svg" alt="Tailwind CSS" class="w-full" />
+        >
        </UPageCard>
       </template>
 
