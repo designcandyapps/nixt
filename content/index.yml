@@ -16,3 +16,8 @@ features:
       description: Full set of custom components.
     - title: Modules
       description: Lorem ipsum crashum smashum.
+sections:
+  title: Header
+  items:
+    - title: Search2
+      description: Powered2
