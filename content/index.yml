@@ -10,13 +10,20 @@ features:
   items:
     - title: Search
       description: Powered by Nuxt for optimal SEO.
-      to: 
     - title: Markdown
       description: Write your pages with new MDC.
-      to: 
     - title: Components
       description: Full set of custom components.
-      to: 
     - title: Modules
       description: Lorem ipsum crashum smashum.
-      to: 
+features:
+  title: 2Sustainability
+  items:
+    - title: 2Search
+      description: Powered by Nuxt for optimal SEO.
+    - title: Markdown
+      description: Write your pages with new MDC.
+    - title: Components
+      description: Full set of custom components.
+    - title: 2Modules
+      description: Lorem ipsum crashum smashum.
