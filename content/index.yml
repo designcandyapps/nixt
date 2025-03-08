@@ -16,14 +16,3 @@ features:
       description: Full set of custom components.
     - title: Modules
       description: Lorem ipsum crashum smashum.
-features:
-  title: 2Sustainability
-  items:
-    - title: 2Search
-      description: Powered by Nuxt for optimal SEO.
-    - title: Markdown
-      description: Write your pages with new MDC.
-    - title: Components
-      description: Full set of custom components.
-    - title: 2Modules
-      description: Lorem ipsum crashum smashum.
