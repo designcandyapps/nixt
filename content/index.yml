@@ -16,3 +16,11 @@ features:
       description: Full set of custom components.
     - title: Modules
       description: Lorem ipsum crashum smashum.
+features:
+  title: [New productivity]{.text-(--ui-primary)}
+  description: Every session.
+  features:
+    - title: AI-Powered
+      description: More productivity.
+    - title: Get Alerts
+      description: Stay notified.
