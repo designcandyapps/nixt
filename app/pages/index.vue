@@ -8,16 +8,23 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /--></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
-      <!--template>
-        <UPageCard
-          title="Tailwind CSS"
-          description="Nuxt UI v3 integrates with latest Tailwind CSS v4 beta, bringing significant improvements."
-          icon="i-simple-icons-tailwindcss"
-          orientation="horizontal"
-        >
-       </UPageCard>
-      </template-->
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <USeparator />
+    <UPageSection
+      id="features" v-bind="page.features"
+      :ui="{title:'text-left @container relative flex',description:'text-left'}" class="relative overflow-hidden">
+      <div class="absolute rounded-full -left-10 top-10 size-[300px] z-10 bg-(--ui-primary) opacity-30 blur-[200px]" />
+      <div class="absolute rounded-full -right-10 -bottom-10 size-[300px] z-10 bg-(--ui-primary) opacity-30 blur-[200px]" />
+      <template #title>
+        <MDC class="*:leading-9" :value="page.features.title" />
+        <div class="hidden @min-[1020px]:block">
+          <UColorModeImage
+            light="/images/light/line-2.svg"
+            dark="/images/dark/line-2.svg"
+            class="absolute top-0 right-0 size-full transform scale-95 translate-x-[70%]" />
+        </div>
+      </template>
+    </UPageSection>
   </div>
 </template>
 
