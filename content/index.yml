@@ -17,9 +17,8 @@ features:
     - title: Modules
       description: Lorem ipsum crashum smashum.
 features:
-  title: [New productivity]{.text-(--ui-primary)}
-  description: Every session.
-  features:
+  title: New Productivity
+  items:
     - title: AI-Powered
       description: More productivity.
     - title: Get Alerts
