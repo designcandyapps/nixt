@@ -8,8 +8,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /--></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
-
-      <template>
+      <!--template>
         <UPageCard
           title="Tailwind CSS"
           description="Nuxt UI v3 integrates with latest Tailwind CSS v4 beta, bringing significant improvements."
@@ -17,8 +16,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
           orientation="horizontal"
         >
        </UPageCard>
-      </template>
-
+      </template-->
     </ULandingHero><ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   </div>
 </template>
