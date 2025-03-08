@@ -6,18 +6,24 @@ hero:
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnatis aliqua ut enim ad minim veniam.
   orientation: horizontal
 features:
-  title: Sustainability
+  title: Lorem ipsum
   items:
-    - title: Search
-      description: Powered by Nuxt for optimal SEO.
-    - title: Markdown
-      description: Write your pages with new MDC.
-    - title: Components
-      description: Full set of custom components.
-    - title: Modules
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
+    - title: Crashum smashum
+      description: Lorem ipsum crashum smashum.
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
+    - title: Crashum smashum
       description: Lorem ipsum crashum smashum.
 sections:
   title: Header
   items:
-    - title: Search2
-      description: Powered2
+    - title: Crashum smashum
+      description: Lorem ipsum crashum smashum.
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
+    - title: Crashum smashum
+      description: Lorem ipsum crashum smashum.
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
