@@ -16,3 +16,14 @@ features:
       description: Crashum smashum lorem ipsum.
     - title: Crashum smashum
       description: Lorem ipsum crashum smashum.
+sections:
+  title: Header
+  items:
+    - title: Crashum smashum
+      description: Lorem ipsum crashum smashum.
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
+    - title: Crashum smashum
+      description: Lorem ipsum crashum smashum.
+    - title: Lorem ipsum
+      description: Crashum smashum lorem ipsum.
