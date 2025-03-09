@@ -18,34 +18,9 @@ features:
       description: Lorem ipsum crashum smashum.
 sections:
   title: Crashum smashum
-  items:
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
 mid:
   title: Lorem ipsum
-  items:
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
 bottom:
   title: Crashum smashum
-  items:
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum
-      description: Crashum smashum lorem ipsum.
+lower:
+  title: Lorem ipsum
