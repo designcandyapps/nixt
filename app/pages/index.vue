@@ -42,10 +42,10 @@ export default{
       alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
-    async snd(){
+    /*async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply; document.querySelector('#t').innerText=this.response;
-    },
+    },*/
   },
 }
 </script>
