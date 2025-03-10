@@ -31,9 +31,9 @@ export default{
       const response=await fetch("/api/prox",{
         method:"POST",
         headers:{
-          "Content-Type":"application/json",
-          "Access-Control-Allow-Origin":"*",
-          "Cache-Control":"no-cache"
+          "Content-Type":"application/json"
+          //"Access-Control-Allow-Origin":"*",
+          //"Cache-Control":"no-cache"
         },
         body:JSON.stringify({message:document.querySelector('#prox').value})
       });
