@@ -21,46 +21,6 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-/*var f=document.querySelector("#ee");
-    async function bs64(t){//alert("T: "+t);
-      if(!t){return} var cv=document.getElementById("cv");
-      cv.width=t.width; cv.height=t.height; var cx=cv.getContext("2d");
-      cx.fillStyle="red"; cx.fillRect(0,0,cv.width,cv.height);
-      return cv.toDataURL();
-    }
-    async function bi64(f){alert("Fs2: "+f.src);
-      const ym=new Image(); ym.src=f;
-      ym.onload=function(){//alert("IM3: "+this.src);
-        const cv=document.querySelector("#cv");
-        cv.width=this.width; cv.height=this.height;
-        const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
-        const o=cvx.getImageData(0,0,cv.width,cv.height);
-        const d=o.data; const cc={}; let mc=0; let dc="";
-        for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-        document.body.style.backgroundColor=`rgb(${dc})`;
-      }
-    }
-    async function bb64(ff,callback){//alert("F: "+f);
-      const rr=new FileReader();
-      const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"});
-      var ff=document.querySelector("#iz");
-      rr.readAsDataURL(ff);
-      rr.onload=()=>callback(bi64(f.src)); //alert("RR: "+rr.result);
-      rr.onerror=(error)=>console.error(error)
-    }
-    //const r=new FileReader(); r.onload=function(){
-      const im=new Image(); const img=document.getElementById("ee");
-      im.onload=function(){//alert("IM: "+this.src);
-        const cv=document.querySelector("#cv");
-        cv.width=this.width; cv.height=this.height;
-        const cvx=cv.getContext("2d"); cvx.drawImage(this,0,0);
-        const o=cvx.getImageData(0,0,cv.width,cv.height);
-        const d=o.data; const cc={}; let mc=0; let dc="";
-        for(let i=0;i<d.length;i+=4){var r=d[i];var g=d[i+1];var b=d[i+2];var rgb=`${r},${g},${b}`;if(cc[rgb]){cc[rgb]++}else{cc[rgb]=1}if(cc[rgb]>mc){mc=cc[rgb];dc=rgb}}
-        document.body.style.backgroundColor=`rgb(${dc})`;
-      }
-    //} const j=JSON.stringify(f); f=new Blob([j],{type:"application/image"}); r.readAsDataURL(f);
-    */
     //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
