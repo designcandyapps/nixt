@@ -37,12 +37,12 @@ export default{
       try{
         const response=await fetch(url);
         //if(!response.ok){
-          alert("xH: "+`${response.status}`);
+          alert(`${response.status}`);
           //throw new Error(`xH: ${response.status}`);
         //}
         const data=await response.text(); //or res.json()
         alert(data);
-      }catch(error){console.error("Err:", error)}
+      }catch(error){console.error("Err:",error)}
     },
     async zfetchData(url){
       try{
