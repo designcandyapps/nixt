@@ -49,6 +49,6 @@ export default{
       //document.querySelector('#v').firstChild.style.backgroundImage="url("+im.value+")";}
     }
     return{prox,im,gen};
-  },
+  }
 }
 </script>
