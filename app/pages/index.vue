@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-import axios from "axios"; import https from "https";
+//import axios from "axios"; import https from "https";
 </script>
 
 <template>
