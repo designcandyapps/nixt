@@ -51,7 +51,7 @@ export default{
         console.log("Response Body (ignored):",response.data.length > 0 ? "Has content" : "No content");
       }catch(error){console.error("Err:",error)}
     },
-    async setProx(){
+    /*async setProx(){
       const response=await fetch("/api/prox",{
         method:"POST",
         headers:{
@@ -65,7 +65,7 @@ export default{
       this.response=data.reply;
       alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
-    },
+    },*/
     /*async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply; document.querySelector('#t').innerText=this.response;
