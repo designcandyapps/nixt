@@ -39,6 +39,7 @@ export default{
       });
       const data=await response.json();
       this.response=data.reply;
+      alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
     async snd(){
