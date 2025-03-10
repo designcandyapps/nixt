@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+import axios from "axios"; import https from "https";
 </script>
 
 <template>
@@ -20,13 +21,28 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",prox:"",response:null}},
   mounted(){
     //var f=document.querySelector("#ee");
     //setTimeout(()=>{this.snd()},2200);
-    setTimeout(()=>{this.setProx()},2200);
+    setTimeout(()=>{
+      //this.setProx();
+      const url="https://designcandy.com";
+      this.fetchData(url);
+    },2200);
   },
   methods:{
+    async fetchData(url){
+      try{
+        const response=await axios.get(url,{
+          maxRedirects:5,
+          headers:{},
+          httpsAgent:new https.Agent({rejectUnauthorized:false})
+        });
+        console.log("Headers:",response.headers);
+        console.log("Response Body (ignored):",response.data.length > 0 ? "Has content" : "No content");
+      }catch(error){console.error("Err:",error)}
+    },
     async setProx(){
       const response=await fetch("/api/prox",{
         method:"POST",
