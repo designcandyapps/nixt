@@ -36,10 +36,10 @@ export default{
       alert("Test2");
       try{
         const response=await fetch(url);
-        if(!response.ok){
-          alert(`xH: ${response.status}`);
+        //if(!response.ok){
+          alert("xH: "+`${response.status}`);
           //throw new Error(`xH: ${response.status}`);
-        }
+        //}
         const data=await response.text(); //or res.json()
         alert(data);
       }catch(error){console.error("Err:", error)}
