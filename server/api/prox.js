@@ -3,9 +3,9 @@ export default defineEventHandler(async(event)=>{
   const apiResponse=await fetch("/",{
     method:"POST",
     headers:{
-      "Content-Type":"application/json",
-      "Access-Control-Allow-Origin":"*",
-      "Cache-Control":"no-cache"
+      "Content-Type":"application/json"
+      //"Access-Control-Allow-Origin":"*",
+      //"Cache-Control":"no-cache"
     },
     body:JSON.stringify({
       messages:[{content:body.message}],
