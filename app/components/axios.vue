@@ -1,8 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import * as express from "express";
 import axios from "axios"; const app=express();
 app.get("/",async(req,res)=>{
-  const url=req.query.url as string;
+  //const url=req.query.url as string;
+  const url="https://www.designcandy.com/im/dc.png";
   if(!url){return res.status(400).send("Invalid")}
   try{new URL(url)}catch{return res.status(400).send("Invalid")}
   try{
