@@ -25,8 +25,16 @@ export default{
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
-      const data=await response.json(); this.response=data.reply; document.querySelector('#t').innerText=this.response;
+      const response=await fetch("/api/chat",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"},
+          body:JSON.stringify({
+            message:document.querySelector('#prompt').value;
+          });
+      });
+      const data=await response.json(); this.response=data.reply;
+      document.querySelector('#t').innerText=this.response;
     },
   },
 }
