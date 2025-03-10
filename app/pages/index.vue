@@ -33,6 +33,7 @@ export default{
   },
   methods:{
     async fetchData(url){
+      alert("Test2");
       try{
         const response=await fetch(url);
         if(!response.ok){
