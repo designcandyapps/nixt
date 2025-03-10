@@ -22,11 +22,25 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    var f=document.querySelector("#ee");
-    
+    //var f=document.querySelector("#ee");
     //setTimeout(()=>{this.snd()},2200);
+    setTimeout(()=>{this.setProx()},2200);
   },
   methods:{
+    async setProx(){
+      const response=await fetch("/api/prox",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "Access-Control-Allow-Origin":"*",
+          "Cache-Control":"no-cache"
+        },
+        body:JSON.stringify({message:document.querySelector('#prox').value})
+      });
+      const data=await response.json();
+      this.response=data.reply;
+      document.querySelector('#t').innerText=this.response;
+    },
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply; document.querySelector('#t').innerText=this.response;
