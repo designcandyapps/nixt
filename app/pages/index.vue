@@ -35,12 +35,14 @@ export default{
     }
     setTimeout(()=>{
       this.snd();
+    },2200);
+    setTimeout(()=>{
       alert(prompt.value);
       fetchPh(prompt.value,1).then(photos=>{photos.forEach(photo=>{
         pho.value=photo.urls.small;
         document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       })});
-    },2200);
+    },4200);
   },
   methods:{
     async snd(){
