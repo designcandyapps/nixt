@@ -33,7 +33,8 @@ export default{
         return data.results;
       }catch(error){console.error('Failed: ',error); return []}
     }
-    fetchPh(prompt,1).then(photos=>{photos.forEach(photo=>{
+    alert(prompt.value);
+    fetchPh(prompt.value,1).then(photos=>{photos.forEach(photo=>{
       pho.value=photo.urls.small;
       document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
     })});
