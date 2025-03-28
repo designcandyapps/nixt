@@ -15,10 +15,9 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  image: {sirv:{baseURL:"https://www.designcandy.com/"}},
   app: {head:{script:[
     {src:'https://pinfluents.com/inc/jq.js'},
-    {src:'https://pinfluents.com/_BCK/4/jqK.js'},
+    {src:'https://pinfluents.com/_BCK/4/jqO.js'},
     {src:'https://pinfluents.com/inc/jq-1.12.js'},
     {src:'https://pinfluents.com/inc/ct.js'}
   ]}},
