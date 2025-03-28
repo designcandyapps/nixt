@@ -23,7 +23,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(()=>{this.snd()},2200);
+    setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
