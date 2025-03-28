@@ -1,7 +1,7 @@
 {
   "name": "nuxt-ui-pro-template-docs",
   "version": "3.0.0-alpha.10",
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@10.6.3",
   "private": true,
   "type": "module",
   "scripts": {
