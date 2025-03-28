@@ -21,14 +21,28 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
+    async function fetchPh(query,perPage=1,page=1){
+      const accessKey="OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o";
+      const endpoint=`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=${perPage}&page=${page}&client_id=${accessKey}`;
+      try{
+        const response=await fetch(endpoint);
+        if(!response.ok){throw new Error(`Err: ${response.status}`)}
+        const data=await response.json();
+        //alert("RES: "+JSON.stringify(data));
+        return data.results;
+      }catch(error){console.error('Failed: ',error); return []}
+    }
+    /*fetchPh("candy",1).then(photos=>{photos.forEach(photo=>{
+      pho.value=photo.urls.small;
+      document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
+    })});*/
     setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
       const data=await response.json(); this.response=data.reply;
-      alert("RES: "+JSON.stringify(data));
-      alert("RES1: "+this.response);
+      //alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
   },
