@@ -22,7 +22,7 @@ const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
 };
 
 onMounted(()=>{
-  //alert("2: "+document.getElementById("ee").src);
+  alert("Test2");
   window.onload=function(){
     //alert("1: "+document.getElementById("ee").src);
     //imageUrl.value=document.getElementById("ee").src; //alert("IM: "+imageUrl.value);
