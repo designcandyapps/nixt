@@ -31,7 +31,7 @@ export default{
       try{
         const response=await fetch(url,{headers:{"Api-Key":apiKey}});
         alert("RES0: "+this.response);
-        //if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
+        //if(!response.ok){throw new Error(`Error: ${response.status}-${response.statusText}`)}
         const data=await response.json();
         alert("RES1: "+JSON.stringify(data));
         return data.images.map(image=>({
@@ -39,7 +39,7 @@ export default{
           thumbUrl:image.display_sizes[0]?.uri||'',
           previewUrl:image.display_sizes[1]?.uri||''
         }));
-      }catch(error){console.error("Err: ",error); return []}
+      }catch(error){console.error("Error: ",error); return []}
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
