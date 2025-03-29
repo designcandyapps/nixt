@@ -41,13 +41,13 @@ export default{
       }catch(error){console.error("Error2: ",error); return []}
     }
     //setTimeout(()=>{this.snd()},2200);
-    setTimeout(()=>{
+    //setTimeout(()=>{
       fetchGI(query,apiKey).then(images=>{
         alert("Im: "+images);
         pho.value=query;
         //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
-    },8800);
+    //},8800);
   },
   methods:{
     async snd(){
