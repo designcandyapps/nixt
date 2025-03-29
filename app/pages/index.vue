@@ -24,7 +24,7 @@ export default{
   mounted(){
     const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
     //alert("PR: "+document.querySelector("#prompt").value);
-    const query="green candy"; //document.querySelector("#prompt").value;
+    const query=prompt.value; //"green candy"; //document.querySelector("#prompt").value;
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
