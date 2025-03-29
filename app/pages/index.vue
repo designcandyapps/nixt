@@ -44,10 +44,10 @@ export default{
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      //alert(prompt.value);
-      fetchGI("sky",apiKey).then(images=>{
-        alert("Im: "+images);
-        //pho.value=images;
+      alert(prompt.value);
+      fetchGI(prompt.value,apiKey).then(images=>{
+        alert("Im: "+image);
+        //pho.value=image;
         //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
     },8800);
