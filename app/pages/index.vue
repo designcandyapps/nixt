@@ -25,6 +25,7 @@ export default{
     const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
     const q="green candy";
     async function fetchGI(query,apiKey,page=1,pageSize=1){
+      alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       //try{
         const response=await fetch(url,{headers:{"Api-Key":apiKey}});
