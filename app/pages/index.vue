@@ -28,10 +28,13 @@ export default{
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       //try{
-        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
+        const response=await fetch(url,{
+          headers:{"Api-Key":apiKey}
+        });
+        //alert("RES: "+JSON.stringify(response));
         //if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
         const data=await response.json();
-        alert("RES: "+JSON.stringify(data));
+        alert("RES1: "+JSON.stringify(data));
         return data.images.map(image=>({
           id:image.id,title:image.title||'',
           thumbUrl:image.display_sizes[0]?.uri||'',
@@ -41,11 +44,11 @@ export default{
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      alert(prompt.value);
-      fetchGI(prompt.value,apiKey).then(images=>{
+      //alert(prompt.value);
+      fetchGI("sky",apiKey).then(images=>{
         alert("Im: "+images);
-        pho.value=images;
-        document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
+        //pho.value=images;
+        //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
     },8800);
   },
