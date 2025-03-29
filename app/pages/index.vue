@@ -41,7 +41,7 @@ export default{
       }catch(error){console.error("Error2: ",error); return []}
     }
     //setTimeout(()=>{this.snd()},2200);
-    fetchPh(query,apiKey).then(images=>{images.forEach(image=>{
+    fetchGI(query,apiKey).then(images=>{images.forEach(image=>{
       alert("Im: "+image.uri);
       pho.value=query;
       //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
