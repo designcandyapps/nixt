@@ -6,6 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
+      <getGI />
       <div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /--></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -22,7 +23,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
+    /*const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
     const query="pink sky"; //prompt.value; //document.querySelector("#prompt").value;
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
@@ -40,12 +41,12 @@ export default{
         alert("Test");
       }catch(error){console.error("Error2: ",error); return []}
     }
-    //setTimeout(()=>{this.snd()},2200);
     fetchGI(query,apiKey).then(images=>{images.forEach(image=>{
       alert("Im: "+image.uri);
       pho.value=query;
       //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
-    })});
+    })});*/
+    //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
