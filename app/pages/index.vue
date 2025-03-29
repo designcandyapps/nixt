@@ -23,14 +23,12 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
-    const q="green candy";
+    const query=prompt.value; //"green candy";
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       //try{
-        const response=await fetch(url,{
-          headers:{"Api-Key":apiKey}
-        });
+        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
         //alert("RES: "+JSON.stringify(response));
         //if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
         const data=await response.json();
@@ -44,10 +42,10 @@ export default{
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      alert(prompt.value);
-      fetchGI(prompt.value,apiKey).then(images=>{
-        alert("Im: "+image);
-        //pho.value=image;
+      alert("PR: "+prompt.value);
+      fetchGI(query,apiKey).then(images=>{
+        alert("Im: "+images);
+        //pho.value=images;
         //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
     },8800);
