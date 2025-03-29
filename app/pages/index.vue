@@ -23,7 +23,8 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
-    const query=prompt.value; //"green candy";
+    alert("PR: "+document.querySelector("#prompt").value);
+    const query=document.querySelector("#prompt").value; //"green candy";
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
@@ -42,7 +43,6 @@ export default{
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      alert("PR: "+prompt.value);
       fetchGI(query,apiKey).then(images=>{
         alert("Im: "+images);
         //pho.value=images;
