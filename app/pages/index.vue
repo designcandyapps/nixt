@@ -26,9 +26,9 @@ export default{
     const q="green candy";
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
-      try{
+      //try{
         const response=await fetch(url,{headers:{"Api-Key":apiKey}});
-        if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
+        //if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
         const data=await response.json();
         alert("RES: "+JSON.stringify(data));
         return data.images.map(image=>({
@@ -36,12 +36,12 @@ export default{
           thumbUrl:image.display_sizes[0]?.uri||'',
           previewUrl:image.display_sizes[1]?.uri||''
         }));
-      }catch(error){console.error("Err: ",error); return []}
+      //}catch(error){console.error("Err: ",error); return []}
     }
-    setTimeout(()=>{this.snd()},2200);
+    //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      alert(prompt.value);
-      fetchGI(q,apiKey).then(images=>{
+      //alert(prompt.value);
+      fetchGI("sky",apiKey).then(images=>{
         alert("Im: "+images);
         pho.value=images;
         document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
