@@ -23,19 +23,12 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
-    //alert("PR: "+document.querySelector("#prompt").value);
-    const query=prompt.value; //"green candy"; //document.querySelector("#prompt").value;
+    const query="pink sky"; //prompt.value; //document.querySelector("#prompt").value;
     async function fetchGI(query,apiKey,page=1,pageSize=1){
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       try{
-        const response=await fetch(url,{
-          method:"POST",
-          headers:{"Api-Key":apiKey},
-          body:JSON.stringify({
-            message:document.querySelector('#prompt').value
-          })
-        });
+        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
         alert("RES0: "+this.response);
         if(!response.ok){throw new Error(`Error: ${response.status}-${response.statusText}`)}
         const data=await response.json();
@@ -50,7 +43,7 @@ export default{
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
       fetchGI(query,apiKey).then(images=>{
-        alert("Im: "+images.image);
+        alert("Im: "+images);
         pho.value=query;
         //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
