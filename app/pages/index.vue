@@ -41,8 +41,8 @@ export default{
     }
     //setTimeout(()=>{this.snd()},2200);
     setTimeout(()=>{
-      //alert(prompt.value);
-      fetchGI("sky",apiKey).then(images=>{
+      alert(prompt.value);
+      fetchGI(prompt.value,apiKey).then(images=>{
         alert("Im: "+images);
         pho.value=images;
         document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
