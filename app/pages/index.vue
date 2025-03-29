@@ -29,11 +29,17 @@ export default{
       alert("Q: "+query);
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       try{
-        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
-        //alert("RES0: "+this.response);
+        const response=await fetch(url,{
+          method:"POST",
+          headers:{"Api-Key":apiKey},
+          body:JSON.stringify({
+            message:document.querySelector('#prompt').value
+          })
+        });
+        alert("RES0: "+this.response);
         if(!response.ok){throw new Error(`Error: ${response.status}-${response.statusText}`)}
         const data=await response.json();
-        //alert("RES1: "+JSON.stringify(data));
+        alert("RES1: "+JSON.stringify(data));
         return data.images.map(image=>({
           id:image.id,title:image.title||'',
           thumbUrl:image.display_sizes[0]?.uri||'',
@@ -52,7 +58,13 @@ export default{
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
+      const response=await fetch("/api/chat",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          message:document.querySelector('#prompt').value
+        })
+      });
       const data=await response.json(); this.response=data.reply;
       //alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
