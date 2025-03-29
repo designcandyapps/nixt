@@ -23,7 +23,7 @@ const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
 
 onMounted(()=>{
   alert("Test2");
-  window.onload=function(){
+  //window.onload=function(){
     //alert("1: "+document.getElementById("ee").src);
     //imageUrl.value=document.getElementById("ee").src; //alert("IM: "+imageUrl.value);
 
@@ -34,6 +34,6 @@ onMounted(()=>{
       //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
     //})
     });
-  }
+  //}
 });
 </script>
