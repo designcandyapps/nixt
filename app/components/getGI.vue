@@ -7,8 +7,8 @@ const isLoading=ref(false);
 const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
 const query="blue stone";
 
-//const fetchGI=async()=>{
-async function fetchGI(query,apiKey,page=1,pageSize=1){
+const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
+//async function fetchGI(query,apiKey,page=1,pageSize=1){
   isLoading.value=true;
   proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
   //`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
