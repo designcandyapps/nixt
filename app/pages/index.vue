@@ -47,7 +47,7 @@ export default{
         pho.value=images;
         document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
       });
-    },4200);
+    },8800);
   },
   methods:{
     async snd(){
