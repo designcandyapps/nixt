@@ -30,7 +30,7 @@ export default{
       const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
       try{
         const response=await fetch(url,{headers:{"Api-Key":apiKey}});
-        //alert("RES: "+JSON.stringify(response));
+        alert("RES0: "+this.response);
         //if(!response.ok){throw new Error(`Err: ${response.status}-${response.statusText}`)}
         const data=await response.json();
         alert("RES1: "+JSON.stringify(data));
