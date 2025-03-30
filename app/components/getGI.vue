@@ -11,6 +11,8 @@ const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
   //`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert(proxyUrl.value);
 
+  document.querySelector("#pho").value=proxyUrl.value;
+
   const img=new Image();
   img.crossOrigin="Anonymous";
   img.src=proxyUrl.value;
