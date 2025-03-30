@@ -13,6 +13,7 @@ const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
 
   setTimeout(function(){
     document.querySelector("#pho").value=proxyUrl.value;
+    document.querySelector("#a").style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
 
   const img=new Image();
