@@ -7,7 +7,8 @@ const query="blue stone";
 const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
 //async function fetchGI(query,apiKey,page=1,pageSize=1){
   isLoading.value=true;
-  proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
+  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
+  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
   //`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert(proxyUrl.value);
 
