@@ -38,7 +38,7 @@ export default{
           thumbUrl:image.display_sizes[0]?.uri||'',
           previewUrl:image.display_sizes[1]?.uri||''
         }));
-        alert("Test");
+        alert("Test1");
       }catch(error){console.error("Error2: ",error); return []}
     }
     fetchGI(query,apiKey).then(images=>{images.forEach(image=>{
