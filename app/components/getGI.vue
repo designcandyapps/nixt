@@ -11,11 +11,35 @@ const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
   //`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert(proxyUrl.value);
 
+
+        const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
+      try{
+        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
+        alert("RES0: "+this.response);
+        if(!response.ok){throw new Error(`Error: ${response.status}-${response.statusText}`)}
+        const data=await response.json();
+        alert("RES1: "+JSON.stringify(data));
+        return data.images.map(image=>({
+          id:image.id,title:image.title||'',
+          thumbUrl:image.display_sizes[0]?.uri||'',
+          previewUrl:image.display_sizes[1]?.uri||''
+        }));
+      }catch(error){console.error("Error2: ",error); return []}
+  
+
   setTimeout(function(){
     document.querySelector("#pho").value=proxyUrl.value;
     document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
 
+
+
+    
+
+
+
+
+  
   const img=new Image();
   img.crossOrigin="Anonymous";
   img.src=proxyUrl.value;
