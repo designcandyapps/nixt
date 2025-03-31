@@ -21,7 +21,7 @@ const fetchGI=async(query)=>{
 };
 onMounted(()=>{
   fetchGI("candy").then(image=>{
-    alert("IM: "+image); //.display_sizes[0].uri
+    alert("IM: "+image[0]); //.display_sizes[0].uri
   });
 });
 </script>
