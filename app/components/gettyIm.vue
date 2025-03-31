@@ -20,7 +20,7 @@ const fetchGI=async(query)=>{
     document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  img.onload=()=>{backgroundImage.value=`url('${query}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
   fetchGI("candy").then(image=>{
