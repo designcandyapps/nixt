@@ -10,6 +10,7 @@ export default defineEventHandler(async(event)=>{
     const response=await fetch(imageUrl,{
       headers:{
         "User-Agent":"Mozilla/5.0",
+        "Api-Key":"lep3mq3jxr4u99m7hy3gzzp3gl"
       }
     });
     if(!response.ok){return new Response("Error",{status:500})}
