@@ -11,14 +11,12 @@ const fetchGI=async(query)=>{
     if(data.images&&data.images.length>0){const image=data.images[0];alert("Im: "+image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}*/
 
-  const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"lep3mq3jxr4u99m7hy3gzzp3gl"}});
-  alert(response);
-
-  /*isLoading.value=true;
+  isLoading.value=true;
   proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}*/
+  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false};*/
+  //img.onerror=()=>{console.error("Failed"); isLoading.value=false}*/
 };
 onMounted(()=>{
   fetchGI("candy");
