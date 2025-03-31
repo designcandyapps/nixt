@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <gettyIm />
+      <!--gettyGen /-->
       <div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /--></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -40,13 +40,13 @@ export default{
       alert("IM: "+image.display_sizes[0].uri);
       //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
     });*/
-    //setTimeout(()=>{this.snd()},2200);
+    setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector('#prompt').value})});
+      const response=await fetch("/api/post",{method:"GET",headers:{"Content-Type":"application/json"}});
       const data=await response.json(); this.response=data.reply;
-      //alert("RES1: "+this.response);
+      alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
   },
