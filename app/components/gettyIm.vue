@@ -13,8 +13,8 @@ const fetchGI=async(query)=>{
   }catch(error){console.error("Error2:",error)}
 
   isLoading.value=true;
-  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
-  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
+  proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
+  //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
 
   //document.querySelector("#pho").value=proxyUrl.value; //document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
