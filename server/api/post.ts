@@ -8,7 +8,7 @@ export default defineEventHandler(async(event)=>{
       "Api-Key":`lep3mq3jxr4u99m7hy3gzzp3gl`,
       Authorization: `Bearer lep3mq3jxr4u99m7hy3gzzp3gl`
     },
-    //body:JSON.stringify({messages:[{content:body.message}]}),
+    body:JSON.stringify({messages:[{content:body.message}]}),
   });
   const data=await apiResponse.json();
   this.response=data.reply;
