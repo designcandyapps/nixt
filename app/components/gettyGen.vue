@@ -5,7 +5,7 @@ export default{
   setup(){const query=ref(""); const image=ref("");
     const gettyGen=async()=>{
       query="candied"; image.value="";
-      const response=await fetch(`/api/getty?phrase=${encodeURIComponent(query)}`,{method:"GET",headers:{
+      const response=await fetch(`/api/getty?phrase=${encodeURIComponent(query)}`,{method:"POST",headers:{
         "Content-Type":"application/json",
         Authorization:`lep3mq3jxr4u99m7hy3gzzp3gl`,
         "Api-Key":`lep3mq3jxr4u99m7hy3gzzp3gl`
