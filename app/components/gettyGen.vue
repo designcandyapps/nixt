@@ -4,7 +4,7 @@ export default{
   mounted(){setTimeout(()=>{this.gettyGen()},1600)},
   setup(){const prompt=ref(""); const image=ref("");
     const gettyGen=async()=>{image.value="";
-      const response=await fetch("https://api.gettyimages.com/v3/search/images?phrase=radiant",{method:"GET",headers:{
+      const response=await fetch(`/api/getty?phrase=${encodeURIComponent(query)}`,{method:"GET",headers:{
         "Content-Type":"application/json",
         Authorization:`lep3mq3jxr4u99m7hy3gzzp3gl`,
         "Api-Key":`lep3mq3jxr4u99m7hy3gzzp3gl`
