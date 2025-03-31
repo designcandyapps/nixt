@@ -6,7 +6,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <gettyIm />
+      
       <div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
       <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div><!--ImageGenerator /--></div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -23,7 +23,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    /*async function fetchGI(query){
+    async function fetchGI(query){
       const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
       const apiUrl=`https://api.gettyimages.com/v3/search/images`;
       try{
@@ -39,7 +39,7 @@ export default{
     fetchGI("sunset").then(image=>{
       alert("IM: "+image.display_sizes[0].uri);
       //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
-    });*/
+    });
     //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
