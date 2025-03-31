@@ -44,7 +44,7 @@ export default{
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/post",{method:"GET",headers:{"Content-Type":"application/json"}});
+      const response=await fetch("/api/post",{method:"POST",headers:{"Content-Type":"application/json"}});
       const data=await response.json(); this.response=data.reply;
       alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
