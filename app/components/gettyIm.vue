@@ -24,7 +24,7 @@ const fetchGI=async(query)=>{
 };
 onMounted(()=>{
   fetchGI("sunset").then(image=>{
-    alert("IM: "+image[0].uri);
+    alert("IM: "+image.uri);
   });
 });
 </script>
