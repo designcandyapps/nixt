@@ -1,5 +1,5 @@
 <script setup>
-import {ref,onMounted} from "vue"; const imageUrl=ref(""); const proxyUrl=ref(""); const backgroundImage=ref(""); const isLoading=ref(false);
+import {ref,onMounted} from "vue"; const query=ref(""); const proxyUrl=ref(""); const backgroundImage=ref(""); const isLoading=ref(false);
 const fetchGI=async(query,apiKey)=>{
   const apiUrl=`https://api.gettyimages.com/v3/search/images`;
   try{
@@ -14,14 +14,14 @@ const fetchGI=async(query,apiKey)=>{
   isLoading.value=true;
   //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
-  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert(proxyUrl.value);
+  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`; alert(proxyUrl.value);
 
   setTimeout(function(){
     document.querySelector("#pho").value=proxyUrl.value;
     document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
   //const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  //img.onload=()=>{backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+  //img.onload=()=>{backgroundImage.value=`url('${query}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
   fetchGI("sunset").then(image=>{
