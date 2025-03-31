@@ -11,8 +11,8 @@ const fetchGI=async(query)=>{
   }catch(error){console.error("Error2: ",error)}*/
 
   isLoading.value=true;
-  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
-  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
+  proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
+  //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
   alert(proxyUrl.value);
 
   setTimeout(function(){
@@ -23,7 +23,7 @@ const fetchGI=async(query)=>{
   img.onload=()=>{backgroundImage.value=`url('${query}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
-  fetchGI("sunset").then(image=>{
+  fetchGI("candy").then(image=>{
     alert("IM: "+image.uri); //.display_sizes[0]
   });
 });
