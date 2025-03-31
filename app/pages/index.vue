@@ -40,13 +40,14 @@ export default{
       alert("IM: "+image.display_sizes[0].uri);
       //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
     });*/
-    setTimeout(()=>{this.snd()},2200);
+    //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
     async snd(){
-      const response=await fetch("/api/post",{method:"POST",headers:{"Content-Type":"application/json"}});
+      const response=await fetch("/api/chat",{
+      method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply;
-      alert("RES1: "+this.response);
+      //alert("RES1: "+this.response);
       document.querySelector('#t').innerText=this.response;
     },
   },
