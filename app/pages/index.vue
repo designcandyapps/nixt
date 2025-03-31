@@ -28,7 +28,8 @@ export default{
       const apiUrl=`https://api.gettyimages.com/v3/search/images`;
       try{
         const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
-        if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
+        throw new Error(`Err1:${response.statusText}`)
+        //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
         const data=await response.json(); this.response=data.reply;
         alert("RES1: "+this.response);
         //alert("RES2: "+JSON.stringify(data));
@@ -36,7 +37,8 @@ export default{
       }catch(error){console.error("Error2:",error)}
     }
     fetchGI("sunset").then(image=>{
-      alert("IM: "+image.display_sizes[0].uri);
+      if(image){alert("Image")}
+      //alert("IM: "+image.display_sizes[0].uri);
       //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
     });
     //setTimeout(()=>{this.snd()},2200);
