@@ -1,6 +1,6 @@
 <script setup>
 import {ref,onMounted} from "vue"; const imageUrl=ref(""); const proxyUrl=ref(""); const backgroundImage=ref(""); const isLoading=ref(false);
-const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl"; const query="blue stone";
+//const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl"; const query="blue stone";
 
 const fetchGI=async(query,apiKey)=>{
 //async function fetchGI(query,apiKey,page=1,pageSize=1){
