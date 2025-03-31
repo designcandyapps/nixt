@@ -15,16 +15,13 @@ const fetchGI=async(query)=>{
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
   alert(proxyUrl.value);
 
-  setTimeout(function(){
-    document.querySelector("#pho").value=proxyUrl.value;
-    document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
-  },8800);
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+  document.querySelector("#pho").value=proxyUrl.value; //document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
+  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
+  //img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
   fetchGI("candy").then(image=>{
-    alert("IM: "+image.uri); //.display_sizes[0]
+    alert("IM: "+image[0].uri); //.display_sizes[0]
   });
 });
 </script>
