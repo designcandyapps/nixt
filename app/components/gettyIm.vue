@@ -11,16 +11,16 @@ const fetchGI=async(query)=>{
   }catch(error){console.error("Error2: ",error)}*/
 
   isLoading.value=true;
-  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
-  //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
-  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`; alert(proxyUrl.value);
+  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
+  proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
+  alert(proxyUrl.value);
 
   setTimeout(function(){
     document.querySelector("#pho").value=proxyUrl.value;
     document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
-  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  //img.onload=()=>{backgroundImage.value=`url('${query}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
+  img.onload=()=>{backgroundImage.value=`url('${query}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
   fetchGI("sunset").then(image=>{
