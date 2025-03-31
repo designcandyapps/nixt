@@ -5,7 +5,7 @@ import {ref,onMounted} from "vue"; const imageUrl=ref(""); const proxyUrl=ref(""
 const fetchGI=async(query,apiKey)=>{
 //async function fetchGI(query,apiKey,page=1,pageSize=1){
 //async function fetchGI(query){
-  const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
+  //const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
   const apiUrl=`https://api.gettyimages.com/v3/search/images`;
   try{
     const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"lep3mq3jxr4u99m7hy3gzzp3gl"}});
