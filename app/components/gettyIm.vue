@@ -1,26 +1,20 @@
 <script setup>
 import {ref,onMounted} from "vue"; const imageUrl=ref(""); const proxyUrl=ref(""); const backgroundImage=ref(""); const isLoading=ref(false);
-//const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl"; const query="blue stone";
-
 const fetchGI=async(query,apiKey)=>{
-//async function fetchGI(query,apiKey,page=1,pageSize=1){
-//async function fetchGI(query){
-  //const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
   const apiUrl=`https://api.gettyimages.com/v3/search/images`;
-  try{
+  //try{
     const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"lep3mq3jxr4u99m7hy3gzzp3gl"}});
-    if(!response.ok){throw new Error(`Error: ${response.statusText}`)}
-    const data=await response.json();
-    if(data.images&&data.images.length>0){const image=data.images[0]; console.log("Im:",image); return image}else{console.log("No ims"); return null}
-  }catch(error){console.error("Error:",error)}
-};
-  
-/*const fetchGI=async(query,apiKey,page=1,pageSize=1)=>{
+    //if(!response.ok){throw new Error(`Error: ${response.statusText}`)}
+    const data=await response.json(); this.response=data.reply;
+    alert("RES1: "+this.response);
+    
+    if(data.images&&data.images.length>0){const image=data.images[0];alert("Im: "+image);return image}else{console.log("No ims");return null}
+  //}catch(error){console.error("Error:",error)}
+//};
+
   isLoading.value=true;
-  const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
   //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
   proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
-  //`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert(proxyUrl.value);
 
   setTimeout(function(){
@@ -30,8 +24,8 @@ const fetchGI=async(query,apiKey)=>{
 
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false; alert(backgroundImage.value)};
-  img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
-};*/
+  img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+};
 
 onMounted(()=>{
   fetchGI("sunset").then(image=>{
