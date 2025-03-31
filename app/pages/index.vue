@@ -23,29 +23,23 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
-    const query="pink sky"; //prompt.value; //document.querySelector("#prompt").value;
-    async function fetchGI(query,apiKey,page=1,pageSize=1){
-      const url=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page=${page}&page_size=${pageSize}`;
+    async function fetchGI(query){
+      const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
+      const apiUrl=`https://api.gettyimages.com/v3/search/images`;
       try{
-        const response=await fetch(url,{headers:{"Api-Key":apiKey}});
-        //alert("RES0: "+this.response);
-        if(!response.ok){throw new Error(`Error: ${response.status}-${response.statusText}`)}
+        const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
+        if(!response.ok){throw new Error(`Error: ${response.statusText}`)}
         const data=await response.json();
-        //alert("RES1: "+JSON.stringify(data));
-        return data.images.map(image=>({
-          id:image.id,title:image.title||'',
-          thumbUrl:image.display_sizes[0]?.uri||'',
-          previewUrl:image.display_sizes[1]?.uri||''
-        }));
-        alert("Test1");
-      }catch(error){console.error("Error2: ",error); return []}
+        if(data.images&&data.images.length>0){const image=data.images[0]; console.log("Im:",image); return image}else{console.log("No ims"); return null}
+      }catch(error){console.error("Error:",error)}
     }
-    fetchGI(query,apiKey).then(images=>{images.forEach(image=>{
-      alert("Im: "+image.uri);
-      pho.value=query;
-      //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
-    })});
+    fetchGI("sunset").then(image=>{
+      if(image){
+        alert("IM: "+image.display_sizes[0].uri);
+        //pho.value=query;
+        //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
+      }
+    });
     //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
