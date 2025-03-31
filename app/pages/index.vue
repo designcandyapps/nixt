@@ -28,7 +28,7 @@ export default{
       const apiUrl=`https://api.gettyimages.com/v3/search/images`;
       try{
         const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
-        throw new Error(`Err1:${response.statusText}`)
+        throw new Error(`Err1:${response.statusText}`);
         //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
         const data=await response.json(); this.response=data.reply;
         alert("RES1: "+this.response);
