@@ -2,8 +2,8 @@ export default defineEventHandler(async(event)=>{
   const query=getQuery(event);
   alert(query);
 
-  //https://api.gettyimages.com/v3/search/images?phrase=sunset&page_size=1
-  const imageUrl=query.url as string;
+  //const imageUrl=`https://api.gettyimages.com/v3/search/images?phrase=sunset&page_size=1`;
+  const imageUrl=query.phrase as string;
   alert(imageUrl);
 
   if(!imageUrl){return new Response("Invalid URL",{status:400})}
