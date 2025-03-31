@@ -8,6 +8,7 @@ const fetchGI=async(query)=>{
     //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
     const data=await response.json(); this.response=data.reply;
     alert("RES1: "+this.response);
+    //alert("RES2: "+JSON.stringify(data));
     if(data.images&&data.images.length>0){const image=data.images[0];alert("Im: "+image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 
