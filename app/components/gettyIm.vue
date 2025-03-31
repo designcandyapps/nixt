@@ -13,8 +13,9 @@ const fetchGI=async(query,apiKey)=>{
 //};
 
   isLoading.value=true;
-  proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
+  //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
+  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert(proxyUrl.value);
 
   setTimeout(function(){
