@@ -2,7 +2,7 @@
 <script>
 export default{
   mounted(){setTimeout(()=>{this.gettyGen()},1600)},
-  setup(){const query=ref(""); const prompt=ref(""); const image=ref("");
+  setup(){const query=ref(""); const image=ref("");
     const gettyGen=async()=>{
       query="green"; image.value="";
       const response=await fetch(`/api/getty?phrase=${encodeURIComponent(query)}`,{method:"GET",headers:{
@@ -10,12 +10,12 @@ export default{
         Authorization:`lep3mq3jxr4u99m7hy3gzzp3gl`,
         "Api-Key":`lep3mq3jxr4u99m7hy3gzzp3gl`
       },
-      body:JSON.stringify({prompt:"radial",n:1,size:"256x256"})});
+      body:JSON.stringify({query:"radial",n:1,size:"256x256"})});
       const data=await response.json();
       alert("RES2: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){image.value=data.data[0].url; document.querySelector("#v").firstChild.style.backgroundImage="url("+image.value+")";}
     }
-    return{prompt,image,gettyGen};
+    return{query,image,gettyGen};
   },
 }
 </script>
