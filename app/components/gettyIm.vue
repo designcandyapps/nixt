@@ -7,7 +7,6 @@ const fetchGI=async(query,apiKey)=>{
     if(!response.ok){throw new Error(`Error1: ${response.statusText}`)}
     const data=await response.json(); this.response=data.reply;
     alert("RES1: "+this.response);
-    
     if(data.images&&data.images.length>0){const image=data.images[0];alert("Im: "+image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2: ",error)}
 //};
@@ -15,25 +14,18 @@ const fetchGI=async(query,apiKey)=>{
   isLoading.value=true;
   //proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}&page_size=${pageSize}`;
-  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert(proxyUrl.value);
+  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert(proxyUrl.value);
 
   setTimeout(function(){
     document.querySelector("#pho").value=proxyUrl.value;
     document.body.style.backgroundImage="https://www.designcandy.com/im/dc.png";
   },8800);
-
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  img.onload=()=>{backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false; alert(backgroundImage.value)};
-  img.onerror=()=>{console.error("Failed"); isLoading.value=false}
+  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
+  //img.onload=()=>{backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false; alert(backgroundImage.value)}; img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
-
 onMounted(()=>{
   fetchGI("sunset").then(image=>{
-    if(image){
-      alert("IM: "+image.display_sizes[0].uri);
-      //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
-    }
+    alert("IM: "+image.display_sizes[0].uri);
   });
 });
 </script>
