@@ -15,8 +15,8 @@ const fetchGI=async(query)=>{
   proxyUrl.value=`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}`;
   //proxyUrl.value=`/api/getty?phrase=${encodeURIComponent(query)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false};*/
-  //img.onerror=()=>{console.error("Failed"); isLoading.value=false}*/
+  img.onload=()=>{alert("IU: "+imageUrl.value); backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false};
+  //img.onerror=()=>{console.error("Failed"); isLoading.value=false}
 };
 onMounted(()=>{
   fetchGI("candy");
