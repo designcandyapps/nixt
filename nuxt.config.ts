@@ -16,14 +16,11 @@ export default defineNuxtConfig({
     }
   },
   app: {head:{
-    //css:["https://pinfluents.com/_BCK/4/inc/ct.css"],
     link:[{rel:"stylesheet",href:"https://pinfluents.com/_BCK/4/inc/ct.css"}],
     script:[
       {src:"https://pinfluents.com/inc/jq.js"},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       {src:"https://pinfluents.com/_BCK/4/jqO.js"}
-      //{src:"https://pinfluents.com/inc/jq-1.12.js'},
-      //{src:"https://pinfluents.com/inc/ct.js'}
     ]}},
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
