@@ -14,6 +14,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
     <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
     <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
     <ULandingSection :title="page.bottom.title" :links="page.bottom.links"><UPageGrid><ULandingCard v-for="(item,index) of page.bottom.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <Slider />
   </div>
 </template>
 
@@ -21,20 +22,35 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    async function fetchGI(query){
-      const apiKey="lep3mq3jxr4u99m7hy3gzzp3gl";
-      const apiUrl=`https://api.gettyimages.com/v3/search/images`;
-      try{
-        const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
-        if(!response.ok){throw new Error(`Error:${response.statusText}`)}
-        const data=await response.json();
-        if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-      }catch(error){console.error("Error2:",error)}
+    async function fetchGetty(query) {
+      const apiKey = "lep3mq3jxr4u99m7hy3gzzp3gl";
+      const apiUrl = `https://api.gettyimages.com/v3/search/images`;
+      try {
+        const response = await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{
+          method:"GET",
+          headers:{
+            "Api-Key":apiKey
+          }
+        });
+        if (!response.ok) {
+          throw new Error(`Error:${response.statusText}`);
+        }
+        const data = await response.json();
+        if (data.images && data.images.length > 0) {
+          const image = data.images[0];
+          console.log("Image:",image);
+          return image;
+        } else {
+          console.log("No images loaded.");
+          return null;
+        }
+      } catch(error) {
+        console.error("Error:",error);
+      }
     }
-    fetchGI("sunset").then(image=>{
-      alert("IM: "+image.display_sizes[0].uri);
-      //pho.value=query; //document.querySelector("#a").style.backgroundImage="url("+pho.value+")";
-    });*/
+    fetchGetty("sunset").then(image => {
+      alert("Image: "+image.display_sizes[0].uri);
+    });
     //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
