@@ -20,7 +20,7 @@ export default{
   //data(){return{prompt:"",response:null}},
   mounted(){
     async function fetchGetty(query) {
-      const apiKey = "lep3mq3jxr4u99m7hy3gzzp3gl";
+      const apiKey = "ep3mq3jxr4u99m7hy3gzzp3g";
       const apiUrl = `https://api.gettyimages.com/v3/search/images`;
       try {
         const response = await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{
