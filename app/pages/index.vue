@@ -19,7 +19,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  //data(){return{prompt:"",response:null}},
   mounted(){
     async function fetchGetty(query) {
       const apiKey = "lep3mq3jxr4u99m7hy3gzzp3gl";
@@ -50,16 +50,9 @@ export default{
     fetchGetty("sunset").then(image => {
       alert("Image: "+image.display_sizes[0].uri);
     });
-    //setTimeout(()=>{this.snd()},2200);
   },
   methods:{
-    async snd(){
-      const response=await fetch("/api/chat",{
-      method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply;
-      //alert("RES1: "+this.response);
-      document.querySelector('#t').innerText=this.response;
-    },
+
   },
 }
 </script>
