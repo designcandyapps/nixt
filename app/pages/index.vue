@@ -29,7 +29,7 @@ export default{
         const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
         if(!response.ok){throw new Error(`Error:${response.statusText}`)}
         const data=await response.json();
-        if(data.images&&data.images.length>0){const imagr=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
+        if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
       }catch(error){console.error("Error:",error)}
     }
     //alert(document.querySelector("#prompt").value);
@@ -44,4 +44,3 @@ export default{
   },
 }
 </script>
-
