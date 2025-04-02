@@ -30,9 +30,9 @@ export default{
         if(data.images&&data.images.length>0){const imagr=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
       }catch(error){console.error("Error:",error)}
     }
-    alert(document.querySelector("#prompt").value);
-    fetchGetty(document.querySelector("#prompt").value).then(image=>{
-      alert("Im: "+image.display_sizes[0].uri);
+    //alert(document.querySelector("#prompt").value);
+    fetchGetty("sunset").then(image=>{
+      //alert("Im: "+image.display_sizes[0].uri);
       pho.value=image.display_sizes[0].uri;
       document.body.style.backgroundImage="url("+image.display_sizes[0].uri+")";
     });
