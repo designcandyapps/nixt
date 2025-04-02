@@ -46,10 +46,10 @@ export default{
         console.error("Error:",error);
       }
     }
-    fetchGetty("sunset").then(image => {
+    fetchGetty(document.querySelector("#prompt").value).then(image => {
       //alert("Image: "+image.display_sizes[0].uri);
       pho.value=image.display_sizes[0].uri;
-      document.body.style.backgroundImage="url("+pho.value+")";
+      document.body.style.backgroundImage="url("+image.display_sizes[0].uri+")";
     });
   },
   methods:{
