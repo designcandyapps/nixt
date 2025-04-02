@@ -18,7 +18,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 
 <script lang="ts">
 export default{
-  //data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){
     async function fetchGetty(query) {
       const apiKey = "ep3mq3jxr4u99m7hy3gzzp3g";
