@@ -47,7 +47,9 @@ export default{
       }
     }
     fetchGetty("sunset").then(image => {
-      alert("Image: "+image.display_sizes[0].uri);
+      //alert("Image: "+image.display_sizes[0].uri);
+      pho.value=image.display_sizes[0].uri;
+      document.body.style.backgroundImage="url("+pho.value+")";
     });
   },
   methods:{
