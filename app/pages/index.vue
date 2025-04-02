@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
-useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+const {data:page}=await useAsyncData("index",()=>queryContent("/").findOne())
+useSeoMeta({titleTemplate:"",title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 </script>
 
 <template>
@@ -21,30 +21,14 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     async function fetchGetty(query) {
-      const apiKey = "ep3mq3jxr4u99m7hy3gzzp3g";
-      const apiUrl = `https://api.gettyimages.com/v3/search/images`;
-      try {
-        const response = await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{
-          method:"GET",
-          headers:{
-            "Api-Key":apiKey
-          }
-        });
-        if (!response.ok) {
-          throw new Error(`Error:${response.statusText}`);
-        }
-        const data = await response.json();
-        if (data.images && data.images.length > 0) {
-          const image = data.images[0];
-          console.log("Image:",image);
-          return image;
-        } else {
-          console.log("No images loaded.");
-          return null;
-        }
-      } catch(error) {
-        console.error("Error:",error);
-      }
+      const apiKey="ep3mq3jxr4u99m7hy3gzzp3g";
+      const apiUrl=`https://api.gettyimages.com/v3/search/images`;
+      try{
+        const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
+        if(!response.ok){throw new Error(`Error:${response.statusText}`)}
+        const data=await response.json();
+        if(data.images&&data.images.length>0){const imagr=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
+      }catch(error){console.error("Error:",error)}
     }
     alert(document.querySelector("#prompt").value);
     fetchGetty(document.querySelector("#prompt").value).then(image=>{
