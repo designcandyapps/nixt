@@ -34,9 +34,9 @@ export default{
     }
     //alert(document.querySelector("#prompt").value);
     fetchGetty("sunset").then(image=>{
-      //alert("Im: "+image.display_sizes[0].uri);
-      pho.value=image.display_sizes[0].uri;
-      document.body.style.backgroundImage="url("+image.display_sizes[0].uri+")";
+      alert("Im: "+image.display_sizes[0].uri);
+      //pho.value=image.display_sizes[0].uri;
+      //document.body.style.backgroundImage="url("+image.display_sizes[0].uri+")";
     });
   },
   methods:{
