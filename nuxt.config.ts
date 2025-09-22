@@ -15,13 +15,14 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  app: {head:{
+  /*app: {head:{
     link:[{rel:"stylesheet",href:"https://pinfluents.com/_BCK/4/inc/ct.css"}],
     script:[
       {src:"https://pinfluents.com/inc/jq.js"},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       {src:"https://pinfluents.com/_BCK/4/jqO.js"}
     ]}},
+  */
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
   routeRules: {'/api/search.json':{prerender:true}},
