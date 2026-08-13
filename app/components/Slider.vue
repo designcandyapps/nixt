@@ -1,4 +1,4 @@
-<template>
+<!--template>
   <span>
   <span id="ns" class="news-slider">
     <span>
@@ -25,4 +25,4 @@
     <div><p></p></div>
     <div><p></p></div>
   </div>
-</template>
+</template-->
