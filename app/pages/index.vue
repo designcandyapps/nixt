@@ -21,26 +21,6 @@ useSeoMeta({titleTemplate:"",title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    /*
-    async function fetchGetty(query) {
-      const apiKey="ep3mq3jxr4u99m7hy3gzzp3g";
-      const apiUrl=`https://api.gettyimages.com/v3/search/images`;
-      try{
-        const response=await fetch(`${apiUrl}?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":apiKey}});
-        if(!response.ok){throw new Error(`Error:${response.statusText}`)}
-        const data=await response.json();
-        if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-      }catch(error){console.error("Error:",error)}
-    }
-    //alert(document.querySelector("#prompt").value);
-    fetchGetty("sunset").then(image=>{
-      alert("Im: "+image.display_sizes[0].uri);
-      //pho.value=image.display_sizes[0].uri;
-      //document.body.style.backgroundImage="url("+image.display_sizes[0].uri+")";
-    });
-    */
-  },
-  methods:{
 
   },
 }
